@@ -19,7 +19,7 @@
     sort = yes
     idle_threshold = 120
     # font = JetBrains Mono Medium 11
-    font =  mononoki Nerd Font 12
+    font =  SF Pro Display 12
     # font = DejaVu Sans Mono:pixelsize 18
     # font = DejaVu Sans Mono:pixelsize 9.5
     line_height = 4
@@ -88,7 +88,7 @@
     # foreground = "#ffffff"
     # foreground = "#88C0D0"
     highlight = "#BF616A"
-    background = "#000001"
+    background = "#151818"
     foreground = "#a3be8c"
     # highlight = "#ebcb8b"
     timeout = 5
@@ -99,7 +99,7 @@
     # foreground = "#ffffff"
     # foreground = "#8FBCBB"
     highlight = "#BF616A"
-    background = "#000001"
+    background = "#151818"
     foreground = "#a3be8c"
     # highlight = "#ebcb8b"
     timeout = 5
@@ -108,12 +108,13 @@
 # [urgency_critical]
 #     background = "#900000"
 #     foreground = "#ffffff"
-#     frame_color = "#ff0000"
+#     frame_color = "#000000"
 #     timeout = 5
 #     # Icon for notifications with critical urgency, uncomment to enable
 [urgency_critical]
-    background = "#E5E9F0"
-    foreground = "#BF616A"
+    background = "#151818"
+    foreground = "#df4949"
+    frame_color = "#df494999"
     timeout = 6
     # Icon for notifications with critical urgency, uncomment to enable
 

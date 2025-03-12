@@ -234,8 +234,6 @@ bindkey '^e' edit-command-line
 # eval "$(fzf --zsh)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-# Zoxide plugin
-eval "$(zoxide init zsh)"
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
@@ -302,6 +300,8 @@ ex ()
   fi
 }
 
+
+
 # Flutter apps completion
 if type complete &>/dev/null; then
   __flutter_completion() {
@@ -343,5 +343,8 @@ elif type compctl &>/dev/null; then
   }
   compctl -K __flutter_completion flutter
 fi
+
+# Zoxide plugin
+eval "$(zoxide init zsh)"
 
 #===============[ THE END ]====================================
