@@ -1,0 +1,6 @@
+#!/bin/sh
+# Arch
+systemctl hybrid-sleep
+
+# Artix
+# loginctl hybrid-sleep

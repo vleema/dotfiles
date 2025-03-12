@@ -1,0 +1,6 @@
+zsh/.config/zsh/plugins
+tmux/.config/tmux/plugins
+history/.cache/zsh/history_backup
+zsh/.config/zsh/.zcompdump
+scripts/.local/bin/tmuxifier
+

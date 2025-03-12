@@ -1,0 +1,458 @@
+.de LI
+.LIST
+.SHIFT_LIST 10p
+..
+.PARA_SPACE 1m
+\"===================================================================="
+.ds MONTH1 January
+.ds MONTH2 February
+.ds MONTH3 March
+.ds MONTH4 April
+.ds MONTH5 May
+.ds MONTH6 June
+.ds MONTH7 July
+.ds MONTH8 August
+.ds MONTH9 September
+.ds MONTH10 October
+.ds MONTH11 November
+.ds MONTH12 December
+.ds MO \E*[MONTH\n[mo]]
+.ds DY \*[MO] \n[dy], \n[year]
+\"===================================================================="
+
+.HEADING_STYLE 1 NUMBER
+.HEADING_STYLE 2 NUMBER
+.TITLE "\s+(10System Keybindings and Tricks\s0"
+.AUTHOR "\s+5Selan Santos\s0"
+.DOCTYPE    DEFAULT
+.COPYSTYLE  FINAL
+.PRINTSTYLE TYPESET
+.PT_SIZE 12
+.START
+.LP
+.rj
+Last updated on: \*[DY]
+.HEADING 1 "Introduction"
+.PP
+This document presents the most relevant keybinding for some application and it's meant to used as a
+\fIcheat sheet\fP. For a complete list of keybindings for a given software, please refer to the source
+code, config files, man pages, or the Internet.
+
+This document was heavily inspired by 
+.PDF_WWW_LINK https://larbs.xyz/ "Luke Smith's LARBS"
+.HEADING 2 "General keyboard changes"
+.PP
+Capslock is remapped.
+If you press it alone, it will function as escape, making vimcraft much more natural,
+but you can also hold it down and it will act as another Windows/super/mod key.
+.PP
+If you'd like to modify any of these keyboard changes, you need only open and change the \f(CWremaps\fP script.
+All custom scripts are located in \f(CW~/.local/bin/\fP.
+.HEADING 2 "Key bindings"
+.PP
+Throughout this document \f(CWMod\fP key refers to the Super Key, usually known as
+"the Windows Key", or "the Command key."
+.PP
+When reading the key bindings in this document pay attention to the case sensitivity of the shortcuts.
+This means that whenever a capital letter appears in a key binding it implicitly means
+that you also have to hold down the \f(CWShift\fP key while generating the required 
+key combination.
+.NEWPAGE
+.HEADING 1 "System Key Bindings"
+.HEADING 2 "Basic Commands"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination         ; Result
+_
+.TH
+\f(CWMod+F1\fP          ; Toggle on/off the display of this document.
+\f(CWMod+Alt+F1\fP      ; Toggle on/off the layout of my custom keyboard (Piantor).
+\f(CWMod+Enter\fP       ; Spawn terminal (the default terminal is \f(CWkitty\fP).
+\f(CWCtrl+Alt+Enter\fP  ; While focused on a \f(CWkitty\fP terminal it opens new terminal on same directory.
+\f(CWMod+Shift+Enter\fP ; Spawn \f(CWalacritty\fP (light background).
+\f(CWMod+Alt+Enter\fP   ; Spawn \f(CWst\fP.
+
+\f(CWMod+space\fP       ; Runs \f(CWdmenu\fP, a running \fBP\fPrompt.
+\f(CWMod+A\fP           ; Toggle \f(CWpulsemix\fP on/off (\fBA\fPudio control panel).
+\f(CWMod+b\fP           ; Toggle sytem bar on/off.
+\f(CWMod+c\fP           ; \fBC\fPaptures a region of the screen (interactively).
+\f(CWMod+q\fP           ; Close (\fBq\fPuit) window.
+\f(CWMod+Q\fP           ; Invokes the quit/logout (\f(CWdmenu\fP) dialog window.
+\f(CWMod+r\fP           ; Toggle a scratchpad with \fBr\fP\f(CWanger\fP on/off to navigate file system.
+\f(CWMod+R\fP           ; Hard restart dwm, usually after compiling.
+\f(CWMod+t\fP           ; Toggle \f(CWpicom\fP (\fBt\fPransparency) off/on.
+\f(CWMod+z\fP           ; Toggle scratchpad terminal on/off.
+\f(CWMod+X\fP           ; Restart \f(CWsxhkd\fP.
+\f(CWMod+y\fP           ; Toggle a scratchpad with \fBy\fP\f(CWazi\fP on/off to navigate file system.
+.TE
+.HEADING 2 "Window layouts"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination         ; Result
+_
+.TH
+\f(CWMod+n\fP           ; Cycle thru layouts (forwards).
+\f(CWMod+p\fP           ; Cycle thru layouts (backwards).
+\f(CWMod+f\fP           ; Toggle on/off fullscreen (no window border).
+\f(CWMod+period\fP      ; Switch focus to other monitor (forwards).
+\f(CWMod+comma\fP       ; Switch focus to other monitor (backward).
+\f(CWMod+Shift+period\fP; Bring focused client from other monitor (tag monitor).
+\f(CWMod+Shift+comma\fP ; Bring focused client from other monitor (tag monitor).
+.TE
+.NEWPAGE
+
+Two keys inside a pair of parentheses, \f(CW(Mod+o)\fP, represent \fBkeychords\fP combinations.
+This means we press and release them together (as usual),
+and after that we press the last letter of the desired three key combination.
+
+.HEADING 2 "Launching Applications"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination         ; Result
+_
+.TH 
+\f(CW(Mod+o)+b\fP       ; Launch default \fBB\fProwser (defined in \f(CW$BROWSER\fP).
+\f(CW(Mod+o)+d\fP       ; Launch \fBD\fP\f(CWiscord\fP.
+\f(CW(Mod+o)+e\fP       ; Launch \f(CWflameshot\fP (interactive scr\fBE\fPen capture).
+\f(CW(Mod+o)+f\fP       ; Launch \f(CWthunar\fP (a GUI \fBF\fPile manager).
+\f(CW(Mod+o)+k\fP       ; Toggle \fBk\fP\f(CWeepassxc\fP on/off.
+\f(CW(Mod+o)+l\fP       ; Launch \fBL\fPock screen.
+\f(CW(Mod+o)+m\fP       ; Launch \f(CWncmpcpp\fP (front-end for \fBM\fPusic daemon \f(CWmpd\fP).
+\f(CW(Mod+o)+n\fP       ; Launch \f(CWdunsctl\fP to show \fBN\fPotification history (repeat to show older notifications).
+\f(CW(Mod+o)+p\fP       ; Launch \fBP\fPrinter manager.
+\f(CW(Mod+o)+s\fP       ; Launch \fBS\fP\f(CWpotify\fP.
+\f(CW(Mod+o)+t\fP       ; Toggle \fBT\fPask monitor (\f(CWbtop\fP) on/off.
+\f(CW(Mod+o)+v\fP       ; Launch \f(CWpa\fP\fBV\fPucontrol (alternative audio control panel).
+\f(CW(Mod+o)+w\fP       ; Launch \f(CWnsxiv\fP in the \fBW\fPallpaper folder (to change wallpaper).
+\f(CW(Mod+o)+y\fP       ; Toggle \f(CWs\fP\fBY\fP\f(CWstray\fP on/off.
+
+.TE
+.NEWPAGE
+.HEADING 2 "Client Window Navigation"
+.TS H
+tab(;);
+cb  lb
+l  l.
+Key combination         ; Result
+_
+.TH
+\f(CWMod+{j/k}\fP         ; Move focus on client down/up.
+\f(CWMod+{h/l}\fP         ; Move focus on client left/right.
+\f(CWMod+Backspace\fP     ; Toggle client into/out of \fIfloat\fP mode.
+\f(CWMod+{J/K}\fP         ; Push \fIonly\fP focused client "down"/"up" the stack.
+\f(CWMod+{L/H}\fP         ; Increase/Decrease master stack client width.
+\f(CWMod+{i/d}\fP         ; Increase/Decrease master stack capacity.
+\f(CWMod+m\fP             ; Swap focused clients back/forth between master/stack.
+\f(CWMod+<tag>\fP         ; Go to \<tag\> (\fBpress again to go back to previous tag\fP).
+\f(CWMod+Ctrl+<tag>\fP    ; Toggle (view) of (multiple) clients from  \<tag\> to the current tag.
+\f(CWMod+Shift+<tag>\fP   ; Shift (send) focused client to \<tag\>.
+\f(CWMod+Shift+Ctrl+<tag>\fP ; Toggle focused client to (multiple) \<tag\>, a.k.a. stick behaviour.
+\f(CWMod+Tab\fP           ; Shift view client (back and forth).
+\f(CWMod+Left\fP          ; View the next tag (circular).
+\f(CWMod+Right\fP         ; View the prev tag (circular).
+\f(CWMod+Shift+Left\fP    ; View the next tag that has a client (circular).
+\f(CWMod+Shift+Right\fP   ; View the prev tag that has a client (circular).
+\f(CWMod+Up\fP            ; Send focused client to the next tag (circular).
+\f(CWMod+Down\fP          ; Send focused client to the previous tag (circular).
+\f(CWMod+Shift+Up\fP      ; Send focused client to the next tag and view that tag (circular).
+\f(CWMod+Shift+Down\fP    ; Send focused client to the prev tag and view that tag (circular).
+
+.TE
+.NEWPAGE
+.HEADING 2 "Function Keys"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination         ; Result
+_
+.TH
+\f(CWMod+F1\fP          ; Launch a pdf (this document) with keybindings and help.
+\f(CWMod+Alt+F1\fP      ; Toggle on/off the layout of my custom keyboard (Piantor).
+\f(CWMod+F2\fP          ; Toggle off/on idle lockscreen activation.
+\f(CWMod+F3\fP          ; Launch blueman-manager.
+\f(CWMod+F4\fP          ; Opens up webcam on a client.
+\f(CWMod+F5\fP          ; Launch \f(CWdmenu\fP to choose keyboard layout.
+\f(CWMod+F6\fP          ; Launch \f(CWdmenu\fP to setup display (extra monitor, projector, etc.).
+\f(CWMod+F7\fP          ; Launch \f(CWdmenu\fP to manage internet connection.
+\f(CWMod+F8\fP          ; Toggle off/on notifications.
+\f(CWMod+F9\fP          ; Toggle on/off wifi.
+\f(CWMod+F10\fP         ; Toggle off/on bluetooth.
+\f(CWMod+F11\fP         ; Toggle on/off screenkey (display area is set via interactive window).
+\f(CWMod+F12\fP         ; Activates single monitor (if multi-monitor is activate)
+.TE
+.HEADING 2 "Gap Control"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination         ; Result
+_
+.TH
+\f(CWMod++\fP       ; Increase all gaps simultaneously.
+\f(CWMod+-\fP       ; Decrease all gaps simultaneously.
+\f(CWMod+=\fP       ; Reset all gaps back to default.
+\f(CWMod+Alt+=\fP ; Toggle gaps on/off.
+.TE
+.HEADING 2 "Mouse Control"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Mouse Click and Key combination         ; Result
+_
+.TH
+\f(CWMod+Button1 drag\fP ; Make client float and move it around.
+\f(CWMod+Button2 click\fP ; Make client float.
+\f(CWMod+Shift+Button1\fP ; Make client float and resize window.
+\f(CWMod+Alt+Button1\fP ; Make client float and resize window (alternative).
+.TE
+.NEWPAGE
+.HEADING 1 "Zathura Key Bindings"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination         ; Result
+_
+.TH
+(\f(CWh/j/k/l\fP)       ; Supports vim-style navigation in this document.
+\f(CWs\fP               ; Adjust document in with-fit view mode.
+\f(CWa\fP               ; Adjust document in best-fit view mode.
+\f(CW+\fP or \f(CWK\fP  ; Zoom in the document.
+\f(CW-\fP or \f(CWJ\fP  ; Zoom out the document.
+\f(CW=\fP               ; Zoom to original size.
+\f(CWi\fP               ; Toggles light/dark mode.
+\f(CWu\fP               ; Scroll half page up.
+\f(CWd\fP               ; Scroll half page down.
+\f(CWD\fP               ; Toggle page mode.
+\f(CWr\fP               ; Reload document.
+\f(CWR\fP               ; Rotate document 90 degrees clockwise.
+\f(CWG\fP               ; Go to last page (same as in vim).
+\f(CWgg\fP              ; Go to first page (same as in vim).
+\f(CW:n\fP              ; Go to n-th page in the document.
+\f(CW/\fP or \f(CW?\fP  ; Search document forwards or backwards.
+\f(CWf\fP               ; Follow links (press link number to go).
+\f(CWF5\fP              ; Toggle switch to presentation mode.
+\f(CWF11\fP             ; Toggle switch to fullscreen mode.
+\f(CWq\fP               ; Quits zathura.
+.TE
+.HEADING 1 "Encription with gpg"
+\"
+.LP
+If there is no key created:
+\f(CWgpg -full-generate-key \fP
+\"
+.LP
+To encrypt a file with my gpg key (created previously):
+\f(CWgpg -r your_email@entity.org -e somefile.txt\fP
+\"
+.LP
+To dencrypt a file with my gpg key:
+\f(CWgpg -d somefile.txt.gpg > new_file.txt\fP
+
+.HEADING 1 "Getting wheather information in a terminal"
+\"
+.LP
+\f(CWcurl wttr.in\fP
+
+or just call the alias \f(CWwheather\fP
+
+.NEWPAGE
+.HEADING 1 "Converting a file from one character encoding to another"
+\"
+.LP
+\f(CWiconv -t ISO-8859-1 -f UTF-8//TRANSLIT file_utf8.tex -o file_iso.tex\fP
+\"
+where
+.LP
+\f(CW-f --from-enconding  Input encoding\fP
+\f(CW-t --to-encoding     Output enconding\fP
+\f(CW-o --output          Defines the output file\fP
+
+.HEADING 1 "How to list largest files in a system"
+\"
+.LP
+Suppose we want to list the 5 largest files in a folder.
+
+\f(CWfind /path/to/directory -type f -exec du -hs {} \;| sort -rh | head -n 5\fP
+
+\f(CWdu -sh /path/to/directory | sort -rh | head -5\fP
+
+\f(CWfind /path/to/directory -type f -exec du -sh {} \; |sort -h|tail -5\fP
+
+\f(CWdu -ah /path/to/directory | sort -h -r | head -n 5\fP
+
+\f(CWfind /path/to/directory -type f -exec ls -s {} \; | sort -n | tail -n 5\fP
+
+or just call the alias \f(CWlargest-file\fP
+
+.HEADING 1 "How to find stuff"
+\"
+.LP
+Using the traditional find command (finding file w/ .md extension):
+
+\f(CWfind /where-to-look "*.md" -type f \fP
+
+We can have the output of find piped into another command:
+
+\f(CWfind /where "*.md" -type f -print0 | xargs -0 tar -zcvf files.tgz\fP
+
+The \f(CWfind\fP command has a built-in method of calling external programs to perform further processing on
+the filenames that it returns. The \f(CW-exec\fP (execute) option has a syntax similar to but different from the
+\f(CWxargs\fP command.
+
+\f(CWfind . -name "*.page" -type f -exec wc -c "{}" \;\fP
+
+Use fzf to obtain the file name and pass it like this:
+
+\f(CWnvim $(fzf)\fP
+
+Use fzf to copy the file to a different location:
+
+\f(CWcp $(fzf) ~/Documents\fP
+
+To start the fzf finder at 50% height and display files ending with .md:
+
+\f(CWfzf --reverse --multi --height 50% --query=.md$\fP
+
+Combine fzf and bat to preview files:
+
+\f(CWfzf --preview 'bat --color=always {}'\fP
+
+To avoid typing this option every time, you can set the environment variable \f(CWFZF_DEFAULT_OPTS\fP
+to apply it automatically every time you run \f(CWfzf\fP:
+
+\f(CWexport FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"\fP
+
+Change the default search command:
+\f(CWexport FZF_DEFAULT_COMMAND="fd --type f"\fP
+
+To activate fzf keybindings add the following to the \f(CW.zshrc\fP (already done):
+
+\f(CWeval "$(fzf --zsh)"\fP
+
+or source the file like so:
+
+\f(CWsource /usr/share/fzf/key-bindings.zsh\fP
+
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination   ; Result
+_
+.TH
+\f(CWCtrl+t\fP  ; To select files, similar to autocompletion but with fewer keystrokes
+\f(CWAlt+c\fP   ; To quickly switch into a selected subdirectory
+\f(CWCtrl+r\fP  ; For smart searching your command history
+.TE
+
+Pressing \f(CWtab\fP and \f(CWshift+tab\fP selects and unslects, respectivelly, items in list.
+
+.HEADING 1 "Mount Disk With Writing Permission"
+\"
+.LP
+To enable everyone rw access, the key is \f(CWumask=0\fP option to mount command.
+\f(CWsudo mount -o umask=0,uid=nobody,gid=nobody /dev/something /mnt/somewhere \fP
+\f(CWuid\fP and \f(CWgid\fP just for sake of clarity, so you don't see more 'root' owners than necessarily.
+
+.HEADING 1 "Write Bootable USB stick from an Image"
+\"
+.LP
+This command creates a bootable USB stick from a ISO image.
+
+\f(CWdd bs=4M if=debian-12.0.0-amd64.iso of=/dev/sda conv=fsync oflag=direct status=progress \fP
+
+The \f(CWdebian-12.0.0-amd64.iso\fP  is the ISO file and the \f(CW/dev/sda\fP is the USB device that will be
+written by the process.
+
+.HEADING 1 "List some process id"
+\"
+.LP
+This command lists the id of the proccess provided via fzf.
+
+\f(CWproccesses | fzf  \fP
+
+or 
+
+\f(CWps xf | fzf  \fP
+
+.HEADING 1 "List passwords stored by Networkmanager"
+\"
+.LP
+This command, run as root, prints the passwords that Networkmanager stored.
+
+\f(CWgrep -r '^psk=' /etc/NetworkManager/system-connections/ \fP
+
+To edit network connection, run:
+
+\f(CWnm-connection-editor \fP
+
+.HEADING 1 "Change kitty's opacity interactively"
+\"
+.LP
+To change background opacity of a kitty terminal you have to press \f(CWCtrl+A\fP, followed by one of these commands:
+
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination   ; Result
+_
+.TH
+\f(CWm\fP  ; increase background opacity
+\f(CWl\fP  ; decrease background opacity
+\f(CW1\fP  ; make background fully opaque
+\f(CWd\fP  ; reset background opacity
+.TE
+
+.HEADING 1 "LSP NeoVim"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination         ; Result
+_
+.TH
+\f(CW<leade>ls\fP       ; Activate a panel w/ symbols outline (aerial).
+\f(CWgr\fP       ; Show LSP references.
+\f(CWgD\fP       ; Go to declaration.
+\f(CWgd\fP       ; Show LSP definitions (implementation).
+\f(CWgi\fP       ; Show LSP implementations.
+\f(CWgt\fP       ; Show LSP type definitions.
+\f(CWgl\fP       ; Show line diagnostics.
+\f(CW<leader>ta\fP       ; See available code actions.
+\f(CW<leader>rn\fP       ; Smart rename.
+\f(CW<leader>d\fP       ; Show buffer diagnostics.
+\f(CW[d\fP       ; Go to previous diagnostic.
+\f(CW]d\fP       ; Go to next diagnostic.
+\f(CWK\fP       ; Show documentation for what is under cursor.
+\f(CW<leader>rs\fP       ; Restart LSP.
+\f(CW<leader>=\fP       ; Format buffer.
+.TE
+
+.NEWPAGE
+.HEADING 1 "Visual Multi - Neovim"
+.TS H
+tab(;);
+cb  lb
+l  l .
+Key combination         ; Result
+_
+.TH
+\f(CW<Ctrl>+n\fP       ; Select words.
+\f(CW<Ctrl>+down,<Ctrl>+up\fP       ; Create cursors vertically.
+\f(CW<Shift>+arrows       ; Select one character at a time.
+\f(CWn/N\fP       ; to get next/previous occurrence.
+\f(CW[/]\fP       ; to select next/previous cursor.
+\f(CWq\fP       ; to skip current and get next occurrence.
+\f(CWQ\fP       ; to remove current cursor/selection.
+\f(CWi, a, I, A\fP       ; to start insert mode.
+.TE

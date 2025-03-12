@@ -1,0 +1,41 @@
+include "%L"
+
+<dead_acute> <c> : "ç" ccedilla
+<dead_acute> <C> : "Ç" ccedilla
+
+
+# The XCompose file is used for defining key combinations and composing characters in the X Window System. It allows users to create custom keyboard mappings by specifying sequences of keystrokes that produce specific characters or symbols. This file is part of the input method system in X and is used to handle key combinations for composing accented characters, special symbols, and other extended characters.
+# 
+# Here are some key points about the XCompose file:
+# 
+# Purpose:
+# 
+# The primary purpose of the XCompose file is to define key sequences that, when typed, generate specific characters. This is particularly useful for languages or writing systems that require diacritics or special symbols not present on the standard keyboard layout.
+# 
+# Location:
+# 
+# The XCompose file is typically located in the user's home directory and is named .XCompose. If this file does not exist, the system may use a system-wide XCompose file, often located in /usr/share/X11/locale/ or a similar directory.
+# 
+# Syntax:
+# 
+# The syntax of the XCompose file is straightforward. Each line specifies a key combination followed by the character it should produce. For example:
+# 
+# plaintext
+# Copy code
+# <Multi_key> <acute> <e> : "é"   # Compose '+e' to get 'é'
+# <Multi_key> <grave> <e> : "è"   # Compose '`e' to get 'è'
+# In this example, pressing the Multi key (often the Right Alt or Compose key) followed by the acute accent and then the letter 'e' results in the character 'é'.
+# 
+# Key Combinations:
+# 
+# Key combinations in the XCompose file often include the Multi key (<Multi_key>), which is used to initiate the composition sequence. Additionally, modifiers such as <Shift>, <Control>, and <Alt> can be used to create variations of the key combinations.
+# 
+# Customization:
+# 
+# Users can customize the XCompose file to define their preferred key combinations for composing characters. This is particularly helpful for users who frequently need to type characters not present on their keyboard layout.
+# 
+# Usage:
+# 
+# The X input method system reads the XCompose file and interprets the defined key combinations. When a specified sequence is entered, the corresponding character is generated and inserted into the application.
+# 
+# Overall, the XCompose file is a powerful tool for customizing keyboard input in the X Window System, enabling users to create efficient and personalized ways to input characters beyond the standard keyboard layout.

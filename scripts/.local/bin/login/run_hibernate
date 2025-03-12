@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Arch
+systemctl hibernate
+
+# Artix
+# loginctl hibernate

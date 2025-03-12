@@ -1,0 +1,6 @@
+#!/bin/sh
+# Arch
+systemctl reboot
+
+# Artix
+# loginctl reboot

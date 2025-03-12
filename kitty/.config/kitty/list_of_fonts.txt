@@ -1,0 +1,377 @@
+FantasqueSansMono Nerd Font
+    Fantasque Sans Mono Regular Nerd Font Complete
+
+feather
+    feather
+
+FiraCode Nerd Font
+    FiraCode Nerd Font Bold
+    FiraCode Nerd Font Light
+    FiraCode Nerd Font Med
+    FiraCode Nerd Font Reg
+    FiraCode Nerd Font Ret
+    FiraCode Nerd Font SemBd
+
+FiraCode Nerd Font Mono
+    FiraCode Nerd Font Mono Bold
+    FiraCode Nerd Font Mono Light
+    FiraCode Nerd Font Mono Med
+    FiraCode Nerd Font Mono Reg
+    FiraCode Nerd Font Mono Ret
+    FiraCode Nerd Font Mono SemBd
+
+Hack Nerd Font
+    Hack Nerd Font Bold
+    Hack Nerd Font Bold Italic
+    Hack Nerd Font Italic
+    Hack Nerd Font Regular
+
+Hack Nerd Font Mono
+    Hack Nerd Font Mono Bold
+    Hack Nerd Font Mono Bold Italic
+    Hack Nerd Font Mono Italic
+    Hack Nerd Font Mono Regular
+
+Iosevka Nerd Font
+    Iosevka NF
+    Iosevka NF Bold
+    Iosevka NF Bold Italic
+    Iosevka NF Bold Oblique
+    Iosevka NF ExtraBold
+    Iosevka NF ExtraBold Italic
+    Iosevka NF ExtraBold Oblique
+    Iosevka NF ExtraLight
+    Iosevka NF ExtraLight Italic
+    Iosevka NF ExtraLight Oblique
+    Iosevka NF Heavy
+    Iosevka NF Heavy Italic
+    Iosevka NF Heavy Oblique
+    Iosevka NF Italic
+    Iosevka NF Light
+    Iosevka NF Light Italic
+    Iosevka NF Light Oblique
+    Iosevka NF Medium
+    Iosevka NF Medium Italic
+    Iosevka NF Medium Oblique
+    Iosevka NF Oblique
+    Iosevka NF SemiBold
+    Iosevka NF SemiBold Italic
+    Iosevka NF SemiBold Oblique
+    Iosevka NF Thin
+    Iosevka NF Thin Italic
+    Iosevka NF Thin Oblique
+
+Iosevka Nerd Font Mono
+    Iosevka NFM
+    Iosevka NFM Bold
+    Iosevka NFM Bold Italic
+    Iosevka NFM Bold Oblique
+    Iosevka NFM ExtraBold
+    Iosevka NFM ExtraBold Italic
+    Iosevka NFM ExtraBold Oblique
+    Iosevka NFM ExtraLight
+    Iosevka NFM ExtraLight Italic
+    Iosevka NFM ExtraLight Oblique
+    Iosevka NFM Heavy
+    Iosevka NFM Heavy Italic
+    Iosevka NFM Heavy Oblique
+    Iosevka NFM Italic
+    Iosevka NFM Light
+    Iosevka NFM Light Italic
+    Iosevka NFM Light Oblique
+    Iosevka NFM Medium
+    Iosevka NFM Medium Italic
+    Iosevka NFM Medium Oblique
+    Iosevka NFM Oblique
+    Iosevka NFM SemiBold
+    Iosevka NFM SemiBold Italic
+    Iosevka NFM SemiBold Oblique
+    Iosevka NFM Thin
+    Iosevka NFM Thin Italic
+    Iosevka NFM Thin Oblique
+
+JetBrains Mono
+    JetBrains Mono Bold
+    JetBrains Mono Bold Italic
+    JetBrains Mono ExtraBold
+    JetBrains Mono ExtraBold Italic
+    JetBrains Mono ExtraLight
+    JetBrains Mono ExtraLight Italic
+    JetBrains Mono Italic
+    JetBrains Mono Light
+    JetBrains Mono Light Italic
+    JetBrains Mono Medium
+    JetBrains Mono Medium Italic
+    JetBrains Mono Regular
+    JetBrains Mono SemiBold
+    JetBrains Mono SemiBold Italic
+    JetBrains Mono Thin
+    JetBrains Mono Thin Italic
+
+JetBrains Mono NL
+    JetBrains Mono NL Bold
+    JetBrains Mono NL Bold Italic
+    JetBrains Mono NL ExtraBold
+    JetBrains Mono NL ExtraBold Italic
+    JetBrains Mono NL ExtraLight
+    JetBrains Mono NL ExtraLight Italic
+    JetBrains Mono NL Italic
+    JetBrains Mono NL Light
+    JetBrains Mono NL Light Italic
+    JetBrains Mono NL Medium
+    JetBrains Mono NL Medium Italic
+    JetBrains Mono NL Regular
+    JetBrains Mono NL SemiBold
+    JetBrains Mono NL SemiBold Italic
+    JetBrains Mono NL Thin
+    JetBrains Mono NL Thin Italic
+
+JetBrainsMono Nerd Font
+    JetBrainsMono NF Bold
+    JetBrainsMono NF Bold Italic
+    JetBrainsMono NF ExtraBold
+    JetBrainsMono NF ExtraBold Italic
+    JetBrainsMono NF ExtraLight
+    JetBrainsMono NF ExtraLight Italic
+    JetBrainsMono NF Italic
+    JetBrainsMono NF Light
+    JetBrainsMono NF Light Italic
+    JetBrainsMono NF Medium
+    JetBrainsMono NF Medium Italic
+    JetBrainsMono NF Regular
+    JetBrainsMono NF SemiBold
+    JetBrainsMono NF SemiBold Italic
+    JetBrainsMono NF Thin
+    JetBrainsMono NF Thin Italic
+
+JetBrainsMono Nerd Font Mono
+    JetBrainsMono NFM Bold
+    JetBrainsMono NFM Bold Italic
+    JetBrainsMono NFM ExtraBold
+    JetBrainsMono NFM ExtraBold Italic
+    JetBrainsMono NFM ExtraLight
+    JetBrainsMono NFM ExtraLight Italic
+    JetBrainsMono NFM Italic
+    JetBrainsMono NFM Light
+    JetBrainsMono NFM Light Italic
+    JetBrainsMono NFM Medium
+    JetBrainsMono NFM Medium Italic
+    JetBrainsMono NFM Regular
+    JetBrainsMono NFM SemiBold
+    JetBrainsMono NFM SemiBold Italic
+    JetBrainsMono NFM Thin
+    JetBrainsMono NFM Thin Italic
+
+JetBrainsMonoNL Nerd Font
+    JetBrainsMonoNL NF Bold
+    JetBrainsMonoNL NF Bold Italic
+    JetBrainsMonoNL NF ExtraBold
+    JetBrainsMonoNL NF ExtraBold Italic
+    JetBrainsMonoNL NF ExtraLight
+    JetBrainsMonoNL NF ExtraLight Italic
+    JetBrainsMonoNL NF Italic
+    JetBrainsMonoNL NF Light
+    JetBrainsMonoNL NF Light Italic
+    JetBrainsMonoNL NF Medium
+    JetBrainsMonoNL NF Medium Italic
+    JetBrainsMonoNL NF Regular
+    JetBrainsMonoNL NF SemiBold
+    JetBrainsMonoNL NF SemiBold Italic
+    JetBrainsMonoNL NF Thin
+    JetBrainsMonoNL NF Thin Italic
+
+JetBrainsMonoNL Nerd Font Mono
+    JetBrainsMonoNL NFM Bold
+    JetBrainsMonoNL NFM Bold Italic
+    JetBrainsMonoNL NFM ExtraBold
+    JetBrainsMonoNL NFM ExtraBold Italic
+    JetBrainsMonoNL NFM ExtraLight
+    JetBrainsMonoNL NFM ExtraLight Italic
+    JetBrainsMonoNL NFM Italic
+    JetBrainsMonoNL NFM Light
+    JetBrainsMonoNL NFM Light Italic
+    JetBrainsMonoNL NFM Medium
+    JetBrainsMonoNL NFM Medium Italic
+    JetBrainsMonoNL NFM Regular
+    JetBrainsMonoNL NFM SemiBold
+    JetBrainsMonoNL NFM SemiBold Italic
+    JetBrainsMonoNL NFM Thin
+    JetBrainsMonoNL NFM Thin Italic
+
+Liberation Mono
+    Liberation Mono
+    Liberation Mono Bold
+    Liberation Mono Bold Italic
+    Liberation Mono Italic
+
+Material
+    Material
+
+Material Design Icons Desktop
+    Material Design Icons Desktop
+
+MesloLGS NF
+    MesloLGS NF Bold
+    MesloLGS NF Bold Italic
+    MesloLGS NF Italic
+    MesloLGS NF Regular
+    MesloLGS NF Regular
+
+Nimbus Mono PS
+    NimbusMonoPS-Bold
+    NimbusMonoPS-BoldItalic
+    NimbusMonoPS-Italic
+    NimbusMonoPS-Regular
+
+NotoMono Nerd Font
+    NotoMono NF
+
+NotoMono Nerd Font Mono
+    NotoMono NFM
+
+NotoSansM Nerd Font Mono
+    NotoSansM NFM Black
+    NotoSansM NFM Bold
+    NotoSansM NFM Cond Black
+    NotoSansM NFM Cond Bold
+    NotoSansM NFM Cond ExtBd
+    NotoSansM NFM Cond ExtLt
+    NotoSansM NFM Cond Light
+    NotoSansM NFM Cond Med
+    NotoSansM NFM Cond Reg
+    NotoSansM NFM Cond SemBd
+    NotoSansM NFM Cond Thin
+    NotoSansM NFM ExtBd
+    NotoSansM NFM ExtCond Black
+    NotoSansM NFM ExtCond Bold
+    NotoSansM NFM ExtCond ExtBd
+    NotoSansM NFM ExtCond ExtLt
+    NotoSansM NFM ExtCond Light
+    NotoSansM NFM ExtCond Med
+    NotoSansM NFM ExtCond Reg
+    NotoSansM NFM ExtCond SemBd
+    NotoSansM NFM ExtCond Thin
+    NotoSansM NFM ExtLt
+    NotoSansM NFM Light
+    NotoSansM NFM Med
+    NotoSansM NFM Reg
+    NotoSansM NFM SemBd
+    NotoSansM NFM SemCond Black
+    NotoSansM NFM SemCond Bold
+    NotoSansM NFM SemCond ExtBd
+    NotoSansM NFM SemCond ExtLt
+    NotoSansM NFM SemCond Light
+    NotoSansM NFM SemCond Med
+    NotoSansM NFM SemCond Reg
+    NotoSansM NFM SemCond SemBd
+    NotoSansM NFM SemCond Thin
+    NotoSansM NFM Thin
+
+Phosphor
+    Phosphor
+
+Phosphor-Bold
+    Phosphor-Bold
+
+Phosphor-Duotone
+    Phosphor-Duotone
+
+Phosphor-Fill
+    Phosphor-Fill
+
+Phosphor-Light
+    Phosphor-Light
+
+Phosphor-Thin
+    Phosphor-Thin
+
+Roboto Mono
+    Roboto Mono Bold
+    Roboto Mono Bold Italic
+    Roboto Mono Italic
+    Roboto Mono Light
+    Roboto Mono Light Italic
+    Roboto Mono Medium
+    Roboto Mono Medium Italic
+    Roboto Mono Regular
+    Roboto Mono Thin
+    Roboto Mono Thin Italic
+
+SFMono Nerd Font Mono
+    SFMono Nerd Font Mono
+    SFMono Nerd Font Mono Bold
+    SFMono Nerd Font Mono Bold Italic
+    SFMono Nerd Font Mono Heavy
+    SFMono Nerd Font Mono Heavy Italic
+    SFMono Nerd Font Mono Italic
+    SFMono Nerd Font Mono Light
+    SFMono Nerd Font Mono Light Italic
+    SFMono Nerd Font Mono Medium
+    SFMono Nerd Font Mono Medium Italic
+    SFMono Nerd Font Mono SemiBold
+    SFMono Nerd Font Mono SemiBold Italic
+
+Source Code Pro
+    Source Code Pro
+    Source Code Pro Black
+    Source Code Pro Black Italic
+    Source Code Pro Bold
+    Source Code Pro Bold Italic
+    Source Code Pro ExtraLight
+    Source Code Pro ExtraLight Italic
+    Source Code Pro Italic
+    Source Code Pro Light
+    Source Code Pro Light Italic
+    Source Code Pro Medium
+    Source Code Pro Medium Italic
+    Source Code Pro Semibold
+    Source Code Pro Semibold Italic
+
+SourceCodeVF
+    SourceCodeVF
+    SourceCodeVF
+    SourceCodeVF
+    SourceCodeVF Black
+    SourceCodeVF Black Italic
+    SourceCodeVF Bold
+    SourceCodeVF Bold Italic
+    SourceCodeVF Italic
+    SourceCodeVF Italic
+    SourceCodeVF Light
+    SourceCodeVF Light Italic
+    SourceCodeVF Medium
+    SourceCodeVF Medium Italic
+    SourceCodeVF Regular
+    SourceCodeVF Semibold
+    SourceCodeVF Semibold Italic
+
+Terminess Nerd Font
+    Terminess Nerd Font
+    Terminess Nerd Font Bold
+    Terminess Nerd Font Bold Italic
+    Terminess Nerd Font Italic
+
+Terminess Nerd Font Mono
+    Terminess Nerd Font Mono
+    Terminess Nerd Font Mono Bold
+    Terminess Nerd Font Mono Bold Italic
+    Terminess Nerd Font Mono Italic
+
+Ubuntu Mono
+    Ubuntu Mono
+    Ubuntu Mono Bold
+    Ubuntu Mono Bold Italic
+    Ubuntu Mono Italic
+
+UbuntuMono Nerd Font
+    UbuntuMono Nerd Font
+    UbuntuMono Nerd Font Bold
+    UbuntuMono Nerd Font Bold Italic
+    UbuntuMono Nerd Font Italic
+
+UbuntuMono Nerd Font Mono
+    UbuntuMono Nerd Font Mono
+    UbuntuMono Nerd Font Mono Bold
+    UbuntuMono Nerd Font Mono Bold Italic
+    UbuntuMono Nerd Font Mono Italic
+

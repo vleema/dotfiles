@@ -1,0 +1,6 @@
+#!/bin/sh
+# Arch
+systemctl suspend-then-hibernate
+
+# Artix
+# loginctl suspend-then-hibernate

@@ -1,0 +1,382 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Use $XINITRC variable if file exists.
+[ -f "$XINITRC" ] && alias startx="startx $XINITRC"
+
+# sudo not required for some system commands
+for command in mount umount pacman updatedb su shutdown poweroff reboot ; do
+	alias $command="doas $command"
+done; unset command
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -iv" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+	yt="yt-dlp --embed-metadata -i" \
+	yta="yt -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# added on Jan 28th, 2024
+alias processes="ps xf"
+
+# added on Feb 1st, 2024
+alias neofetch="fastfetch"
+
+# Colorize commands when possible.
+	# ls="eza -hN --color=auto --group-directories-first" \
+alias \
+	ls="eza -h --color=always --group-directories-first --icons" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	ip="ip -color=auto"
+alias la='eza -a --color=always --group-directories-first --icons=auto'  # all files and dirs
+alias ll='eza -al --color=always --group-directories-first --icons=auto'  # long format
+alias lt='eza -aT --color=always --group-directories-first --icons=auto' # tree listing
+alias ld='eza -alD --color=always --icons=auto --sort newest' # listing only folders, sorted
+alias l.='eza -a | grep -E "^\."'
+alias lls='eza -al --color=always --group-directories-first --icons=auto --sort newest'  # long format
+alias l='eza -hl --color=always --group-directories-first --icons=auto --sort newest'  # long format
+alias cat='bat'
+
+# These common commands are just too long! Abbreviate them.
+alias \
+    ka="killall" \
+    g="git" \
+    sdn="shutdown -h now" \
+    e="$EDITOR" \
+    v="$EDITOR" \
+		o="open" \
+    p="pacman" \
+    z="zathura" \
+    R=". ranger"\
+    Y="yazi" \
+    tree="tree -C"\
+    t="tree"
+
+
+# May 22th, 2022
+source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc
+# source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc
+# From Luke Smith video on fzf
+se() { du -a $HOME/.local/bin/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
+vf() { find . | fzf | xargs -r -I % $EDITOR % ; }
+
+# # Monitor center, May 13th, 2022
+# alias smc="system-monitoring-center"
+
+
+# adding flags
+alias df='df -h'                          # human-readable sizes
+# List the folders of the current directory sorted their size in Gbytes.
+alias disk_usage='du -csh -- */ | sort -rh' # List the folders o
+
+# Shows overall system information
+alias sysinfo='inxi -Fxz'
+#hardware info --short
+alias hw="hwinfo --short"
+
+
+#pacman unlock
+alias unlock="doas rm /var/lib/pacman/db.lck"
+
+#free
+alias free="free -mt"
+
+#continue download
+alias wget="wget -c"
+
+# #merge new settings
+alias merge="xrdb -merge ~/.Xresources"
+
+# Aliases for software managment
+# pacman or pm
+alias pacman='doas pacman --color auto'
+alias update='doas pacman -Syyu; doas grub-mkconfig -o /boot/grub/grub.cfg'
+alias update-full='pacman -Sy archlinux-keyring && pacman -Su'
+
+#ps
+alias psa="ps auxf"
+alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+
+#grub update
+alias update-grub="doas grub-mkconfig -o /boot/grub/grub.cfg"
+
+#add new fonts
+alias update-fc="doas fc-cache -fv"
+
+#switch between bash and zsh
+alias tobash="doas chsh $USER -s /bin/bash && echo 'Now log out.'"
+alias tozsh="doas chsh $USER -s /bin/zsh && echo 'Now log out.'"
+
+# #skip integrity check
+# alias yayskip='yay -S --mflags --skipinteg'
+
+# #check vulnerabilities microcode
+# alias microcode='grep . /sys/devices/system/cpu/vulnerabilities/*'
+
+#get fastest mirrors in your neighborhood
+alias mirror="doas reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="doas reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="doas reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="doas reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
+#our experimental - best option for the moment
+alias mirrorx="doas reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias mirrorxx="doas reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+
+
+#Cleanup orphaned packages
+alias cleanup='doas pacman -Rns $(pacman -Qtdq)'
+
+#search content with ripgrep
+alias rg="rg --sort path"
+
+#get the error messages from journalctl
+alias jctl="journalctl -p 3 -xb"
+
+#nano for important configuration files
+#know what you do in these files
+alias vpacman="doas $EDITOR /etc/pacman.conf"
+alias vgrub="doas $EDITOR /etc/default/grub"
+alias vconfgrub="doas $EDITOR /boot/grub/grub.cfg"
+alias vmkinitcpio="doas $EDITOR /etc/mkinitcpio.conf"
+alias vmirrorlist="doas $EDITOR /etc/pacman.d/mirrorlist"
+alias vfstab="doas $EDITOR /etc/fstab"
+alias vgnupgconf="doas $EDITOR /etc/pacman.d/gnupg/gpg.conf"
+# alias vautostart="$EDITOR $HOME/.local/bin/autostart.sh"
+
+#gpg
+#verify signature for isos
+alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
+#receive the key of a developer
+alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
+alias fix-keyserver="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
+
+#fixes
+alias fix-permissions="doas chown -R $USER:$USER ~/.config ~/.local"
+
+#systeminfo
+alias probe="doas -E hw-probe -all -upload"
+alias sysd_failed="systemctl list-units --failed"
+alias sysd_status="systemctl list-unit-files --type=service"
+# 03/dez/2024
+alias sysd_user_services="systemctl --user list-units --type=service"
+# List running services to file..
+alias sysd_generate_serv_list="systemctl list-units --state=running | grep -v systemd | awk '{print $1}' | grep service > daemon_list_${today}.txt"
+
+#shutdown or reboot
+alias ssn="doas shutdown now"
+alias sr="doas reboot"
+
+#give the list of all installed desktops - xsessions desktops
+alias xd="ls /usr/share/xsessions"
+
+# yt-dlp aliases
+alias yta-aac="yt-dlp --extract-audio --audio-format aac"
+alias yta-best="yt-dlp --extract-audio --audio-format best"
+alias yta-mp3="yt-dlp --extract-audio --audio-format mp3"
+alias ytv-best="yt-dlp -f 'bv+ba/b' --write-subs"
+alias ytv-best-1080="yt-dlp -f 'bv[height<=1080]+ba/b' --write-subs"
+alias ytv-best-mp4="yt-dlp -f 'mp4[height<=1080]' --write-subs"
+
+#youtube-dl
+# alias yta-aac="youtube-dl --extract-audio --audio-format aac "
+# alias yta-best="youtube-dl --extract-audio --audio-format best "
+# alias yta-flac="youtube-dl --extract-audio --audio-format flac "
+# alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
+# alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
+# alias yta-opus="youtube-dl --extract-audio --audio-format opus "
+# alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
+# alias yta-wav="youtube-dl --extract-audio --audio-format wav "
+# alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+
+
+# # Import colorscheme from 'wal' asynchronously
+# # &   # Run the process in the background.
+# # ( ) # Hide shell job control messages.
+# # Not supported in the "fish" shell.
+# (cat ~/.cache/wal/sequences &)
+#
+# # To add support for TTYs this line can be optionally added.
+# (source ~/.cache/wal/colors-tty.sh)
+
+
+# =======================================================================================
+var=$(date +"%FORMAT_STRING")
+now=$(date +"%m_%d_%Y")
+today=$(date +"%Y-%m-%d")
+# List all packages.
+alias pkglist_2="\pacman -Qq | awk '{print $1}' > pkglist_all_${today}.txt"  # All packages.
+# List explicitly installed packages that are not required by any other package.
+alias pkglist_3="\pacman -Qqet | awk '{print $1}' > pkglist_explicitly_installed_not_required_by_others_${today}.txt"  # Explicitly installed packages that are not required by any other package.
+# List explicitly installed packages.
+alias pkglist_1="\pacman -Qqe > pkglist_explicitly_installed_${today}.txt" # Explicitly installed packages.
+# List explicitly installed packages w/ version number.
+alias pkglist_versions="\pacman -Qe > pkglist_versions_${today}.txt"
+# List packages that were not found in the sync database (AUR).
+alias pkgaur="\pacman -Qqem > foreignpkglist_${today}.txt"
+
+# Recent Installed Packages
+alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
+alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
+
+alias pkgi="pkg_inspection" # script
+# =======================================================================================
+
+
+# alias vim="/usr/bin/nvim"
+# alias ptop="/usr/bin/bpytop"
+alias open="/usr/bin/xdg-open"
+
+# Mounting external disks
+alias mssd="doas mount -t hfsplus -o force,rw UUID=13a242e2-f7b6-3079-9891-336dd3d84ec8 /run/media"
+alias mbackup_cati="doas mount UUID=39256e13-aa87-4188-9412-c30935e0bef9 /mnt/backup"
+alias mbackup="doas mount UUID=a0c29b3b-714b-493a-bba4-2433559bbef5 /mnt/backup"
+
+alias dry_run_backup_system='doas rsync -aAXv --dry-run --delete --exclude={"/dev/*","/proc/*","/sys/*","/run/*","/tmp/*","/mnt/*","/media/*","/lost+found","/home/selan/*"} / /mnt/backup/backup_system/'
+# alias run_backup_system='doas rsync -aAXv --delete --exclude={"/dev/*","/proc/*","/sys/*","/run/*","/tmp/*","/mnt/*","/media/*","/lost+found","/home/selan/*"} / /mnt/backup/backup_system/'
+
+# NOTE: May 27th, 2023. Create a script to keep the last n backups (see .local/bin/misc/backup_my_home.sh)
+alias dry_run_backup_home='rsync -aAXv --dry-run --delete --exclude={".cache/*",".local/share/Trash/*",".mozilla/*","Downloads/*"} /home/selan/ /mnt/backup/backup_selan_home/'
+# alias run_backup_home='rsync -aAXv --delete --exclude={".cache/*",".local/share/Trash/*",".mozilla/*","Downloads/*"} /home/selan/ /mnt/backup/backup_selan_home/'
+
+# -a, --archive 	archive microcode
+# -A, --acls			preserve ACLs (Access Control Lists)
+# -X, --xattrs		preserve extended attributes
+# -v, --verbose 	increase Verbosity
+# 		--delete 		delete extraneous files from the dest dirs (preserve unmodified files)
+#                 Use the --delete option to keep the source and the target in sync.
+# --dry-run				simulate the backup
+#=========[ to restore from backup] ================
+# 1. boot from a live usb iso.
+# 2. create 2 folder in /mnt, one for the real system (which we want to recover) and another
+#    for the backup disk:
+#    Ex.: /mnt/system and /mnt/backup/
+# 3. Use the following command: rsync -aAXv --delete --exclude="lost+found" /mnt/backup/ /mnt/system
+# NOTE: the destination cannot have the '/' at the end, otherwise the command will create a backup
+#       directory inside the system folder.
+
+##==========[ These information below was provided by ChatGPT]====================================
+# When backing up a Linux system with `rsync`, you should exclude any folders that are specific to the operating system or can be easily regenerated, such as:
+#
+# - `/proc` - This directory contains information about system processes and is generated dynamically by the kernel.
+# - `/sys` - This directory contains information about the system hardware and is generated dynamically by the kernel.
+# - `/run` - This directory contains runtime files that are created by various system services and can be safely excluded.
+# - `/dev` - This directory contains device files that are created dynamically by the system and can be safely excluded.
+# - `/tmp` - This directory contains temporary files that are meant to be cleared regularly and can be safely excluded.
+#
+# It's also a good idea to exclude any cache directories or other directories that are generated by user applications, such as:
+#
+# - `~/.cache` - This directory contains cached files for various applications and can be safely excluded.
+# - `~/.local/share/Trash` - This directory contains files that have been moved to the trash and can be easily regenerated.
+# - `~/.thumbnails` - This directory contains thumbnail images for image files and can be safely excluded.
+#
+# Here's an example of an `rsync` command that would backup a Linux system while excluding these directories:
+
+# ```
+# rsync -aAXv --delete --exclude={"/dev/*","/proc/*","/sys/*","/run/*","/tmp/*","/mnt/*","/media/*","/lost+found","~/.cache/*","~/.local/share/Trash/*","~/.thumbnails/*"} / /path/to/backup/folder
+# alias run_backup_system="sudo rsync -aAXv --delete --exclude={"/dev/*","/proc/*","/sys/*","/run/*","/tmp/*","/mnt/*","/media/*","/lost+found","~/.cache/*","~/.local/share/Trash/*","~/.thumbnails/*"} / /path/to/backup/folder"
+# ```
+
+# Replace `/path/to/backup/folder` with the actual path to the folder where you want to store the backup. Note that this command assumes that you have root privileges and can access all files on the system.
+#===============================================================================================
+
+
+
+
+
+
+
+# Code formating. Use clang-format --help to learn other formatting styles available
+alias format="clang-format -style=GNU -i"
+
+#    # =======================================================================================
+#    # Commiting dot files.
+#    alias gitdot="/usr/bin/git --git-dir=$HOME/.mydotcfg --work-tree=$HOME"
+#    # Workflow
+#    # use:
+#    #    git init --bare $HOME/.myconf
+#    #    alias gitdot='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+#    #    gitdot config status.showUntrackedFiles no
+#    # where my ~/.myconf directory is a git bare repository. Then any file within the 
+#    # home folder can be versioned with normal commands like:
+#    #    gitdot status
+#    #    gitdot add .vimrc
+#    #    gitdot commit -m "Add vimrc"
+#    #    gitdot add .config/redshift.conf
+#    #    gitdot commit -m "Add redshift config"
+#    #    gitdot push
+#    # =======================================================================================
+
+# 24/dez/2022
+alias gtop="doas intel_gpu_top"
+
+alias wheather="curl wttr.in"
+
+# 21/jun/2023
+alias fzfp="fzf --preview 'bat --color=always {}'"
+
+# 01/jan/2025
+fcd(){
+  cd "$(find -type d | fzf)"
+}
+fopen(){
+  xdg-open "$(find -type f | fzf)"
+}
+
+
+# =======================================================================================
+# HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
+#
+# The following commands can be used to find the largest files.
+#
+#     find /path/to/directory -type f -exec du -hs {} \;| sort -rh | head -n 1
+#     du -sh * | sort -rh | head -1
+#     ls -lSh /bin | head -1
+#     find ./ -type f -exec du -sh {} \; |sort -h|tail -1
+#     du -ah /home | sort -h -r | head -n 1
+#     find $directory -type f -exec ls -s {} \; | sort -n | tail -n 1
+# =======================================================================================
+
+
+# =======================================================================================
+# HOW TO CONVERT A FILE FROM ONE CHARACTER ENCODING TO ANOTHER.
+# iconv -t ISO-8859-1 -f UTF-8//TRANSLIT filter.tex -o converted.tex
+# -f --from-enconding		Input encoding
+# -t --to-encoding			Output enconding
+# -o --output 					Defines the output file.
+# =======================================================================================
+
+
+# =======================================================================================
+# WHAT DOES " 2>&1 " MEAN?
+# 
+# To combine stderr and stdout into the stdout stream, we append this to a command:
+# 
+# 2>&1
+# 
+# e.g. to see the first few errors from compiling g++ main.cpp:
+# 
+# g++ main.cpp 2>&1 | head
+# 
+# 
+# File descriptor 1 is the standard output (stdout).
+# File descriptor 2 is the standard error (stderr).
+# 
+# At first, 2>1 may look like a good way to redirect stderr to stdout. However, it will actually be interpreted as "redirect stderr to a file named 1".
+# 
+# & indicates that what follows and precedes is a file descriptor, and not a filename. Thus, we use 2>&1. Consider >& to be a redirect merger operator.
+# =======================================================================================
+
+# =======================================================================================
+# TO get key pressed codes:
+# xkbcli
+# =======================================================================================

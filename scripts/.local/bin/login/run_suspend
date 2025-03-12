@@ -1,0 +1,6 @@
+#!/bin/sh
+# Arch
+systemctl suspend
+
+# Artix
+# loginctl suspend

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Arch
+systemctl poweroff
+
+# Artix
+# loginctl poweroff
