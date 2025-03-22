@@ -1,15 +1,15 @@
 #!/bin/sh
 
-# Use neovim for vim if present.
-[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+[ -x "$(command -v nvim)" ] && alias vimdiff="nvim -d"
 
 # Use $XINITRC variable if file exists.
 [ -f "$XINITRC" ] && alias startx="startx $XINITRC"
 
 # sudo not required for some system commands
-for command in mount umount pacman updatedb su shutdown poweroff reboot ; do
+for command in mount umount pacman updatedb su shutdown poweroff reboot; do
 	alias $command="doas $command"
-done; unset command
+done
+unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
@@ -29,7 +29,7 @@ alias processes="ps xf"
 alias neofetch="fastfetch"
 
 # Colorize commands when possible.
-	# ls="eza -hN --color=auto --group-directories-first" \
+# ls="eza -hN --color=auto --group-directories-first" \
 alias \
 	ls="eza -h --color=always --group-directories-first --icons" \
 	grep="grep --color=auto" \
@@ -37,43 +37,41 @@ alias \
 	ccat="highlight --out-format=ansi" \
 	ip="ip -color=auto"
 alias la='eza -a --color=always --group-directories-first --icons=auto'  # all files and dirs
-alias ll='eza -al --color=always --group-directories-first --icons=auto'  # long format
+alias ll='eza -al --color=always --group-directories-first --icons=auto' # long format
 alias lt='eza -aT --color=always --group-directories-first --icons=auto' # tree listing
-alias ld='eza -alD --color=always --icons=auto --sort newest' # listing only folders, sorted
+alias ld='eza -alD --color=always --icons=auto --sort newest'            # listing only folders, sorted
 alias l.='eza -a | grep -E "^\."'
-alias lls='eza -al --color=always --group-directories-first --icons=auto --sort newest'  # long format
-alias l='eza -hl --color=always --group-directories-first --icons=auto --sort newest'  # long format
+alias lls='eza -al --color=always --group-directories-first --icons=auto --sort newest' # long format
+alias l='eza -hl --color=always --group-directories-first --icons=auto --sort newest'   # long format
 alias cat='bat'
 
 # These common commands are just too long! Abbreviate them.
 alias \
-    ka="killall" \
-    g="git" \
-    sdn="shutdown -h now" \
-    e="$EDITOR" \
-    v="$EDITOR" \
-		o="open" \
-    p="pacman" \
-    z="zathura" \
-    R=". ranger"\
-    Y="yazi" \
-    tree="tree -C"\
-    t="tree"
-
+	ka="killall" \
+	g="git" \
+	sdn="shutdown -h now" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	o="open" \
+	p="pacman" \
+	z="zathura" \
+	R=". ranger" \
+	Y="yazi" \
+	tree="tree -C" \
+	t="tree"
 
 # May 22th, 2022
 source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc
 # source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc
 # From Luke Smith video on fzf
 se() { du -a $HOME/.local/bin/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
-vf() { find . | fzf | xargs -r -I % $EDITOR % ; }
+vf() { find . | fzf | xargs -r -I % $EDITOR %; }
 
 # # Monitor center, May 13th, 2022
 # alias smc="system-monitoring-center"
 
-
 # adding flags
-alias df='df -h'                          # human-readable sizes
+alias df='df -h' # human-readable sizes
 # List the folders of the current directory sorted their size in Gbytes.
 alias disk_usage='du -csh -- */ | sort -rh' # List the folders o
 
@@ -81,7 +79,6 @@ alias disk_usage='du -csh -- */ | sort -rh' # List the folders o
 alias sysinfo='inxi -Fxz'
 #hardware info --short
 alias hw="hwinfo --short"
-
 
 #pacman unlock
 alias unlock="doas rm /var/lib/pacman/db.lck"
@@ -129,7 +126,6 @@ alias mirrora="doas reflector --latest 30 --number 10 --sort age --save /etc/pac
 #our experimental - best option for the moment
 alias mirrorx="doas reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 alias mirrorxx="doas reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-
 
 #Cleanup orphaned packages
 alias cleanup='doas pacman -Rns $(pacman -Qtdq)'
@@ -198,7 +194,6 @@ alias ytv-best-mp4="yt-dlp -f 'mp4[height<=1080]' --write-subs"
 # alias yta-wav="youtube-dl --extract-audio --audio-format wav "
 # alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 
-
 # # Import colorscheme from 'wal' asynchronously
 # # &   # Run the process in the background.
 # # ( ) # Hide shell job control messages.
@@ -208,15 +203,14 @@ alias ytv-best-mp4="yt-dlp -f 'mp4[height<=1080]' --write-subs"
 # # To add support for TTYs this line can be optionally added.
 # (source ~/.cache/wal/colors-tty.sh)
 
-
 # =======================================================================================
 var=$(date +"%FORMAT_STRING")
 now=$(date +"%m_%d_%Y")
 today=$(date +"%Y-%m-%d")
 # List all packages.
-alias pkglist_2="\pacman -Qq | awk '{print $1}' > pkglist_all_${today}.txt"  # All packages.
+alias pkglist_2="\pacman -Qq | awk '{print $1}' > pkglist_all_${today}.txt" # All packages.
 # List explicitly installed packages that are not required by any other package.
-alias pkglist_3="\pacman -Qqet | awk '{print $1}' > pkglist_explicitly_installed_not_required_by_others_${today}.txt"  # Explicitly installed packages that are not required by any other package.
+alias pkglist_3="\pacman -Qqet | awk '{print $1}' > pkglist_explicitly_installed_not_required_by_others_${today}.txt" # Explicitly installed packages that are not required by any other package.
 # List explicitly installed packages.
 alias pkglist_1="\pacman -Qqe > pkglist_explicitly_installed_${today}.txt" # Explicitly installed packages.
 # List explicitly installed packages w/ version number.
@@ -230,7 +224,6 @@ alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | n
 
 alias pkgi="pkg_inspection" # script
 # =======================================================================================
-
 
 # alias vim="/usr/bin/nvim"
 # alias ptop="/usr/bin/bpytop"
@@ -289,12 +282,6 @@ alias dry_run_backup_home='rsync -aAXv --dry-run --delete --exclude={".cache/*",
 # Replace `/path/to/backup/folder` with the actual path to the folder where you want to store the backup. Note that this command assumes that you have root privileges and can access all files on the system.
 #===============================================================================================
 
-
-
-
-
-
-
 # Code formating. Use clang-format --help to learn other formatting styles available
 alias format="clang-format -style=GNU -i"
 
@@ -306,7 +293,7 @@ alias format="clang-format -style=GNU -i"
 #    #    git init --bare $HOME/.myconf
 #    #    alias gitdot='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 #    #    gitdot config status.showUntrackedFiles no
-#    # where my ~/.myconf directory is a git bare repository. Then any file within the 
+#    # where my ~/.myconf directory is a git bare repository. Then any file within the
 #    # home folder can be versioned with normal commands like:
 #    #    gitdot status
 #    #    gitdot add .vimrc
@@ -325,13 +312,12 @@ alias wheather="curl wttr.in"
 alias fzfp="fzf --preview 'bat --color=always {}'"
 
 # 01/jan/2025
-fcd(){
-  cd "$(find -type d | fzf)"
+fcd() {
+	cd "$(find -type d | fzf)"
 }
-fopen(){
-  xdg-open "$(find -type f | fzf)"
+fopen() {
+	xdg-open "$(find -type f | fzf)"
 }
-
 
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
@@ -346,7 +332,6 @@ fopen(){
 #     find $directory -type f -exec ls -s {} \; | sort -n | tail -n 1
 # =======================================================================================
 
-
 # =======================================================================================
 # HOW TO CONVERT A FILE FROM ONE CHARACTER ENCODING TO ANOTHER.
 # iconv -t ISO-8859-1 -f UTF-8//TRANSLIT filter.tex -o converted.tex
@@ -355,24 +340,23 @@ fopen(){
 # -o --output 					Defines the output file.
 # =======================================================================================
 
-
 # =======================================================================================
 # WHAT DOES " 2>&1 " MEAN?
-# 
+#
 # To combine stderr and stdout into the stdout stream, we append this to a command:
-# 
+#
 # 2>&1
-# 
+#
 # e.g. to see the first few errors from compiling g++ main.cpp:
-# 
+#
 # g++ main.cpp 2>&1 | head
-# 
-# 
+#
+#
 # File descriptor 1 is the standard output (stdout).
 # File descriptor 2 is the standard error (stderr).
-# 
+#
 # At first, 2>1 may look like a good way to redirect stderr to stdout. However, it will actually be interpreted as "redirect stderr to a file named 1".
-# 
+#
 # & indicates that what follows and precedes is a file descriptor, and not a filename. Thus, we use 2>&1. Consider >& to be a redirect merger operator.
 # =======================================================================================
 

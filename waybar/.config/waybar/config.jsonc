@@ -27,6 +27,7 @@
 		"custom/updates-icon",
 		"custom/updates",
 		// "custom/hypridle",
+		"tray",
 		"idle_inhibitor",
 		"bluetooth",
 		"network",
@@ -44,28 +45,29 @@
 		"format": "{icon}",
 		"format-icons": {
 			// "1": "",
-			// "1": "",
-			// "2": "",
-			// "3": "",
-			// "4": "",
+			"1": "",
+			"2": "",
+			"3": "󰺿",
+			"4": "",
 			// "5": "",
-			// "5": "",
-			// "6": "",
-			// "7": "",
-			// "8": "",
-			// "9": "",
+			"5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": "",
 			// "10": "",
-			// "10": "",
-			// "urgent": ""
+			"10": "",
+			"urgent": "",
 			// "focused": "&#xeb8d;",
 			// "default": "&#xf671;"
 		},
 		"persistent-workspaces": {
-			// "1": []
-			// "2": [],
-			// "3": [],
-			// "4": [],
-			// "5": [],
+			// TODO: Sort a nice workspace persistency
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": []
 		}
 	},
 	// ============ [ Network ] ===============
@@ -156,7 +158,8 @@
 			"critical": 15
 		},
 		"format": "{capacity}%",
-		"tooltip-format": "{time}"
+		"tooltip-format": "{time}",
+		"interval": 5
 	},
 	// ============ [ Date ] ===============
 	"custom/date-icon": {
@@ -209,7 +212,7 @@
 	"custom/memory-icon": {
 		"format": "",
 		"tooltip": false,
-		"on-click": "kitty htop",
+		"on-click": "kitty btop",
 	},
 	"memory": {
 		"format": "{}%"

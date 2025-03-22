@@ -22,7 +22,7 @@ return {
       workspaces = {
         {
           name = "Cave",
-          path = "~/OneDrive/Cave",
+          path = "~/Public/OneDrive/Cave",
         },
       },
       templates = {

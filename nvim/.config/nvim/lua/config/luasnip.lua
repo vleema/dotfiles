@@ -19,3 +19,11 @@ ls.add_snippets("markdown", {
     t("}"),
   }),
 })
+
+ls.add_snippets("cpp", {
+  s("cmain", {
+    t({ "#include <bits/stdc++.h>", "", "using namespace std;", "", "int main() {", "\t" }),
+    i(1, "//"),
+    t({ "", "\treturn 0;", "}" }),
+  }),
+})

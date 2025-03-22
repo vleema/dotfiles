@@ -33,9 +33,9 @@ tooltip label{
 }
 
 #workspaces {
-		font-family: "SF Pro Display";
-    font-size: 14px;
-		font-weight: bold;
+		font-family:"Phosphor", "SF Pro Display";
+    font-size: 18px;
+		/*font-weight: bold;*/
     border-radius: 10px;
     background: @waybar_bkg;
 }
@@ -50,12 +50,12 @@ tooltip label{
     color: @wsp_empty;
 }
 #workspaces button.active {
-    /* padding-right: 15px; */
-    /* padding-left: 15px; */
+    /*padding-right: 10px; */
+    /*padding-left: 10px; */
     background-color: rgba(100, 100, 100, 0.2);
-    /* border-radius: 10px; */
+    border-radius: 10px; 
     color: @wsp_active;
-    /* border-bottom: 2px solid @wsp_active; */
+     /*border-bottom: 2px solid @wsp_active; */
 }
 #workspaces button.urgent {
     color: @wsp_urgent;
@@ -95,6 +95,7 @@ tooltip label{
 #bluetooth,
 #network,
 #idle_inhibitor,
+#tray,
 #pulseaudio,
 #battery
 {
@@ -222,11 +223,11 @@ tooltip label{
 
 #battery.warning:not(.charging) {
     color: @battery_warning;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    /*animation-name: blink;*/
+    /*animation-duration: 0.5s;*/
+    /*animation-timing-function: linear;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-direction: alternate;*/
 }
 
 #battery.critical:not(.charging) {
@@ -281,6 +282,13 @@ tooltip label{
 }
 
 #tray {
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
 }
 
 #pulseaudio-slider slider {

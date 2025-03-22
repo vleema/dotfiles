@@ -4,11 +4,11 @@
 @define-color disabled_color #928374;
 @define-color urgent_color #ff6699;
 @define-color icon_color #E2A74A;
-/*@define-color wsp_occupied #fbf1c7;*/
-@define-color wsp_occupied #928374;
+@define-color wsp_occupied #fbf1c7;
+/*@define-color wsp_occupied #928374;*/
 @define-color wsp_empty #928374;
-/*@define-color wsp_active #b8bb26;*/
-@define-color wsp_active #fbf1c7;
+@define-color wsp_active #b8bb26;
+/*@define-color wsp_active #fbf1c7;*/
 @define-color wsp_urgent #ff6699;
 @define-color text_color #fbf1c7;
 @define-color bluetooth_connected #0082FC;
