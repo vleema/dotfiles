@@ -345,7 +345,7 @@ elif type compctl &>/dev/null; then
 fi
 
 # Zoxide plugin
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd j)"
 
 # Android studio configuraiton
 export CHROME_EXECUTABLE=/opt/google/chrome/chrome
