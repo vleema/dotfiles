@@ -2,7 +2,7 @@
     font: "SF Pro Display Bold 12";
     // font: "JetBrains Mono NL 12";
     /* font: "MesloLGS Nerd Font Mono Bold"; */
-    //font: "Font Awesome 5 Free";
+    // font: "Font Awesome 5 Free";
     g-spacing: 10px;
     g-margin: 0;
     b-color: #1A1A1AFF;
