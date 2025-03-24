@@ -46,6 +46,9 @@ tooltip label{
     color: @wsp_occupied;
     /* color: @text_color; */
 }
+#workspaces button:nth-child(n+6) {
+    color: @wsp_occupied_snd_monitor;
+}
 #workspaces button.empty {
     color: @wsp_empty;
 }
@@ -56,6 +59,9 @@ tooltip label{
     border-radius: 10px; 
     color: @wsp_active;
      /*border-bottom: 2px solid @wsp_active; */
+}
+#workspaces button.active:nth-child(n+6) {
+    color: @wsp_active_snd_monitor;
 }
 #workspaces button.urgent {
     color: @wsp_urgent;

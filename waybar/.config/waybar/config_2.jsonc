@@ -38,6 +38,9 @@
 		"active-only": false,
 		"disable-scroll": true,
 		"all-outputs": false,
+		"output": [
+			"DP-2"
+		],
 		"warp-on-scroll": false,
 		// "format": "<small>{name}</small>:{icon}",
 		"tooltip-format": "oi",
@@ -63,12 +66,13 @@
 			// "default": "&#xf671;"
 		},
 		"persistent-workspaces": {
-			// TODO: Sort a nice workspace persistency
-			"1": [],
-			"2": [],
-			"3": [],
-			"4": [],
-			"5": []
+			"DP-2": [
+				6,
+				7,
+				8,
+				9,
+				10
+			]
 		}
 	},
 	// ============ [ Network ] ===============
