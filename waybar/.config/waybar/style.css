@@ -195,6 +195,8 @@ tooltip label{
 }
 
 #pulseaudio {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
 }
 #pulseaudio.muted {
     color: @off_color;

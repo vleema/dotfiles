@@ -16,8 +16,8 @@
 	],
 	"modules-right": [
 		// "pulseaudio/slider",
-		"battery",
-		"battery#percentage",
+		// "battery",
+		// "battery#percentage",
 		"pulseaudio",
 		"pulseaudio#percentage",
 		"custom/cpu-icon",
