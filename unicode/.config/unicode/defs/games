@@ -1,0 +1,50 @@
+# chess
+wK          ♔
+wQ          ♕
+wR          ♖
+wB          ♗
+wN          ♘
+wP          ♙
+bK          ♚
+bQ          ♛
+bR          ♜
+bB          ♝
+bN          ♞
+bP          ♟
+king        ♚
+queen       ♛
+rook        ♜
+bishop      ♝
+knight      ♞
+pawn        ♟
+King        ♔
+Queen       ♕
+Rook        ♖
+Bishop      ♗
+Knight      ♘
+Pawn        ♙
+
+# cards
+bspade       ♠
+wheart       ♡
+wdiam        ♢
+bclub        ♣
+wspade       ♤
+bheart       ♥
+bdiam        ♦
+wclub        ♧
+
+# dice
+die1         ⚀
+die2         ⚁
+die3         ⚂
+die4         ⚃
+die5         ⚄
+die6         ⚅
+
+# sports
+trinca       𝓔𝓧𝟑
+basket       🏀
+bball        🏀
+tennis       🎾
+
