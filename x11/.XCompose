@@ -1,5 +1,14 @@
 include "%L"
 
+include "%H/.config/unicode/unicodefs.XCompose"
+include "%H/.config/unicode/emoji.XCompose"
+include "%H/.config/unicode/fonts.XCompose"
+include "%H/.config/unicode/games.XCompose"
+include "%H/.config/unicode/lang.XCompose"
+include "%H/.config/unicode/math.XCompose"
+include "%H/.config/unicode/misc.XCompose"
+include "%H/.config/unicode/thatex.XCompose"
+
 <dead_acute> <c> : "ç" ccedilla
 <dead_acute> <C> : "Ç" ccedilla
 
