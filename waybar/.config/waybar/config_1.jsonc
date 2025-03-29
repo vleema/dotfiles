@@ -177,8 +177,10 @@
 	},
 	"clock": {
 		// "format": "{:%a %b %d  %R}",
-		"format": "{:%R 🞄 %a %d %b}",
-		"tooltip-format": "<span font_family='SFMono Nerd Font Mono' font_size='10pt'>{calendar}</span>",
+		"format": "{:L%R 🞄 %A %d %B}",
+		// "format": "{:L%R %A %H:%M:%S}",
+		"locale": "fr_FR.utf8",
+		"tooltip-format": "<span font_family='SFMono Nerd Font' font_size='10pt'>{calendar}</span>",
 		"calendar": {
 			"mode": "month",
 			"mode-mon-col": 3,
