@@ -64,6 +64,7 @@ tooltip label{
     background-color: rgba(100, 100, 100, 0.2);
     opacity: 0.9;
     border: none;
+    border-radius: 10px; 
     box-shadow: none;
 }
 
@@ -132,7 +133,8 @@ tooltip label{
     padding-right: 5px;
 }
 
-#clock{ font-family: "SF Pro Display", "SFMono Nerd Font Mono Medium", "Phosphor";
+#clock{ 
+		font-family: "SF Pro Display", "SFMono Nerd Font Mono Medium", "Phosphor";
 		font-weight: bold;
     padding-left: 15px;
     padding-right: 15px;
