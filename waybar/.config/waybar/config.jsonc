@@ -168,7 +168,8 @@
 	},
 	"clock": {
 		// "format": "{:%a %b %d  %R}",
-		"format": "{:%R 🞄 %a %d %b}",
+		"format": "{:L%R 🞄 %A %d %B}",
+		"locale": "fr_FR.UTF-8",
 		"tooltip-format": "<span font_family='SFMono Nerd Font Mono' font_size='10pt'>{calendar}</span>",
 		"calendar": {
 			"mode": "month",
