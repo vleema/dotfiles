@@ -28,6 +28,9 @@ alias processes="ps xf"
 # added on Feb 1st, 2024
 alias neofetch="fastfetch"
 
+# added on March 31st, 2025
+alias psrg="ps x | rg $1"
+
 # Colorize commands when possible.
 # ls="eza -hN --color=auto --group-directories-first" \
 alias \
