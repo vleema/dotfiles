@@ -73,19 +73,21 @@
 	// ============ [ Network ] ===============
 	"network": {
 		"format": "{ifname}",
-		"format-wifi": "",
-		"format-ethernet": "",
+		"format-wifi": "{icon}",
+		"format-ethernet": "",
 		"format-linked": "{ifname}",
-		"format-disconnected": "",
-		// "tooltip-format": "󰌘 {ifname} via {gwaddri}",
+		"format-disconnected": "",
 		"tooltip-format-wifi": "{essid} {signalStrength}%",
-		// "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n {bandwidthUpBits}  {bandwidthDownBits}",
-		"tooltip-format-ethernet": "IP: {ipaddr}\n  {bandwidthUpBits}  {bandwidthDownBits}",
+		"tooltip-format-ethernet": "IP: {ipaddr}\n  {bandwidthUpBits}  {bandwidthDownBits}",
 		"tooltip-format-disconnected": "disconnected",
 		"max-length": 50,
-		// "format-icons": {
-		//     "default": ["", "", ""]
-		// },
+		"format-icons": {
+			"default": [
+				"",
+				"",
+				""
+			]
+		},
 		"on-click": "dmenu_networkmanager",
 	},
 	// ============ [ Updates ] ===============
