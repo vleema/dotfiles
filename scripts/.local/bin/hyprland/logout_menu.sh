@@ -4,12 +4,12 @@ prompt="rofi -dmenu -l 7 -i -c -n 3 "
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
-hibernate=" Hibernate"
-shutdown="  Shutdown"
-reboot="  Reboot"
-suspend=" Suspend"
-lock=" Lock"
-logout="﫼 Logout"
+hibernate="   Hibernate"
+shutdown="   Shutdown"
+reboot="   Reboot"
+suspend="  Suspend"
+lock="   Lock"
+logout="﫼   Logout"
 cancel="窱 Cancel"
 
 option="$cancel\n$suspend\n$hibernate\n$shutdown\n$reboot\n$lock\n$logout"
