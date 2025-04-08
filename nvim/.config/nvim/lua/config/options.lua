@@ -18,7 +18,6 @@ opt.cursorline = false
 
 -- Output for vimtex
 vim.g.vimtex_compiler_latexmk = {
-  -- options = { "-pdflua" },
   out_dir = "output",
 }
 
