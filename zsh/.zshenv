@@ -78,3 +78,11 @@ export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 
 export CXX="/usr/bin/clang++"
 export CC="/usr/bin/clang"
+
+# ZVM
+export ZVM_INSTALL="$HOME/.zvm/self"
+export PATH="$PATH:$HOME/.zvm/bin"
+export PATH="$PATH:$ZVM_INSTALL/"
+
+# Rust installations
+export PATH="$PATH":$HOME/.cargo/bin/
