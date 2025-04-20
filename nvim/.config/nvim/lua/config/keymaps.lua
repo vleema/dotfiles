@@ -19,8 +19,5 @@ map("n", "<leader>os", ":ObsidianSearch<CR>", { noremap = true, silent = true, d
 map("n", "<leader>oo", ":ObsidianOpen<CR>", { noremap = true, silent = true, desc = "Open note in obsidian app" })
 map("n", "<leader>od", ":ObsidianDailies<CR>", { noremap = true, silent = true, desc = "Open daily notes" })
 
--- Nvim-Tree
-map("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true, desc = "Open file NvimTree explorer" })
-
 -- Flutter
 vim.keymap.set("n", "<leader>r", require("telescope").extensions.flutter.commands, { desc = "Open Flutter commands" })

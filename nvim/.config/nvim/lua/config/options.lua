@@ -5,8 +5,8 @@ local opt = vim.opt
 
 opt.wrap = true
 opt.foldlevelstart = 0
-opt.shiftwidth = 2
-opt.tabstop = 2
+opt.shiftwidth = 4
+opt.tabstop = 4
 opt.expandtab = false
 opt.spell = true
 opt.spelllang = "en_us,pt_br"

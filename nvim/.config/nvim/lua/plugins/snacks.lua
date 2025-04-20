@@ -46,5 +46,16 @@ return {
     words = {
       enabled = true,
     },
+    picker = {
+      sources = {
+        explorer = {
+          layout = {
+            layout = {
+              position = "right",
+            },
+          },
+        },
+      },
+    },
   },
 }
