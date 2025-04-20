@@ -20,7 +20,8 @@ alias \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --embed-metadata -i" \
 	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner"
+	ffmpeg="ffmpeg -hide_banner" \
+	c="clear"
 
 # added on Jan 28th, 2024
 alias processes="ps xf"
