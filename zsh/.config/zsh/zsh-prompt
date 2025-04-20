@@ -58,6 +58,6 @@ zstyle ':vcs_info:git:*' formats "%{$fg[blue]%}(%{$fg[red]%}%m%u%c%{$fg[yellow]%
 PROMPT="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%}󰯉 )%{$reset_color%} " # Cute symbol
 PROMPT+="%{$fg[cyan]%}%c " # Current directory
 PROMPT+="\$vcs_info_msg_0_ " # Git info
-PROMPT+="%{$fg[cyan]%}➜ " # Prompt indicator
+PROMPT+="%{$fg[cyan]%}. " # Prompt indicator
 # PROMPT+="%{$fg[cyan]%}ﬦ " # Prompt indicator
 # ------------------------------------------------------------------------------------------------------------------------
