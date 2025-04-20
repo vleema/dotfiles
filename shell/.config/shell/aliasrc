@@ -13,9 +13,9 @@ unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -iv" \
+	cp="cp -v" \
+	mv="mv -v" \
+	rm="rm -v" \
 	bc="bc -ql" \
 	mkd="mkdir -pv" \
 	yt="yt-dlp --embed-metadata -i" \
@@ -62,7 +62,8 @@ alias \
 	R=". ranger" \
 	Y="yazi" \
 	tree="tree -C" \
-	t="tree"
+	t="tmux-sessionizer.sh" \
+	lg="lazygit"
 
 # May 22th, 2022
 source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc
@@ -322,6 +323,9 @@ fcd() {
 fopen() {
 	xdg-open "$(find -type f | fzf)"
 }
+
+# 01/mai/2025
+alias cvpn="cd ~/Public/OneDrive/Cave/Projects/CAURN/vpn/vpn\ caurn\ 04/ && sudo openvpn --config pfw-UDP4-41194-imd.04.ovpn "
 
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)

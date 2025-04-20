@@ -1,284 +1,176 @@
 {
-	"layer": "top", // Waybar at top layer
-	"position": "top", // Waybar at the bottom of your screen
-	"margin": "10 10 0 10", // above, right, below, left
-	// "height": 24, // Waybar height
-	// "spacing": 4, // Gaps between modules (4px)
-	// "width": 1366, // Waybar width
-	// Choose the order of the modules
+	"layer": "top",
+	"position": "top",
+	"height": 10,
+	"spacing": 4,
+	"exclusive": true,
+	"passthrough": false,
+	"fixed-center": true,
 	"modules-left": [
 		"hyprland/workspaces",
 		"hyprland/submap"
+		// "custom/sep",
 	],
 	"modules-center": [
-		"clock"
-		// "custom/spotify",
+		"custom/music-player",
+		"clock",
+		"clock#date"
 	],
 	"modules-right": [
-		// "pulseaudio/slider",
-		"battery",
-		"battery#percentage",
+		// "custom/screen-recorder",
+		"custom/pacman",
+		"custom/sep",
 		"pulseaudio",
-		"pulseaudio#percentage",
-		"custom/cpu-icon",
+		// "pulseaudio#microphone",
+		"custom/sep",
 		"cpu",
-		"custom/memory-icon",
 		"memory",
-		"custom/updates-icon",
-		"custom/updates",
-		// "custom/hypridle",
+		"custom/gpu-usage",
+		"custom/sep",
 		"tray",
-		"idle_inhibitor",
-		"bluetooth",
-		"network",
-		"custom/exit"
+		"custom/sep",
+		"custom/power"
 	],
-	// ============ [ Workspaces ] ===============
+	"hyprland/submap": {
+		"format": "",
+		"max-length": 12
+	},
+	"custom/screen-recorder": {
+		"exec": "~/.config/waybar/modules/screen_recorder_init.sh",
+		"interval": 1,
+		"return-type": "json",
+		"format": "{}",
+		"on-click": "~/.config/waybar/modules/screen_recorder.sh save",
+		"on-click-middle": "~/.config/waybar/modules/screen_recorder.sh restart",
+		"on-click-right": "~/.config/waybar/modules/screen_recorder.sh stop"
+	},
+	"custom/music-player": {
+		"interval": 1,
+		"format": "{}",
+		"return-type": "json",
+		"exec": "~/.config/waybar/modules/music_player.sh grep",
+		"on-click": "~/.config/waybar/modules/music_player.sh previous",
+		"on-click-middle": "~/.config/waybar/modules/music_player.sh pause",
+		"on-click-right": "~/.config/waybar/modules/music_player.sh next"
+	},
 	"hyprland/workspaces": {
 		"active-only": false,
 		"disable-scroll": true,
 		"all-outputs": false,
 		"warp-on-scroll": false,
-		// "format": "<small>{name}</small>:{icon}",
-		"tooltip-format": "oi",
-		"tooltip": true,
+		"format": "{name}"
+		// "format": "{icon}",
+		// "format-icons": {
+		// 	"1": "",
+		// 	"2": "",
+		// 	"3": "󰺿",
+		// 	"4": "",
+		// 	"5": "",
+		// 	///
+		// 	"6": "",
+		// 	"7": "",
+		// 	"8": "󰺿",
+		// 	"9": "",
+		// 	"10": "",
+		// 	"urgent": ""
+		// 	// "focused": "&#xeb8d;",
+		// 	// "default": "&#xf671;"
+		// }
+	},
+	"wlr/workspaces": {
+		"on-click": "activate",
 		"format": "{icon}",
-		"format-icons": {
-			// "1": "",
-			"1": "",
-			"2": "",
-			"3": "󰺿",
-			"4": "",
-			// "5": "",
-			"5": "",
-			"6": "",
-			"7": "",
-			"8": "",
-			"9": "",
-			// "10": "",
-			"10": "",
-			"urgent": "",
-			// "focused": "&#xeb8d;",
-			// "default": "&#xf671;"
-		},
-		"persistent-workspaces": {
-			// TODO: Sort a nice workspace persistency
-			"1": [],
-			"2": [],
-			"3": [],
-			"4": [],
-			"5": []
-		}
+		"all-outputs": true,
+		"disable-scroll": false,
+		"active-only": false
 	},
-	// ============ [ Network ] ===============
-	"network": {
-		"format": "{ifname}",
-		"format-wifi": "{icon}",
-		"format-ethernet": "",
-		"format-linked": "{ifname}",
-		"format-disconnected": "",
-		"tooltip-format-wifi": "{essid} {signalStrength}%",
-		"tooltip-format-ethernet": "IP: {ipaddr}\n  {bandwidthUpBits}  {bandwidthDownBits}",
-		"tooltip-format-disconnected": "disconnected",
-		"max-length": 50,
-		"format-icons": {
-			"default": [
-				"",
-				"",
-				""
-			]
-		},
-		"on-click": "dmenu_networkmanager",
-	},
-	// ============ [ Updates ] ===============
-	"custom/updates-icon": {
-		"format": "",
-		"tooltip": true,
-		"tooltip-format": "Synchronizes pacman",
-		"on-click": "kitty -e doas pacman -Sy", // update system
-	},
-	"custom/updates": {
+	"hyprland/window": {
 		"format": "{}",
-		"tooltip": false,
-		"interval": 600, // every 10 min.
-		"exec": "package_update.sh value", // # of updates
-		"exec-if": "exit 0", // always run; consider advanced run conditions
-		"signal": 8
-	},
-	// ============ [ Audio ] ===============
-	"pulseaudio": {
-		"on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"format": "{icon}",
-		"format-muted": "",
-		"tooltip": true,
-		"tooltip-format": "Mutes volume",
-		"max-volume": 100,
-		"format-icons": {
-			"default": [
-				"",
-				"",
-				""
-			]
-		}
-	},
-	"pulseaudio#percentage": {
-		"max-volume": 100,
-		"tooltip": true,
-		"tooltip-format": "Calls pavucontrol",
-		"on-click": "pavucontrol",
-		"format": "{volume}%"
-	},
-	// ============ [ Battery ] ===============
-	"battery": {
-		"states": {
-			"warning": 30,
-			"critical": 15
+		"rewrite": {
+			"(.{42}).*": "$1.."
 		},
-		"format": "{icon}",
-		"format-charging": "󰂄",
-		"format-plugged": "",
-		"format-full": "",
-		"format-icons": [
-			"󰂎",
-			"󰁺",
-			"󰁻",
-			"󰁼",
-			"󰁽",
-			"󰁾",
-			"󰁿",
-			"󰂀",
-			"󰂁",
-			"󰂂",
-			"󰁹"
-		],
-		"tooltip-format": "{time}",
-		"interval": 5
+		"icon": true,
+		"icon-size": 22
 	},
-	"battery#percentage": {
-		"states": {
-			"warning": 30,
-			"critical": 15
-		},
-		"format": "{capacity}%",
-		"tooltip-format": "{time}",
-		"interval": 5
-	},
-	// ============ [ Date ] ===============
-	"custom/date-icon": {
-		"format": "",
-		"tooltip": false
+	"tray": {
+		"show-passive-items": true,
+		"spacing": 10
 	},
 	"clock": {
-		// "format": "{:%a %b %d  %R}",
-		"format": "{:L%R 🞄 %A %d %B}",
-		"locale": "fr_FR.UTF-8",
-		"tooltip-format": "<span font_family='SFMono Nerd Font Mono' font_size='10pt'>{calendar}</span>",
+		"tooltip": false,
+		"format": "  {:%H:%M}"
+	},
+	"clock#date": {
+		"format": "  {:L%a %d %b}",
+		"tooltip-format": "<tt>{calendar}</tt>",
 		"calendar": {
 			"mode": "month",
 			"mode-mon-col": 3,
-			"weeks-pos": "right",
-			"on-scroll": 1,
+			"on-click-right": "mode",
 			"format": {
-				"months": "<span color='#ffead3'><b>{}</b></span>",
-				"days": "<span color='#ecc6d9'><b>{}</b></span>",
-				"weeks": "<span color='#74c7ec'><b>W{}</b></span>",
-				"weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-				"today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+				"months": "<span color='#f5e0dc'><b>{}</b></span>",
+				"weekdays": "<span color='#f9e2af'><b>{}</b></span>",
+				"today": "<span color='#f38ba8'><b>{}</b></span>"
 			}
 		},
+		"actions": {
+			"on-click-right": "mode"
+		},
+		"min-length": 8,
+		"max-length": 28
 	},
-	// ============ [ Bluetooth ] ===============
-	"bluetooth": {
-		// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-		"format": "",
-		"format-disabled": "", // an empty format will hide the module
-		"format-connected": "",
-		// "format-off": "&#xeceb;",
-		"format-off": "",
-		"on-click": "blueman-manager",
-		"tooltip-format": "{controller_alias}\t{controller_address}",
-		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-		"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+		"format-muted": "  muted",
+		"format-icons": {
+			"headphone": " ",
+			"hands-free": "󰂑",
+			"headset": "󰂑",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": [
+				" ",
+				" ",
+				" "
+			]
+		},
+		"on-click-middle": "pamixer -t",
+		"on-click": "pavucontrol"
 	},
-	// ============ [ CPU ] ===============
-	"custom/cpu-icon": {
-		"format": "",
-		"tooltip": true,
-		"tooltip-format": "Calls htop",
-		"on-click": "kitty htop",
+	"pulseaudio#microphone": {
+		"format": "{format_source}",
+		"format-source": " {volume}%",
+		"format-source-muted": "",
+		"on-click": "pavucontrol -t 4",
+		"on-click-middle": "~/.config/hypr/scripts/volume.sh --toggle-mic",
+		"on-scroll-up": "~/.config/hypr/scripts/volume.sh --mic-inc",
+		"on-scroll-down": "~/.config/hypr/scripts/volume.sh --mic-dec",
+		"tooltip-format": "{source_desc} | {source_volume}%"
+	},
+	"custom/sep": {
+		"format": "|",
+		"tooltip": false
+	},
+	"custom/power": {
+		"tooltip": false,
+		"on-click": "rofi.sh p &",
+		"format": "⏻ "
 	},
 	"cpu": {
-		"format": "{usage}%"
-	},
-	// ============ [ Memory ] ===============
-	"custom/memory-icon": {
-		"format": "",
-		"tooltip": false,
-		"on-click": "kitty btop",
+		"format": "  {usage}%"
 	},
 	"memory": {
-		"format": "{}%"
+		"format": " {}%"
 	},
-	// ============ [ Inhibitor ] ===============
-	"idle_inhibitor": {
-		"format": "{icon}",
-		"format-icons": {
-			"activated": "",
-			"deactivated": ""
-		},
-		"tooltip-format-activated": "Idle inhibitor is ON.\nLeft click to turn it off.",
-		"tooltip-format-deactivated": "Idle inhibitor is OFF.\nLeft click to turn it on."
-	},
-	// ============ [ Hypridle inhibitor ] ===============
-	"custom/hypridle": {
-		"format": "{icon}",
-		"format-icons": {
-			"0": "",
-			"1": ""
-		},
+	"custom/pacman": {
+		"format": "{icon}{0}",
 		"return-type": "json",
-		"escape": true,
-		"exec-on-event": true,
-		"interval": 60,
-		"exec": "hypridle.sh status",
-		"on-click": "hypridle.sh toggle",
-		"on-click-right": "hyprlock"
-	},
-	// ============ [ Submap indication ] ===============
-	"hyprland/submap": {
-		"format": "",
-		"max-length": 12,
-		"tooltip": true,
-		// "tooltip-format": "'a': deactivate animation\n'b': browser"
-	},
-	// ============ [ mode ] ===============
-	"hyprland/mode": {
-		"format": "<span style=\"italic\">{}</span>"
-	},
-	// ============ [ Tray ] ===============
-	"tray": {
-		// "icon-size": 21,
-		"spacing": 10
-	},
-	// // ============ [ Spotify ] ===============
-	// "custom/spotify": {
-	//     "format": " {}",
-	//     "max-length": 40,
-	//     "interval": 3, // Remove this if your script is endless and write in loop
-	//     "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null", // Script in resources folder
-	//     "exec-if": "pgrep spotify"
-	// },
-	// ============ [Exit] ===============
-	"custom/exit": {
-		"format": "",
-		"tooltip": true,
-		"tooltip-format": "Power off menu",
-		"on-click": "logout_menu.sh",
-	},
-	"pulseaudio/slider": {
-		"min": 0,
-		"max": 100,
-		"orientation": "horizontal"
-	},
+		"format-icons": {
+			"pending-updates": " ",
+			"updated": ""
+		},
+		"exec-if": "which waybar-updates",
+		"exec": "waybar-updates"
+	}
 }
