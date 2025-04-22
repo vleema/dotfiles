@@ -5,15 +5,16 @@ local opt = vim.opt
 
 opt.wrap = true
 opt.foldlevelstart = 0
-opt.shiftwidth = 2
-opt.tabstop = 2
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.shiftwidth = 4
+opt.tabstop = 4
 opt.expandtab = false
 opt.spell = true
 opt.spelllang = "en_us,pt_br"
 -- opt.listchars = { trail = "·", tab = "  ", space = " " }
 opt.listchars = { trail = "·", tab = "  ", space = " " }
 opt.cursorline = false
--- opt.foldlevelstart = 0
 
 -- Output for vimtex
 vim.g.vimtex_compiler_latexmk = {
