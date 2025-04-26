@@ -1,17 +1,7 @@
 return {
   {
-    "lervag/vimtex",
-    lazy = false, -- we don't want to lazy load VimTeX
-    -- tag = "v2.15", -- uncomment to pin to a specific release
-    init = function()
-      -- VimTeX configuration goes here, e.g.
-      vim.g.vimtex_view_method = "zathura"
-    end,
-  }, -- { "KeitaNakamura/tex-conceal.vim" },
-  {
     "obsidian-nvim/obsidian.nvim",
     ft = "markdown",
-    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
