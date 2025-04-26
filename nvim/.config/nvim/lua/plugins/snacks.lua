@@ -1,4 +1,3 @@
-local ascii = require("plugins.ascii")
 return {
   "folke/snacks.nvim",
   ---@type snacks.Config
