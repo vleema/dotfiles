@@ -1,322 +1,161 @@
 @import "colors.css";
 
-/* Reset all styles */
 * {
-    border: none;
-    border-radius: 0;
+    min-height: 0;
+    /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
+    /* font-family: "FiraCode Nerd Font"; */
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 12px;
+    font-weight: 500;
 }
 
-/* The whole bar */
-#waybar {
-    font-family: "Phosphor", "SFMono Nerd Font Mono Medium";
-    background: transparent;
-    margin: 0px;
+window#waybar {
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    /* background-color: #1e1e2e; */
+    /* background-color: #181825; */
+    /* background-color: rgba(24, 24, 37, 0.8); */
+    background-color: @black0;
 }
 
-/* The window module displays the title of the currently focused window of
-*  Hyprland, the Wayland compositor. */
-/* #window { */
-/*     font-size: 14px; */
-/* } */
-
-tooltip {
-    background: @tooltip_bkg;
-    border-radius: 8px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: @tooltip_border;
-}
-tooltip label{
-    font-family: "SF Pro Display";
-		/*font-weight: bold;*/
-    font-size: 10pt;
+window#waybar.hidden {
+    opacity: 0.5;
 }
 
 #workspaces {
-		font-family:"Phosphor", "SF Pro Display";
-    font-size: 18px;
-		/*font-weight: bold;*/
-    border-radius: 10px;
-    background: @waybar_bkg;
+    background-color: transparent;
+	font-weight: bold;
 }
+
 #workspaces button {
-    padding-right: 10px;
-    padding-left: 10px;
-    transition: all 0.3s ease-in-out;
-    color: @wsp_occupied;
-    /* color: @text_color; */
+    all: initial;
+    min-width: 0;
+    box-shadow: inset 0 -3px transparent;
+    padding: 2px 8px;
+    min-height: 0;
+    /* margin: 4px 4px; */
+    /* border-radius: 8px; */
+    background-color: @bkg1;
+    color: @text_color;
 }
-#workspaces button:nth-child(n+6) {
-    color: @wsp_occupied_snd_monitor;
-}
-#workspaces button.empty {
-    color: @wsp_empty;
-}
-#workspaces button.active {
-    /*padding-right: 10px; */
-    /*padding-left: 10px; */
-    background-color: rgba(100, 100, 100, 0.2);
-    border-radius: 10px; 
-    color: @wsp_active;
-     /*border-bottom: 2px solid @wsp_active; */
-}
-#workspaces button.active:nth-child(n+6) {
-    color: @wsp_active_snd_monitor;
-}
-#workspaces button.urgent {
-    color: @wsp_urgent;
-}
+
 #workspaces button:hover {
-    background-color: rgba(100, 100, 100, 0.2);
-    opacity: 0.9;
-    border: none;
-    border-radius: 10px; 
-    box-shadow: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: @black0;
+    background-color: @wsp_active;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-    /* border-radius: 10px; */
-    /* border-top-left-radius: 10px; */
-    /* border-bottom-left-radius: 10px; */
+#workspaces button.active {
+    color: @black0;
+    background-color: @wsp_active;
 }
 
-/* Overall control over the entire group of modules. */
-.modules-right  {
-    margin-right: 0;
-    /* Currently, margins are set in config.jsonc */
-    /* See command:
-       "margin": "10 10 0 10", // above, right, below, left
-    */
+#workspaces button.urgent {
+    background-color: @urgent_color;
 }
 
-#custom-cpu-icon,
-#custom-date-icon,
-#custom-exit,
-#custom-hypridle,
-#custom-memory-icon,
-#custom-time-icon,
-#custom-updates-icon,
-#submap,
-#bluetooth,
-#network,
-#idle_inhibitor,
-#tray,
-#pulseaudio,
-#battery
-{
-    font-family: "Phosphor";
-    font-size: 16px;
-    padding-left: 10px;
-    padding-right: 5px;
-    color: @icon_color;
-    background: @waybar_bkg;
-}
-
-#battery-percentage,
 #clock,
+#pulseaudio,
+#custom-logo,
+#custom-power,
+#custom-music-player,
 #cpu,
-#custom-updates, 
+#tray,
 #memory,
-#custom-spotify,
-#pulseaudio.percentage,
-#battery.percentage
-{
-    font-family: "SF Pro Display", "SFMono Nerd Font Mono Medium", "Phosphor";
-    font-size: 14px;
-    padding-left: 5px;
-    padding-right: 10px;
-    color: @text_color;
-    background: @waybar_bkg;
-		/*font-weight: bold;*/
+#window,
+#custom-screen-recorder,
+#custom-gpu {
+    min-height: 0;
+    padding: 2px 10px;
+    /* border-radius: 8px; */
+    /* margin: 0px 4px; */
+    /* background-color: @black0; */
 }
 
-#submap{
-    border-radius: 10px;
-    margin-left: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+#custom-sep {
+    padding: 0px;
+    color: @sep;
 }
 
-#clock{ 
-		font-family: "SF Pro Display", "SFMono Nerd Font Mono Medium", "Phosphor";
-		font-weight: bold;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 10px;
-    color: @text_color;
-    background: @waybar_bkg;
+#custom-screen-recorder.recording {
+    color: @on_color;
 }
 
-#custom-hypridle {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    padding-left: 10px;
-    margin-left: 10px;
-}
-#custom-hypridle.active {
-    /* color: @iconcolor; */
-    color: @icon_color;
-}
-#custom-hypridle.notactive {
-    /* color: #dc2f2f; */
+#custom-screen-recorder.not-recording {
     color: @off_color;
 }
 
-#idle_inhibitor{
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    padding-left: 10px;
-    margin-left: 10px;
-}
-#idle_inhibitor.activated {
-    /* color: @on_color; */
-}
-#idle_inhibitor.deactivated {
-    color: @disabled_color;
+
+window#waybar.empty #window {
+    background-color: @waybar_bkg;
 }
 
-#bluetooth {
-}
-#bluetooth.disabled {
-    color: @bluetooth_disabled;
-}
-#bluetooth.on{
-    color: @bluetooth_on;
-}
-#bluetooth.connected{
-    color: @bluetooth_connected;
+#cpu {
+    color: @icon10;
+    margin-left: 0;
+    margin-right: 0;
 }
 
-#network {
-    padding-left: 10px;
-    background: @waybar_bkg;
-    font-family: "Phosphor", "SFMono Nerd Font Mono Medium";
-    font-size: 18px;
-    color: @icon_color;
+#custom-gpu {
+    color: #94e2d5;
+    margin-left: 0;
+    margin-right: 0;
 }
-#network.wifi {
+
+#memory {
+    margin-left: 0;
+    color: @icon9;
 }
-#network.disconnected {
-    color: @off_color;
+
+#clock {
+	background-color: #A89984;
+    color: @black0;
+}
+
+#clock.date {
+	background-color: #504945;
+    color: @text_color;
+}
+
+#clock.simpleclock {
+    color: #89b4fa;
+}
+
+#window {
+    color: #a6e3a1;
 }
 
 #pulseaudio {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+    color: @icon6;
 }
+
 #pulseaudio.muted {
-    color: @off_color;
-}
-#pulseaudio.percentage{
-    border-radius: 0px;
+    color: @icon1;
 }
 
-#battery {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
+#custom-logo {
+    color: #89b4fa;
 }
 
-#battery.percentage {
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
-}
-
-#battery.full {
-    color: @battery_full;
-}
-
-#battery.charging {
-    color: @battery_charging;
-}
-
-#battery.warning:not(.charging) {
+#custom-power {
     color: @battery_warning;
-    /*animation-name: blink;*/
-    /*animation-duration: 0.5s;*/
-    /*animation-timing-function: linear;*/
-    /*animation-iteration-count: infinite;*/
-    /*animation-direction: alternate;*/
-}
-
-#battery.critical:not(.charging) {
-    color: @battery_critical;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    padding-right: 5px;
+    font-size: 14px;
 }
 
 @keyframes blink {
     to {
-        opacity: 0.5;
+        background-color: #d3869b;
+        color: #181825;
     }
 }
 
-#custom-cpu-icon{
-}
-#cpu {
-}
-
-#custom-memory-icon{
-}
-#memory {
+tooltip {
+    border-radius: 8px;
 }
 
-#custom-updates-icon{
-}
-#custom-updates{
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-#custom-exit{
-    padding-right: 10px;
-    margin-left: 0px;
-    margin-right: 0px;
-    /* border-radius: 10px; */
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-/* ================== [ NOT IN USE ] ===================== */
-
-#custom-spotify {
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-left: 20px;
-    color: rgb(102, 220, 105);
-    border-radius: 10px;
-}
-
-#tray {
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 10px;
-}
-
-#pulseaudio-slider slider {
-    min-height: 0px;
-    min-width: 0px;
-    opacity: 0;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-}
-#pulseaudio-slider trough {
-    min-height: 10px;
-    min-width: 80px;
-    border-radius: 5px;
-    background-color: black;
-}
-#pulseaudio-slider highlight {
-    min-width: 10px;
-    border-radius: 5px;
-    background-color: green;
+#tray menu {
+    /* background: rgb(24, 24, 37); */
+    color: @bkg1;
 }

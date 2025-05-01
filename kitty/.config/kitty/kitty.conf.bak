@@ -1,7 +1,7 @@
 font_family JetBrainsMono Nerd Font
 font_size 10
 
-# window_padding_width 6
+window_padding_width 6
 
 include current-theme.conf
 
@@ -10,7 +10,4 @@ map ctrl+shift+m launch --cwd=current --type=os-window
 copy_on_select yes
 
 # for ssh terminal
-# term xterm-256color
-
-text_composition_strategy platform
-# text_composition_strategy legacy
+term xterm-256color

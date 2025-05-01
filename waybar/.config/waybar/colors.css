@@ -7,10 +7,8 @@
 @define-color wsp_occupied #fbf1c7;
 /*@define-color wsp_occupied #928374;*/
 @define-color wsp_empty #928374;
-@define-color wsp_occupied_snd_monitor #d3869b;
-@define-color wsp_active #b8bb26;
-@define-color wsp_active_snd_monitor #0082FC;
-/*@define-color wsp_active #fbf1c7;*/
+/* @define-color wsp_active #b8bb26; */
+@define-color wsp_active #fbf1c7;
 @define-color wsp_urgent #ff6699;
 @define-color text_color #fbf1c7;
 @define-color bluetooth_connected #0082FC;
@@ -37,6 +35,7 @@
 @define-color surface3 #1f1f28;
 @define-color surface0 rgba(49,50,68,0.30);
 @define-color black0 #161616;
+@define-color black1 #010202;
 @define-color cream #dcd7ba;
 @define-color icon0 #c7522a;
 @define-color icon1 #e5c185;
@@ -50,3 +49,8 @@
 @define-color icon9 #99ffdd;
 @define-color icon10 #ffcc66;
 @define-color icon11 #ff6699;
+
+@define-color bkg1 #504945;
+@define-color bkg2 #282828;
+
+@define-color sep #CAB693;
