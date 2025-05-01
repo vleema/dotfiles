@@ -59,7 +59,8 @@ alias \
 	R=". ranger" \
 	Y="yazi" \
 	tree="tree -C" \
-	t="tree"
+	t="tree" \
+	lg="lazygit"
 
 # May 22th, 2022
 source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc
