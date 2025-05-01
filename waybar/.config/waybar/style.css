@@ -144,6 +144,23 @@ window#waybar.empty #window {
     font-size: 14px;
 }
 
+#submap {
+	color: @icon_color;
+}
+
+#custom-pacman {
+    color: #ffffff;
+    padding: 0 10px;
+}
+
+#custom-pacman.pending-updates {
+    color: @orange;  /* Yellow color for pending updates */
+}
+
+#custom-pacman.updated {
+    color: @on_color;  /* Green color for up-to-date system */
+}
+
 @keyframes blink {
     to {
         background-color: #d3869b;
