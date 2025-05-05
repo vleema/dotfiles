@@ -68,6 +68,7 @@ window#waybar.hidden {
 #custom-gpu {
     min-height: 0;
     padding: 2px 5px;
+	color: @text_color;
     /* border-radius: 8px; */
     /* margin: 0px 4px; */
     /* background-color: @black0; */
@@ -108,15 +109,15 @@ window#waybar.empty #window {
     color: @icon9;
 }
 
-#clock {
-	background-color: #A89984;
-    color: @black0;
-}
+/* #clock { */
+/* 	background-color: #A89984; */
+/*     color: @black0; */
+/* } */
 
-#clock.date {
-	background-color: #504945;
-    color: @text_color;
-}
+/* #clock.date { */
+/* 	background-color: #504945; */
+/*     color: @text_color; */
+/* } */
 
 #clock.simpleclock {
     color: #89b4fa;
@@ -154,7 +155,7 @@ window#waybar.empty #window {
 }
 
 #custom-pacman.pending-updates {
-    color: @orange;  /* Yellow color for pending updates */
+    color: @icon_color;  /* Yellow color for pending updates */
 }
 
 #custom-pacman.updated {
