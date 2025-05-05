@@ -21,7 +21,7 @@
 		"custom/pacman",
 		"custom/sep",
 		"pulseaudio",
-		"pulseaudio#microphone",
+		// "pulseaudio#microphone",
 		"custom/sep",
 		"cpu",
 		"memory",
