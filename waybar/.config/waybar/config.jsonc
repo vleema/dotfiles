@@ -12,7 +12,7 @@
 		// "custom/sep",
 	],
 	"modules-center": [
-		"custom/music-player",
+		"custom/pacman",
 		"clock",
 		"clock#date"
 	],
