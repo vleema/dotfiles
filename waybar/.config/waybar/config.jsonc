@@ -17,11 +17,9 @@
 		"clock#date"
 	],
 	"modules-right": [
-		// "custom/screen-recorder",
-		"custom/pacman",
+		"battery",
 		"custom/sep",
 		"pulseaudio",
-		// "pulseaudio#microphone",
 		"custom/sep",
 		"cpu",
 		"memory",
@@ -157,6 +155,31 @@
 		"on-click": "rofi.sh p &",
 		"format": "⏻ "
 	},
+	"battery": {
+		"states": {
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": "󰂄",
+		"format-plugged": "",
+		"format-full": "",
+		"format-icons": [
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹"
+		],
+		"tooltip-format": "{time}",
+		"interval": 5
+	},
 	"cpu": {
 		"format": "  {usage}%"
 	},
@@ -168,7 +191,8 @@
 		"return-type": "json",
 		"format-icons": {
 			"pending-updates": " ",
-			"updated": ""
+			// "updated": ""
+			"updated": ""
 		},
 		"exec-if": "which waybar-updates",
 		"exec": "waybar-updates"
