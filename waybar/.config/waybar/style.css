@@ -5,7 +5,7 @@
     /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
     /* font-family: "FiraCode Nerd Font"; */
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
 }
 
@@ -64,6 +64,7 @@ window#waybar.hidden {
 #tray,
 #memory,
 #window,
+#battery,
 #custom-screen-recorder,
 #custom-gpu {
     min-height: 0;
@@ -90,6 +91,32 @@ window#waybar.hidden {
 
 window#waybar.empty #window {
     background-color: @waybar_bkg;
+}
+
+#battery.full {
+    color: @battery_full;
+}
+
+#battery.charging {
+    color: @battery_charging;
+}
+
+#battery.warning:not(.charging) {
+    color: @battery_warning;
+    /*animation-name: blink;*/
+    /*animation-duration: 0.5s;*/
+    /*animation-timing-function: linear;*/
+    /*animation-iteration-count: infinite;*/
+    /*animation-direction: alternate;*/
+}
+
+#battery.critical:not(.charging) {
+    color: @battery_critical;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 #cpu {
