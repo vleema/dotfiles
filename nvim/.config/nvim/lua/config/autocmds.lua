@@ -1,19 +1,8 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
+--
 -- Add any additional autocmds here
--- local ls = require("luasnip")
--- local s = ls.snippet
--- local t = ls.text_node
-
--- -- HACK: Cancel the snippet session when leaving insert mode.
--- local unlink_group = vim.api.nvim_create_augroup("UnlinkSnippet", {})
--- vim.api.nvim_create_autocmd("ModeChanged", {
---   group = unlink_group,
---   -- when going from select mode to normal and when leaving insert mode
---   pattern = { "s:n", "i:*" },
---   callback = function(event)
---     if ls.session and ls.session.current_nodes[event.buf] and not ls.session.jump_active then
---       ls.unlink_current()
---     end
---   end,
--- })
+-- with `vim.api.nvim_create_autocmd`
+--
+-- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
+-- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")

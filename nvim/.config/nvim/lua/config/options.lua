@@ -1,30 +1,16 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-local opt = vim.opt
 
-opt.clipboard = "unnamedplus"
-opt.wrap = true
-opt.foldlevelstart = 0
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()"
-opt.shiftwidth = 4
-opt.tabstop = 4
-opt.expandtab = false
-opt.spell = true
-opt.spelllang = "en_us,pt_br"
--- opt.listchars = { trail = "·", tab = "  ", space = " " }
-opt.listchars = { trail = "·", tab = "  ", space = " " }
-opt.cursorline = false
+vim.g.snacks_animate = false
+
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_better_performance = 1
 
 -- Output for vimtex
 vim.g.vimtex_compiler_latexmk = {
   out_dir = "output",
 }
-
-vim.g.snacks_animate = false
-
-vim.g.gruvbox_material_background = "hard"
 
 vim.cmd([[
   augroup CustomColors
