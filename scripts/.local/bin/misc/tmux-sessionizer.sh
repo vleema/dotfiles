@@ -12,8 +12,6 @@ switch_to() {
 	else
 		tmux switch-client -t $selected_name
 	fi
-
-	# tmux send-keys -t $selected_name "ready-tmux" ^M
 }
 
 if tmux has-session -t="$selected_name"; then
