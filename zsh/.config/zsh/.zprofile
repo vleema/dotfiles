@@ -22,8 +22,8 @@
 # Added on January 30th 2024 source: https://wiki.archlinux.org/title/SSH_keys#Keychain
 #====================[ START-Keychain ]====================#
 # Let  re-use ssh-agent and/or gpg-agent between logins
-eval `keychain --eval --quiet --noask --agents ssh --ignore-missing id_ed25519 id_rsa id_ed25519_cf`
-source "$HOME/.keychain/$(hostname)-sh"
+# eval `keychain --eval --quiet --noask --agents ssh --ignore-missing id_ed25519 id_rsa id_ed25519_cf`
+# source "$HOME/.keychain/$(hostname)-sh"
 #====================[ End-keychain ]====================#
 
 # ## Alternative for the script above
