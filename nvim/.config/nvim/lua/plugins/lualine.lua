@@ -12,21 +12,21 @@ return {
       local opts = {
         options = {
           theme = "auto",
-          component_separators = { left = "|", right = "|" },
-          section_separators = { left = "", right = "" },
+          -- component_separators = { left = "|", right = "|" },
+          -- section_separators = { left = "", right = "" },
           globalstatus = vim.o.laststatus == 3,
           disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
         },
         sections = {
           lualine_a = { "mode" },
           lualine_b = {
-            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-            { LazyVim.lualine.pretty_path() },
+            { "branch" },
           },
 
           lualine_c = {
-            { "branch" },
             LazyVim.lualine.root_dir(),
+            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+            { LazyVim.lualine.pretty_path() },
             {
               "diff",
               symbols = {
@@ -87,7 +87,7 @@ return {
             { "progress", separator = " ", padding = { left = 1, right = 1 } },
           },
           lualine_z = {
-            { "location", padding = { left = 0, right = 1 } },
+            { "location", padding = { left = 1, right = 1 } },
           },
         },
         extensions = { "neo-tree", "lazy", "fzf" },
