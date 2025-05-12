@@ -5,7 +5,7 @@
     /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
     /* font-family: "FiraCode Nerd Font"; */
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
 }
 
@@ -61,6 +61,7 @@ window#waybar.hidden {
 #custom-power,
 #custom-music-player,
 #cpu,
+#network,
 #tray,
 #memory,
 #window,
@@ -125,6 +126,12 @@ window#waybar.empty #window {
     margin-right: 0;
 }
 
+#network {
+    color: @icon8;
+    margin-left: 1;
+    margin-right: 0;
+}
+
 #custom-gpu {
     color: #94e2d5;
     margin-left: 0;
@@ -169,7 +176,7 @@ window#waybar.empty #window {
 #custom-power {
     color: @battery_warning;
     padding-right: 5px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 #submap {
