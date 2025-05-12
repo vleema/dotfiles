@@ -145,7 +145,7 @@
     "tooltip-format": "{source_desc} | {source_volume}%"
   },
   "custom/sep": {
-    "format": "|",
+    "format": "┊",
     "tooltip": false
   },
   "custom/power": {
