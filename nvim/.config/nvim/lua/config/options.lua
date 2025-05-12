@@ -8,6 +8,8 @@ vim.g.gruvbox_material_background = "hard"
 vim.g.gruvbox_material_foreground = "material"
 vim.g.gruvbox_material_better_performance = 1
 
+vim.opt.spelllang = { "pt_br", "en_us" }
+
 -- Output for vimtex
 vim.g.vimtex_compiler_latexmk = {
   out_dir = "output",
