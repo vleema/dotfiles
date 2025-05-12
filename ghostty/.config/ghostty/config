@@ -1,0 +1,10 @@
+font-family = JetBrainsMono Nerd Font
+font-size = 10
+alpha-blending = native
+
+# Launch a new terminal with current working directory
+keybind = ctrl+shift+m=new_window
+# Enable copying on selection
+copy-on-select = true
+
+theme = gruvbox-material-hard-dark
