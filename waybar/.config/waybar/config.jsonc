@@ -24,8 +24,10 @@
     "cpu",
     "memory",
     "custom/gpu-usage",
+    "network",
     "custom/sep",
     "tray"
+    // "custom/power"
   ],
   "hyprland/submap": {
     "format": "",
@@ -183,6 +185,22 @@
   },
   "memory": {
     "format": " {}%"
+  },
+  "network": {
+    "format": "",
+    "format-ethernet": "\udb83\udc9d ",
+    "format-wifi": "{icon} ",
+    "format-disconnected": "\udb83\udc9c ",
+    "format-icons": [
+      "\udb82\udd2f",
+      "\udb82\udd1f",
+      "\udb82\udd22",
+      "\udb82\udd25",
+      "\udb82\udd28"
+    ],
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Disconnected",
   },
   "custom/pacman": {
     "format": "{icon}{0}",
