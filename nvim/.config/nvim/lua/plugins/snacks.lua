@@ -37,6 +37,7 @@ return {
     picker = {
       sources = {
         explorer = {
+          enabled = false,
           layout = {
             layout = {
               position = "right",
