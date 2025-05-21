@@ -7,21 +7,21 @@
 
 # sudo not required for some system commands
 for command in mount umount pacman updatedb su shutdown poweroff reboot; do
-	alias $command="doas $command"
+  alias $command="doas $command"
 done
 unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-	cp="cp -v" \
-	mv="mv -v" \
-	rm="rm -v" \
-	bc="bc -ql" \
-	mkd="mkdir -pv" \
-	yt="yt-dlp --embed-metadata -i" \
-	yta="yt -x -f bestaudio/best" \
-	ffmpeg="ffmpeg -hide_banner" \
-	c="clear"
+  cp="cp -v" \
+  mv="mv -v" \
+  rm="rm -v" \
+  bc="bc -ql" \
+  mkd="mkdir -pv" \
+  yt="yt-dlp --embed-metadata -i" \
+  yta="yt -x -f bestaudio/best" \
+  ffmpeg="ffmpeg -hide_banner" \
+  c="clear"
 
 # added on Jan 28th, 2024
 alias processes="ps xf"
@@ -32,15 +32,15 @@ alias neofetch="fastfetch"
 # Colorize commands when possible.
 # ls="eza -hN --color=auto --group-directories-first" \
 alias \
-	ls="eza -h --color=always --group-directories-first --icons" \
-	grep="grep --color=auto" \
-	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi" \
-	ip="ip -color=auto"
+  ls="eza -h --color=always --group-directories-first --icons" \
+  grep="grep --color=auto" \
+  diff="diff --color=auto" \
+  ccat="highlight --out-format=ansi" \
+  ip="ip -color=auto"
 alias la='eza -a --color=always --group-directories-first --icons=auto'  # all files and dirs
 alias ll='eza -al --color=always --group-directories-first --icons=auto' # long format
 alias lt='eza -aT --color=always --group-directories-first --icons=auto' # tree listing
-alias ld='eza -alD --color=always --icons=auto --sort newest'            # listing only folders, sorted
+# alias ld='eza -alD --color=always --icons=auto --sort newest'            # listing only folders, sorted
 alias l.='eza -a | grep -E "^\."'
 alias lls='eza -al --color=always --group-directories-first --icons=auto --sort newest' # long format
 alias l='eza -hl --color=always --group-directories-first --icons=auto --sort newest'   # long format
@@ -48,19 +48,19 @@ alias cat='bat'
 
 # These common commands are just too long! Abbreviate them.
 alias \
-	ka="killall" \
-	g="git" \
-	sdn="shutdown -h now" \
-	e="$EDITOR" \
-	v="$EDITOR" \
-	o="open" \
-	p="pacman" \
-	z="zathura" \
-	R=". ranger" \
-	Y="yazi" \
-	tree="tree -C" \
-	t="tmux-sessionizer.sh" \
-	lg="lazygit"
+  ka="killall" \
+  g="git" \
+  sdn="shutdown -h now" \
+  e="$EDITOR" \
+  v="$EDITOR" \
+  o="open" \
+  p="pacman" \
+  z="zathura" \
+  R=". ranger" \
+  Y="yazi" \
+  tree="tree -C" \
+  t="tmux-sessionizer.sh" \
+  lg="lazygit"
 
 # May 22th, 2022
 source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc
@@ -315,14 +315,17 @@ alias fzfp="fzf --preview 'bat --color=always {}'"
 
 # 01/jan/2025
 fcd() {
-	cd "$(find -type d | fzf)"
+  cd "$(find -type d | fzf)"
 }
 fopen() {
-	xdg-open "$(find -type f | fzf)"
+  xdg-open "$(find -type f | fzf)"
 }
 
 # 01/mai/2025
 alias cvpn="cd ~/Public/OneDrive/Cave/Projects/CAURN/vpn/vpn\ caurn\ 04/ && sudo openvpn --config pfw-UDP4-41194-imd.04.ovpn "
+
+# 20/mai/2025
+alias dt="download-tt-lecs.sh"
 
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
