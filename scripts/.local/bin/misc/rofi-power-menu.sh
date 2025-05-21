@@ -200,14 +200,14 @@ function print_selection {
 declare -A messages
 declare -A confirmationMessages
 for entry in "${all[@]}"; do
-	messages[$entry]=$(write_message "${icons[$entry]}" "${texts[$entry]^}")
+	messages[$entry]=$(write_message "${icons[$entry]} " "${texts[$entry]^}")
 done
 for entry in "${all[@]}"; do
 	# Add zero-width space character (\u200b) to icon to ensure confirmation-
 	# and regular messages never collide.
-	confirmationMessages[$entry]=$(write_message "${icons[$entry]}\u200b" "Yes, ${texts[$entry]}")
+	confirmationMessages[$entry]=$(write_message "${icons[$entry]}\u200b " "Yes, ${texts[$entry]}")
 done
-confirmationMessages[cancel]=$(write_message "${icons[cancel]}" "No, cancel")
+confirmationMessages[cancel]=$(write_message "${icons[cancel]} " "No, cancel")
 
 if [ $# -gt 0 ]; then
 	# If arguments given, use those as the selection
