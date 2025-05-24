@@ -4,12 +4,12 @@ return {
     lazy = false,
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "stevearc/dressing.nvim",
+      "stevearc/dressing.nvim", -- optional, for vim.ui.select
     },
-    config = function()
-      require("flutter-tools").setup({
-        fvm = false,
-      })
-    end,
+    opts = {
+      -- flutter_path = ".fvm/flutter_sdk/bin/flutter", -- Use FVM-managed Flutter
+      fvm = true, -- Enable FVM support
+      -- Additional flutter-tools.nvim options here
+    },
   },
 }
