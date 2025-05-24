@@ -322,7 +322,7 @@ fopen() {
 }
 
 # 01/mai/2025
-alias cvpn="cd ~/Public/OneDrive/Cave/Projects/CAURN/vpn/vpn\ caurn\ 04/ && sudo openvpn --config pfw-UDP4-41194-imd.04.ovpn "
+alias cvpn="cd ~/Public/OneDrive/Cave/Projects/caurn/vpn/vpn\ caurn\ 04/ && sudo openvpn --config pfw-UDP4-41194-imd.04.ovpn "
 
 # 20/mai/2025
 alias dt="download-tt-lecs.sh"
