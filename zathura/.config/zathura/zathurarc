@@ -8,3 +8,5 @@ map r reload
 map i recolor
 map p print
 
+map <S-Down> navigate next
+map <S-Up> navigate previous
