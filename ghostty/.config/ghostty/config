@@ -8,4 +8,7 @@ keybind = ctrl+shift+m=new_window
 # Enable copying on selection
 copy-on-select = false
 
-theme = gruvbox-material-hard-dark
+# theme = gruvbox-material-hard-dark
+# theme = carbonfox
+# theme = gruber-darker
+theme = kurokula

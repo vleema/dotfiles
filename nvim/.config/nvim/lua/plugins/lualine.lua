@@ -1,6 +1,7 @@
 return {
   {
     "nvim-lualine/lualine.nvim",
+    enabled = true,
     opts = function()
       local lualine_require = require("lualine_require")
       lualine_require.require = require
