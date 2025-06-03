@@ -1,0 +1,17 @@
+{
+  "Competitive Programming Template": {
+    "prefix": "cmain",
+    "body": [
+      "#include <bits/stdc++.h>",
+      "using namespace std;",
+      "using ll = long long;",
+      "using vi = vector<int>;",
+      "using pi = pair<int, int>;",
+      "int main() {",
+      "  $1",
+      "  return 0;",
+      "}"
+    ],
+    "description": "Competitive programming template"
+  }
+}
