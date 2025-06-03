@@ -5,4 +5,6 @@
 
 //@theme "/home/leema/.local/share/rofi/themes/squared-everforest.rasi"
 
-@theme "/home/leema/.local/share/rofi/themes/squared-everforest.rasi"
+//@theme "/home/leema/.local/share/rofi/themes/squared-everforest.rasi"
+
+@theme "/home/leema/.local/share/rofi/themes/vague.rasi"
