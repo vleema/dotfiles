@@ -4,11 +4,9 @@
     min-height: 0;
     /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
     /* font-family: "FiraCode Nerd Font"; */
-    /* font-family: "JetBrainsMono Nerd Font"; */
-    font-family: "SF Pro Dislay";
+    font-family: "JetBrainsMono Nerd Font";
     font-size: 12px;
-    /* font-weight: 500; */
-    font-weight: bold;
+    font-weight: 500;
 }
 
 window#waybar {

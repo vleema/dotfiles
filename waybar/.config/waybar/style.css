@@ -7,6 +7,7 @@
     font-family: "JetBrainsMono Nerd Font";
     font-size: 12px;
     font-weight: 500;
+    /* font-weight: bold; */
 }
 
 window#waybar {
@@ -70,7 +71,7 @@ window#waybar.hidden {
 #custom-gpu {
     min-height: 0;
     padding: 2px 5px;
-	color: @text_color;
+	  color: @text_color;
     /* border-radius: 8px; */
     /* margin: 0px 4px; */
     /* background-color: @black0; */

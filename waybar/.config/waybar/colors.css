@@ -3,19 +3,20 @@
 @define-color off_color  #df4949;
 @define-color disabled_color #928374;
 @define-color urgent_color #ff6699;
-@define-color icon_color #e0a363;
-@define-color wsp_occupied #cdcdcd;
-@define-color wsp_empty #878787;
+@define-color icon_color #E2A74A;
+@define-color wsp_occupied #fbf1c7;
+/*@define-color wsp_occupied #928374;*/
+@define-color wsp_empty #928374;
 /* @define-color wsp_active #b8bb26; */
-@define-color wsp_active #bb9dbd;
+@define-color wsp_active #fbf1c7;
 @define-color wsp_urgent #ff6699;
-@define-color text_color #cdcdcd;
+@define-color text_color #fbf1c7;
 @define-color bluetooth_connected #0082FC;
 @define-color bluetooth_disabled #665c54;
 @define-color bluetooth_on #458588;
 @define-color tooltip_bkg #1d2021;
 @define-color tooltip_border #d4be98;
-@define-color waybar_bkg #141415;
+@define-color waybar_bkg #151818;
 @define-color battery_normal #fbf1c7;
 @define-color battery_warning #d3869b; 
 @define-color battery_critical #df4949; 
@@ -42,11 +43,11 @@
 @define-color icon3 #74a892;
 @define-color icon4 #008585;
 @define-color icon5 #be7973;
-@define-color icon6 #7fa563;
+@define-color icon6 #98bb6c;
 @define-color icon7 #ffead3;
 @define-color icon8 #ecc6d9;
-@define-color icon9 #b4d4cf;
-@define-color icon10 #f3be7c;
+@define-color icon9 #99ffdd;
+@define-color icon10 #ffcc66;
 @define-color icon11 #ff6699;
 
 @define-color bkg1 #504945;
