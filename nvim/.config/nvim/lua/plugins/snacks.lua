@@ -34,10 +34,12 @@ return {
         },
       },
     },
+    explorer = {
+      enabled = false,
+    },
     picker = {
       sources = {
         explorer = {
-          enabled = false,
           layout = {
             layout = {
               position = "right",
