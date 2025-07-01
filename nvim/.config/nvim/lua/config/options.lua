@@ -15,12 +15,12 @@ vim.g.vimtex_compiler_latexmk = {
   out_dir = "output",
 }
 
--- vim.cmd([[
---   augroup CustomColors
---     autocmd!
---     autocmd ColorScheme * highlight Normal guibg=#1A1A1A
---   augroup END
--- ]])
+vim.cmd([[
+  augroup CustomColors
+    autocmd!
+    autocmd ColorScheme * highlight Normal guibg=#1A1A1A
+  augroup END
+]])
 --
 -- Fold
 
