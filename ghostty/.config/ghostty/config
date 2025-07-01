@@ -9,3 +9,4 @@ keybind = ctrl+shift+m=new_window
 copy-on-select = false
 
 theme = gruvbox-material-hard-dark
+keybind = shift+enter=text:\n

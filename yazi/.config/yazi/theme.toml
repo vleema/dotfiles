@@ -8,7 +8,7 @@
 # [flavor]
 # use = "onedark"
 
-[manager]
+[mgr]
 cwd = { fg = "white", bold = true }
 
 # Hovered
