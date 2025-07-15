@@ -347,9 +347,10 @@ fi
 # Zoxide plugin
 eval "$(zoxide init zsh --cmd j)"
 
-# Android studio configuraiton
-export CHROME_EXECUTABLE=/opt/google/chrome/chrome
-export ANDROID_HOME=$HOME/Android/Sdk/
-export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools/:$ANDROID_HOME/cmdline-tools/latest/bin/:$ANDROID_HOME/emulator/
+# Android studio configuration
+export PATH=$PATH:$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort | tail -1)
+export ANDROID_AVD_HOME=~/.config/.android/avd
 
 #===============[ THE END ]====================================
+
+alias claude="/home/leema/.config/claude/local/claude"
