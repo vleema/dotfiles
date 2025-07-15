@@ -1,0 +1,14 @@
+cmake
+lldb
+gdb
+clang
+docker
+jdk-openjdk
+tmux
+neovim
+luacheck
+luarocks
+lazygit
+npm
+python
+rustup
