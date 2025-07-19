@@ -17,8 +17,6 @@
     "clock#date"
   ],
   "modules-right": [
-    "battery",
-    "custom/sep",
     "pulseaudio",
     "custom/sep",
     "cpu",
@@ -200,7 +198,7 @@
     ],
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname}",
-    "tooltip-format-disconnected": "Disconnected",
+    "tooltip-format-disconnected": "Disconnected"
   },
   "custom/pacman": {
     "format": "{icon}{0}",

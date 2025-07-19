@@ -351,6 +351,11 @@ eval "$(zoxide init zsh --cmd j)"
 export PATH=$PATH:$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort | tail -1)
 export ANDROID_AVD_HOME=~/.config/.android/avd
 
+# LEAN PATH
+export LEAN_PATH="$HOME/.lean/global/build/lib:$LEAN_PATH"
+
+# TomcatPATH
+export CATALINA_HOME="/opt/apache-tomcat-9.0.102/"
 #===============[ THE END ]====================================
 
 alias claude="/home/leema/.config/claude/local/claude"

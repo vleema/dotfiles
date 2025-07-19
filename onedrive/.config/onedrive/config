@@ -1,2 +1,4 @@
-sync_dir = "~/Public/OneDrive/"
+sync_dir = "~/OneDrive/"
 skip_dir = ".lake"
+skip_file = "*.tmp"
+
