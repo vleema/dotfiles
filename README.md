@@ -1,20 +1,25 @@
 # Dotfiles
 
-This repo contains some configuration files for a small set of basic programs.
-The dotfiles are managed with the GNU `stow` command.
+This repo contains some configuration files for a small set of basic programs. The dotfiles are managed with the GNU `stow` command.
 
-This repo also contains a list of packages you will need to install to get your minimal system running.
+This repo also contains a [installation guide](/installation.md) and lists of packages you will need to install to get your minimal system running.
 
 ## List of Packages
 
-You may find a [**list**](./pkg-pacman.txt) of packages you need to install via pacman.
+You may find a [**list**](./pacman.pkg) of packages you need to install via pacman.
 
-This [**other list**](./pkg-aur.txt) has a list of packages only available from
-AUR. Please, use your favorite AUR package manager, sucha as `paru` or `yay`,
-for instance.
+This [**other list**](./aur.pkg) has a list of packages only available from AUR. Please, use your favorite AUR package manager, such as `paru` or `yay`, for instance.
 
-After installing these packages, you need to use stow to "_install_" their
-corresponding dotfiles.
+You can install the packages with `pacman` and `paru` like this:
+
+```bash
+paru -Syu --needed - < pacman.pkg
+```
+
+After installing these packages, you need to use stow to "_install_" their corresponding dotfiles.
+
+> [!NOTE]
+> Not all of the packages are required e.g. onedrive-abbraunegg, station-bin, zen-browser and others. Take a look at the packages before installing them.
 
 ## Installing Dotfiles with Stow
 
@@ -35,7 +40,6 @@ stow */ # Everything (the '/' ignores the README)
 ```bash
 stow zsh # Just my zsh config
 ```
-
 
 ## Creating entries in the dotfile folder
 
