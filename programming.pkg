@@ -1,6 +1,7 @@
 clang
 cmake
 docker
+docker-compose
 gdb
 go
 jdk-openjdk
