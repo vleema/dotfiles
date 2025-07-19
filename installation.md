@@ -1,6 +1,15 @@
+# Arch linux installation guide (UEFI, BTRFS)
+
+> Mostly copy pasted from <https://gist.github.com/mjkstra/96ce7a5689d753e7a6bdd92cdc169bae>
+
+Before following this guide, make sure you have disabled **Secure Boot** and booted into the installation media in **UEFI** mode. If you don't know how to do this, read the [UEFI section](https://wiki.archlinux.org/title/Installation_guide#UEFI) of the Arch Linux wiki.
+
+## Table of contents
+
 <!--toc:start-->
 
 - [Arch linux installation guide (UEFI, BTRFS)](#arch-linux-installation-guide-uefi-btrfs)
+  - [Table of contents](#table-of-contents)
 - [Preliminary steps](#preliminary-steps)
   - [Wifi Connection](#wifi-connection)
   - [Installation using ssh](#installation-using-ssh)
@@ -23,15 +32,11 @@
   - [Unmount everything and reboot](#unmount-everything-and-reboot)
   - [Automatic snapshot boot entries update](#automatic-snapshot-boot-entries-update)
   - [Aur helper and additional packages installation](#aur-helper-and-additional-packages-installation)
+  - [System Optimization and Configuration](#system-optimization-and-configuration)
   - [Finalization](#finalization)
+  - [Post-Installation System Optimization](#post-installation-system-optimization)
   - [Timeshift first snapshot](#timeshift-first-snapshot)
   <!--toc:end-->
-
-# Arch linux installation guide (UEFI, BTRFS)
-
-> Mostly copy pasted from <https://gist.github.com/mjkstra/96ce7a5689d753e7a6bdd92cdc169bae>
-
-Before following this guide, make sure you have disabled **Secure Boot** and booted into the installation media in **UEFI** mode. If you don't know how to do this, read the [UEFI section](https://wiki.archlinux.org/title/Installation_guide#UEFI) of the Arch Linux wiki.
 
 # Preliminary steps
 
