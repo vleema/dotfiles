@@ -1,8 +1,8 @@
 bat
 blueman
 bluez
-bluez-utils
 bluez-tools
+bluez-utils
 brightnessctl
 btop
 cliphist
@@ -14,12 +14,12 @@ fd
 ffmpegthumbs
 firefox
 fzf
-ghostty
 grim
 hypridle
 hyprland
 hyprlock
 hyprpicker
+hyprshot
 hyprsunset
 imagemagick
 jq
@@ -30,10 +30,10 @@ kvantum-qt5
 libnotify
 neovim
 networkmanager
+noto-fonts
 noto-fonts-emoji
 nwg-displays
 nwg-look
-orchis-theme
 orchis-theme
 pacman-contrib
 pamixer
