@@ -15,7 +15,7 @@
     frame_width = 2
     frame_color = "#7e9cd8"
     frame_color = "#aaaaaa"
-    frame_color = "#a3be8c99"
+    frame_color = "#fbf1c799"
     sort = yes
     idle_threshold = 120
     # font = JetBrains Mono Medium 11
@@ -89,7 +89,7 @@
     # foreground = "#88C0D0"
     highlight = "#BF616A"
     background = "#151818"
-    foreground = "#a3be8c"
+    foreground = "#fbf1c7"
     # highlight = "#ebcb8b"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
@@ -100,7 +100,7 @@
     # foreground = "#8FBCBB"
     highlight = "#BF616A"
     background = "#151818"
-    foreground = "#a3be8c"
+    foreground = "#fbf1c7"
     # highlight = "#ebcb8b"
     timeout = 5
     # Icon for notifications with normal urgency, uncomment to enable
