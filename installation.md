@@ -220,6 +220,8 @@ I will lay down the subvolumes on a **flat** layout, which is overall superior i
 # Create the subvolumes, in my case I choose to make a subvolume for / and one for /home. Subvolumes are identified by prepending @
 btrfs subvolume create /mnt/@
 btrfs subvolume create /mnt/@home
+btrfs subvolume create /mnt/@var
+btrfs subvolume create /mnt/@tmp
 
 # Unmount the root fs
 umount /mnt
@@ -236,8 +238,10 @@ For this guide I'll compress the btrfs subvolumes with **Zstd**, which has prove
 # space_cache=v2 - improved free space tracking
 # autodefrag - automatic defragmentation for small files
 mount -o compress=zstd:3,noatime,ssd,discard=async,space_cache=v2,autodefrag,subvol=@ /dev/nvme0n1p2 /mnt
-mkdir -p /mnt/home
+mkdir -p /mnt/home /mnt/var /mnt/tmp
 mount -o compress=zstd:3,noatime,ssd,discard=async,space_cache=v2,autodefrag,subvol=@home /dev/nvme0n1p2 /mnt/home
+mount -o compress=zstd:3,noatime,ssd,discard=async,space_cache=v2,autodefrag,subvol=@var /dev/nvme0n1p2 /mnt/var
+mount -o compress=zstd:3,noatime,ssd,discard=async,space_cache=v2,autodefrag,subvol=@tmp /dev/nvme0n1p2 /mnt/tmp
 ```
 
 Now we have to mount the efi partition. In general there are 2 main mountpoints to use: `/efi` or `/boot` but in this configuration i am **forced** to use `/efi`, because by choosing `/boot` we could experience a **system crash** when trying to restore `@` _\( the root subvolume \)_ to a previous state after kernel updates. This happens because `/boot` files such as the kernel won't reside on `@` but on the efi partition and hence they can't be saved when snapshotting `@`. Also this choice grants separation of concerns and also is good if one wants to encrypt `/boot`, since you can't encrypt efi files. Learn more [here](https://wiki.archlinux.org/title/EFI_system_partition#Typical_mount_points)
