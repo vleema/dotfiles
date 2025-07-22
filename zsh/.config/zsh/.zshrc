@@ -349,4 +349,3 @@ eval "$(zoxide init zsh --cmd j)"
 
 #===============[ THE END ]====================================
 
-alias claude="/home/leema/.config/claude/local/claude"
