@@ -86,3 +86,6 @@ export PATH="$PATH:$ZVM_INSTALL/"
 
 # Rust installations
 export PATH="$PATH":$HOME/.cargo/bin/
+
+# Go installations
+export PATH="$PATH":$HOME/.local/share/go/bin
