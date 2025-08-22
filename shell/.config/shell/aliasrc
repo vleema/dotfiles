@@ -70,7 +70,7 @@ source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc
 # source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc
 # From Luke Smith video on fzf
 se() { du -a $HOME/.local/bin/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
-vf() { find . | fzf | xargs -r -I % $EDITOR %; }
+vf() { find . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
 
 # # Monitor center, May 13th, 2022
 # alias smc="system-monitoring-center"
@@ -329,6 +329,9 @@ alias cvpn="cd ~/Public/OneDrive/Cave/Projects/caurn/vpn/vpn\ caurn\ 04/ && sudo
 
 # 20/mai/2025
 alias dt="download-tt-lecs.sh"
+
+# 19/aug/2025
+zf() { find . | fzf | xargs -r -I % zathura %; }
 
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
