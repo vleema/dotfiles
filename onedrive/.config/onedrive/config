@@ -1,4 +1,4 @@
 sync_dir = "~/OneDrive/"
-skip_dir = ".lake"
-skip_file = "*.tmp"
+skip_dir = ".lake|target|.git"
+skip_file = "~*|.~*|*.tmp|*.swp|*.partial"
 
