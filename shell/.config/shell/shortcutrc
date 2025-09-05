@@ -58,3 +58,8 @@ abbrev-alias dc='docker' \
   dcn='docker network' \
   dcv='docker volume' \
   dcps='docker compose ps'
+
+# 11/aug/2025
+# Tmux abbreviation
+abbrev-alias tl='tmux list-sessions' \
+  ta='tmux attach-session -t'
