@@ -17,14 +17,12 @@
     "clock#date"
   ],
   "modules-right": [
-    "tray",
-    "custom/sep",
     "pulseaudio",
-    "custom/sep",
     "cpu",
     "memory",
     "custom/gpu-usage",
-    "network"
+    "network",
+    "tray"
   ],
   "hyprland/submap": {
     "format": "",
@@ -144,7 +142,7 @@
     "tooltip-format": "{source_desc} | {source_volume}%"
   },
   "custom/sep": {
-    "format": "┊",
+    "format": "│",
     "tooltip": false
   },
   "custom/power": {
