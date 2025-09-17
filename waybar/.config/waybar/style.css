@@ -24,7 +24,7 @@ window#waybar.hidden {
 }
 
 #workspaces {
-    background-color: transparent;
+    /* background-color: transparent; */
 	font-weight: bold;
 }
 
@@ -36,7 +36,7 @@ window#waybar.hidden {
     min-height: 0;
     /* margin: 4px 4px; */
     /* border-radius: 8px; */
-    background-color: @bkg1;
+    background-color: @waybar_bkg;
     color: @text_color;
 }
 
@@ -128,7 +128,7 @@ window#waybar.empty #window {
 }
 
 #network {
-    color: @icon8;
+    color: @text_color;
     margin-left: 1;
     margin-right: 0;
 }

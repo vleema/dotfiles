@@ -13,10 +13,11 @@
   ],
   "modules-center": [
     "custom/pacman",
-    "clock",
-    "clock#date"
+    "clock#date",
+    "clock"
   ],
   "modules-right": [
+    "battery",
     "pulseaudio",
     "cpu",
     "memory",
@@ -91,10 +92,11 @@
   },
   "clock": {
     "tooltip": false,
-    "format": "  {:%H:%M}"
+    // "format": "  {:%H:%M}"
+    "format": "{:%H:%M}"
   },
   "clock#date": {
-    "format": "  {:L%a %d %b}",
+    "format": "{:L%a %d %b}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",

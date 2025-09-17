@@ -1,6 +1,6 @@
 @define-color orange #d65d0e;
-@define-color on_color  #b8bb26;
-@define-color off_color  #df4949;
+@define-color on_color #b8bb26;
+@define-color off_color #df4949;
 @define-color disabled_color #928374;
 @define-color urgent_color #ff6699;
 @define-color icon_color #E2A74A;
@@ -18,10 +18,10 @@
 @define-color tooltip_border #d4be98;
 @define-color waybar_bkg #151818;
 @define-color battery_normal #fbf1c7;
-@define-color battery_warning #d3869b; 
-@define-color battery_critical #df4949; 
+@define-color battery_warning #d3869b;
+@define-color battery_critical #df4949;
 @define-color battery_charging #b8bb26;
-@define-color battery_full #b8bb26; 
+@define-color battery_full #b8bb26;
 
 
 @define-color subtext1 #bac2de;
@@ -33,7 +33,7 @@
 @define-color surface1 #45475a;
 /* @define-color surface0 #313244; */
 @define-color surface3 #1f1f28;
-@define-color surface0 rgba(49,50,68,0.30);
+@define-color surface0 rgba(49, 50, 68, 0.30);
 @define-color black0 #161616;
 @define-color black1 #010202;
 @define-color cream #dcd7ba;
