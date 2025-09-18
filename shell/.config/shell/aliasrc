@@ -333,6 +333,9 @@ alias dt="download-tt-lecs.sh"
 # 19/aug/2025
 zf() { find . | fzf | xargs -r -I % zathura %; }
 
+# 16/sep/2025
+alias rustbook='rustup doc --book'
+
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
 #
