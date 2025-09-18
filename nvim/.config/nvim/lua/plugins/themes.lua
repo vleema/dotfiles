@@ -17,5 +17,5 @@ return {
   { "HiPhish/rainbow-delimiters.nvim", lazy = false },
   -- { "sainnhe/sonokai" },
   -- { "luisiacc/gruvbox-baby" },
-  { "gamunu/vscode.nvim" },
+  -- { "gamunu/vscode.nvim" },
 }
