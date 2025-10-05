@@ -176,7 +176,11 @@ alias rustbook='rustup doc --book'
 
 # 05/out/2025
 alias s="systemctl --user start rclone-bisync.service"
+alias sl="journalctl --user -xeu rclone-bisync.service"
 alias st="systemctl --user status rclone-bisync.service"
+alias stt="systemctl --user status rclone-bisync.timer"
+
+alias systimers="systemctl list-timers"
 
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
