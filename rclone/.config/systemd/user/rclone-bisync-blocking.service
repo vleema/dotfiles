@@ -1,0 +1,12 @@
+[Unit]
+Description=Periodic Rclone Bisync
+Before=sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/rclone/rclone-bisync.sh false
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sleep.target suspend.target hibernate.target hybrid-sleep.target
+

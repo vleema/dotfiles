@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodic rclone bisync
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=30min
+Unit=rclone-bisync.service
+
+[Install]
+WantedBy=timers.target
