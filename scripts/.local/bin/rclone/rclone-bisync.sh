@@ -8,7 +8,7 @@ LOG_FILE="$BISYNC_WORKDIR"/rclone-bisync.log
 BLOCKING=${1:-false}
 EXCLUDE_DIRS='{.lake/**,target/**,.git/**}'
 
-mdkir -p "$BISYNC_WORKDIR"
+mkdir -p "$BISYNC_WORKDIR"
 
 notify() {
   notify-send -u "$2" "Rclone Sync" "$1"
@@ -24,14 +24,16 @@ if [ ! -d "$BISYNC_WORKDIR" ] || [ -z "$(ls -A "$BISYNC_WORKDIR")" ]; then
   log "First run detected, performing initial resync"
   notify "Performing intial sync setup..." "normal"
 
-  if rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
+  rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
     --resync \
     --workdir "$BISYNC_WORKDIR" \
     --verbose \
     --exclude "$EXCLUDE_DIRS" \
     --create-empty-src-dirs \
     --protondrive-replace-existing-draft=true \
-    2>&1 | tee -a "$LOG_FILE"; then
+    2>&1 | tee -a "$LOG_FILE"
+
+  if [ "${PIPESTATUS[0]}" -eq 0 ]; then
     log "Initial resync completed successfully"
     notify "Initial sync completed successfully" "normal"
     exit 0
@@ -42,7 +44,7 @@ if [ ! -d "$BISYNC_WORKDIR" ] || [ -z "$(ls -A "$BISYNC_WORKDIR")" ]; then
   fi
 fi
 
-if rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
+rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   --workdir "$BISYNC_WORKDIR" \
   --verbose \
   --force \
@@ -52,9 +54,10 @@ if rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   --recover \
   --conflict-suffix "sync-conflict-{DateOnly}" \
   --protondrive-replace-existing-draft=true \
-  2>&1 | tee -a "$LOG_FILE"; then
-  log "Bisync completed successfully"
+  2>&1 | tee -a "$LOG_FILE"
 
+if [ "${PIPESTATUS[0]}" -eq 0 ]; then
+  log "Bisync completed successfully"
   if tail -50 "$LOG_FILE" | grep -q "sync-conflict"; then
     notify "Sync completed with conflicts - check conflict files" "normal"
   else
