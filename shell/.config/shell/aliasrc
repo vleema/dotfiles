@@ -70,7 +70,8 @@ source "${XDG_CONFIG_HOME:-$HOME/.config}"/shell/shortcutrc
 # source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc
 # From Luke Smith video on fzf
 se() { du -a $HOME/.local/bin/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
-vf() { find . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
+vf() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
+vfh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
 
 # # Monitor center, May 13th, 2022
 # alias smc="system-monitoring-center"
@@ -156,10 +157,10 @@ alias open="/usr/bin/xdg-open"
 
 # 01/jan/2025
 fcd() {
-  cd "$(find -type d | fzf)"
+  cd "$(fd -t -d | fzf)" || return
 }
 fopen() {
-  xdg-open "$(find -type f | fzf)"
+  xdg-open "$(fd -t f | fzf)"
 }
 
 # 01/mai/2025
@@ -169,7 +170,7 @@ alias cvpn="cd ~/Public/OneDrive/Cave/Projects/caurn/vpn/vpn\ caurn\ 04/ && sudo
 alias dt="download-tt-lecs.sh"
 
 # 19/aug/2025
-zf() { find . | fzf | xargs -r -I % zathura %; }
+zf() { fd . | fzf | xargs -r -I % zathura %; }
 
 # 16/sep/2025
 alias rustbook='rustup doc --book'
@@ -179,8 +180,10 @@ alias s="systemctl --user start rclone-bisync.service"
 alias sl="journalctl --user -xeu rclone-bisync.service"
 alias st="systemctl --user status rclone-bisync.service"
 alias stt="systemctl --user status rclone-bisync.timer"
-
 alias systimers="systemctl list-timers"
+
+# 06/out/2025
+zfl() { fd -L . "$HOME"/Library | fzf | xargs -r -I % zathura %; }
 
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
