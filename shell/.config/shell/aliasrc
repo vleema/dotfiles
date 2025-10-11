@@ -185,6 +185,10 @@ alias systimers="systemctl list-timers"
 # 06/out/2025
 zfl() { fd -L . "$HOME"/Library | fzf | xargs -r -I % zathura %; }
 
+# 09/out/2025
+of() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
+ofh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
+
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
 #
