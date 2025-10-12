@@ -1,14 +1,12 @@
 #!/bin/bash
 
 REMOTE="proton:"
-LOCAL_PATH="$HOME"/ProtonDrive
-REMOTE_PATH="Sync"
+LOCAL_PATH="$HOME"/proton
+REMOTE_PATH=""
 BISYNC_WORKDIR="$HOME"/.local/state/rclone-bisync
 LOG_FILE="$BISYNC_WORKDIR"/rclone-bisync.log
 BLOCKING=${1:-false}
 EXCLUDE_DIRS='{.lake/**,target/**,.git/**}'
-
-mkdir -p "$BISYNC_WORKDIR"
 
 notify() {
   notify-send -u "$2" "Rclone Sync" "$1"
@@ -18,9 +16,11 @@ log() {
   echo "[$(date +'%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
 }
 
-log "Starting rclone bisync (blocking: $BLOCKING)"
-
 if [ ! -d "$BISYNC_WORKDIR" ] || [ -z "$(ls -A "$BISYNC_WORKDIR")" ]; then
+  mkdir -p "$BISYNC_WORKDIR"
+
+  log "Starting rclone bisync (blocking: $BLOCKING)"
+
   log "First run detected, performing initial resync"
   notify "Performing intial sync setup..." "normal"
 
@@ -36,13 +36,15 @@ if [ ! -d "$BISYNC_WORKDIR" ] || [ -z "$(ls -A "$BISYNC_WORKDIR")" ]; then
   if [ "${PIPESTATUS[0]}" -eq 0 ]; then
     log "Initial resync completed successfully"
     notify "Initial sync completed successfully" "normal"
-    exit 0
   else
     log "Initial resync failed"
     notify "Initial sync failed! Check logs at $LOG_FILE" "critical"
-    [ "$BLOCKING" = "true" ] && exit 1 || exit 0
+    [ "$BLOCKING" = "true" ] && exit 1
   fi
+  exit 0
 fi
+
+log "Starting rclone bisync (blocking: $BLOCKING)"
 
 rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   --workdir "$BISYNC_WORKDIR" \
@@ -57,6 +59,7 @@ rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   2>&1 | tee -a "$LOG_FILE"
 
 if [ "${PIPESTATUS[0]}" -eq 0 ]; then
+
   log "Bisync completed successfully"
   if tail -50 "$LOG_FILE" | grep -q "sync-conflict"; then
     notify "Sync completed with conflicts - check conflict files" "normal"
