@@ -21,6 +21,7 @@ export TERMINAL="kitty"
 export BROWSER="zen-browser"
 export VISUAL='nvim'
 export HOSTNAME=$(hostname)
+export PKG_MANAGER='paru'
 # ~/ Clean-up:
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
