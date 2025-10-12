@@ -59,7 +59,6 @@ alias \
   o="open" \
   p="pacman" \
   z="zathura" \
-  R=". ranger" \
   Y="yazi" \
   tree="tree -C" \
   t="tmux-sessionizer.sh" \
@@ -98,14 +97,8 @@ alias wget="wget -c"
 # #merge new settings
 alias merge="xrdb -merge ~/.Xresources"
 
-# Aliases for software managment
-# pacman or pm
-alias pacman='doas pacman --color auto'
-alias update='doas pacman -Syyu; doas grub-mkconfig -o /boot/grub/grub.cfg'
-alias update-full='pacman -Sy archlinux-keyring && pacman -Su'
-
 #ps
-alias psa="ps auxf"
+alias psa=""
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 #grub update
@@ -183,11 +176,16 @@ alias stt="systemctl --user status rclone-bisync.timer"
 alias systimers="systemctl list-timers"
 
 # 06/out/2025
-zfl() { fd -L . "$HOME"/Library | fzf | xargs -r -I % zathura %; }
+zfl() { fd -L . "$HOME"/library | fzf | xargs -r -I % zathura %; }
 
 # 09/out/2025
 of() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
 ofh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
+
+# 12/out/2025
+alias u='$PKG_MANAGER -Syu'
+alias uf='$PKG_MANAGER -Syyu'
+alias rmp='$PKG_MANAGER -Rns'
 
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
