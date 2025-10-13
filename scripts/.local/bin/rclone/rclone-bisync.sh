@@ -6,7 +6,7 @@ REMOTE_PATH=""
 BISYNC_WORKDIR="$HOME"/.local/state/rclone-bisync
 LOG_FILE="$BISYNC_WORKDIR"/rclone-bisync.log
 BLOCKING=${1:-false}
-EXCLUDE_DIRS='{.lake/**,target/**,.git/**}'
+EXCLUDE_DIRS='{.lake/**,target/**,.git/**,ssd-*/**}'
 
 notify() {
   notify-send -u "$2" "Rclone Sync" "$1"
@@ -59,7 +59,6 @@ rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   2>&1 | tee -a "$LOG_FILE"
 
 if [ "${PIPESTATUS[0]}" -eq 0 ]; then
-
   log "Bisync completed successfully"
   if tail -50 "$LOG_FILE" | grep -q "sync-conflict"; then
     notify "Sync completed with conflicts - check conflict files" "normal"
