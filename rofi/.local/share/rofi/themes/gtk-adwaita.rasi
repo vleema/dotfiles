@@ -4,11 +4,11 @@
 * {
     font:   "SF Pro Text 12";
 
-    bg0:     #282828;
-    bg1:     #504945;
-    fg0:     #D3C6AA;
+    bg0:     #1D1D20;
+    bg1:     #38383B;
+    fg0:     #D2D2D3;
 
-    accent-color:     #E2A74A;
+    accent-color:     #A4CAEE;
     urgent-color:     #ff6699;
 
     background-color:   transparent;

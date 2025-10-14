@@ -3,8 +3,7 @@
 * {
     min-height: 0;
     /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
-    /* font-family: "FiraCode Nerd Font"; */
-    font-family: "JetBrainsMono Nerd Font";
+    font-family: "JetBrains Mono";
     font-size: 12px;
     font-weight: 500;
     /* font-weight: bold; */
@@ -36,7 +35,7 @@ window#waybar.hidden {
     min-height: 0;
     /* margin: 4px 4px; */
     /* border-radius: 8px; */
-    background-color: @waybar_bkg;
+    background-color: @black0;
     color: @text_color;
 }
 

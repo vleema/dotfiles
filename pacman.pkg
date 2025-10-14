@@ -1,3 +1,6 @@
+adwaita-cursors
+adwaita-icon-theme
+adw-gtk-theme
 bat
 blueman
 bluez
@@ -35,7 +38,6 @@ noto-fonts
 noto-fonts-emoji
 nwg-displays
 nwg-look
-orchis-theme
 pacman-contrib
 pamixer
 parallel
