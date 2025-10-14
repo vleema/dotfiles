@@ -1,33 +1,3 @@
-# vim: filetype=sh
-alias A="cd ~/.cache && ls -a" \
-  B="cd ~/.local/bin && ls -a" \
-  C="cd ~/.config && ls -a" \
-  D="cd ~/Downloads && ls -a" \
-  H="cd ~ && ls -a" \
-  M="cd ~/Music && ls -a" \
-  P="cd ~/Pictures && ls -a" \
-  S="cd ~/.local/share && ls -a" \
-  s="cd ~/.local/src && ls -a" \
-  W="cd ~/Pictures/wallpapers && ls -a" \
-  d="cd ~/Documents && ls -a" \
-  m="cd /mnt && ls -a" \
-  V="cd ~/Videos && ls -a"
-
-alias cfa="$EDITOR ~/.config/shell/aliasrc" \
-  cfb="$EDITOR ~/.config/polybar/config.ini" \
-  cfd="$EDITOR ~/.config/dk/dkrc" \
-  cfi="$EDITOR ~/.config/picom/picom.conf" \
-  cfh="$EDITOR ~/.local/share/history" \
-  cfH="$EDITOR ~/.config/hypr/hyprland.conf" \
-  cfk="$EDITOR ~/.config/hypr/conf/keybindings.conf" \
-  cfn="$EDITOR ~/.config/nvim/lua/plugins/" \
-  cfp="$EDITOR ~/.config/shell/profile" \
-  cfr="$EDITOR ~/.config/ranger/rc.conf" \
-  cfs="$EDITOR ~/.config/shell/shortcutrc" \
-  cfX="$EDITOR ~/.config/sxhkd/dk_sxhkdrc" \
-  cfx="$EDITOR ~/.config/sxhkd/dwm_sxhkdrc" \
-  cfz="$EDITOR ~/.config/zsh/.zshrc"
-
 abbrev-alias ..='cd ..' \
   ...='cd ../..' \
   .3='cd ../../..' \
@@ -42,6 +12,7 @@ abbrev-alias gk='git switch' \
   gkm='git switch main' \
   gc='git commit' \
   gs='git status' \
+  gss='git stash' \
   ga='git add' \
   gps='git push' \
   gpl='git pull' \
@@ -63,3 +34,13 @@ abbrev-alias dc='docker' \
 # Tmux abbreviation
 abbrev-alias tl='tmux list-sessions' \
   ta='tmux attach-session -t'
+
+# Abreviations for rclone
+abbrev-alias s="systemctl --user start rclone-bisync.service"
+abbrev-alias sl="journalctl --user -xeu rclone-bisync.service"
+abbrev-alias st="systemctl --user status rclone-bisync.service"
+abbrev-alias stt="systemctl --user status rclone-bisync.timer"
+abbrev-alias systimers="systemctl list-timers"
+
+# Abbreviations for pacman
+abbrev-alias rmp="paru -Rns"

@@ -7,7 +7,7 @@
 
 # sudo not required for some system commands
 for command in mount umount pacman updatedb su shutdown poweroff reboot; do
-  alias $command="doas $command"
+  alias $command="sudo $command"
 done
 unset command
 
@@ -94,30 +94,26 @@ alias free="free -mt"
 #continue download
 alias wget="wget -c"
 
-# #merge new settings
-alias merge="xrdb -merge ~/.Xresources"
-
 #ps
-alias psa=""
 alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
 
 #grub update
-alias update-grub="doas grub-mkconfig -o /boot/grub/grub.cfg"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 #add new fonts
-alias update-fc="doas fc-cache -fv"
+alias update-fc="sudo fc-cache -fv"
 
 #get fastest mirrors in your neighborhood
-alias mirror="doas reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="doas reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="doas reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="doas reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
 #our experimental - best option for the moment
-alias mirrorx="doas reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias mirrorxx="doas reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
 
 #Cleanup orphaned packages
-alias cleanup='doas pacman -Rns $(pacman -Qtdq)'
+alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
 #search content with ripgrep
 alias rg="rg --sort path"
@@ -148,32 +144,11 @@ alias pkgaur="\pacman -Qqem > foreignpkglist_${today}.txt"
 
 alias open="/usr/bin/xdg-open"
 
-# 01/jan/2025
-fcd() {
-  cd "$(fd -t -d | fzf)" || return
-}
-fopen() {
-  xdg-open "$(fd -t f | fzf)"
-}
-
-# 01/mai/2025
-alias cvpn="cd ~/Public/OneDrive/Cave/Projects/caurn/vpn/vpn\ caurn\ 04/ && sudo openvpn --config pfw-UDP4-41194-imd.04.ovpn "
-
-# 20/mai/2025
-alias dt="download-tt-lecs.sh"
-
 # 19/aug/2025
 zf() { fd . | fzf | xargs -r -I % zathura %; }
 
 # 16/sep/2025
 alias rustbook='rustup doc --book'
-
-# 05/out/2025
-alias s="systemctl --user start rclone-bisync.service"
-alias sl="journalctl --user -xeu rclone-bisync.service"
-alias st="systemctl --user status rclone-bisync.service"
-alias stt="systemctl --user status rclone-bisync.timer"
-alias systimers="systemctl list-timers"
 
 # 06/out/2025
 zfl() { fd -L . "$HOME"/library | fzf | xargs -r -I % zathura %; }
@@ -185,7 +160,12 @@ ofh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' 
 # 12/out/2025
 alias u='$PKG_MANAGER -Syu'
 alias uf='$PKG_MANAGER -Syyu'
-alias rmp='$PKG_MANAGER -Rns'
+
+# 14/out/2025
+alias cleansync='rclone-bisync.sh false true'
+
+jf() { cd "$(fd -td | fzf --preview 'eza --tree --color=always {}')" || return; }
+jfh() { cd "$(fd -H -I -td | fzf --preview 'eza --tree --color=always {}')" || return; }
 
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
