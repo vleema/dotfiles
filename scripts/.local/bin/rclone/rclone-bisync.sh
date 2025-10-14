@@ -6,6 +6,7 @@ REMOTE_PATH=""
 BISYNC_WORKDIR="$HOME"/.local/state/rclone-bisync
 LOG_FILE="$BISYNC_WORKDIR"/rclone-bisync.log
 BLOCKING=${1:-false}
+CLEAN_SYNC_DIR=${2:-false}
 EXCLUDE_DIRS='{.lake/**,target/**,.git/**,ssd-*/**}'
 
 notify() {
@@ -15,6 +16,11 @@ notify() {
 log() {
   echo "[$(date +'%Y-%m-%d %H:%M:%S')] $1" | tee -a "$LOG_FILE"
 }
+
+if [ "$CLEAN_SYNC_DIR" = "true" ]; then
+  rm -rf "$BISYNC_WORKDIR"
+  exit 0
+fi
 
 if [ ! -d "$BISYNC_WORKDIR" ] || [ -z "$(ls -A "$BISYNC_WORKDIR")" ]; then
   mkdir -p "$BISYNC_WORKDIR"
