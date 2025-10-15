@@ -7,7 +7,7 @@ BISYNC_WORKDIR="$HOME"/.local/state/rclone-bisync
 LOG_FILE="$BISYNC_WORKDIR"/rclone-bisync.log
 BLOCKING=${1:-false}
 CLEAN_SYNC_DIR=${2:-false}
-EXCLUDE_DIRS='{.lake/**,target/**,.git/**,ssd-*/**}'
+EXCLUDE_DIRS='{.lake/**,target/**,.git/**,ssd-*/**,*venv/**,.ruff-cache/**}'
 
 notify() {
   notify-send -u "$2" "Rclone Sync" "$1"
