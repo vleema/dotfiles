@@ -44,3 +44,4 @@ abbrev-alias systimers="systemctl list-timers"
 
 # Abbreviations for pacman
 abbrev-alias rmp="paru -Rns"
+abbrev-alias ins="paru -S"
