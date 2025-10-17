@@ -33,6 +33,7 @@ if [ ! -d "$BISYNC_WORKDIR" ] || [ -z "$(ls -A "$BISYNC_WORKDIR")" ]; then
   rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
     --resync \
     --workdir "$BISYNC_WORKDIR" \
+    --links \
     --verbose \
     --exclude "$EXCLUDE_DIRS" \
     --create-empty-src-dirs \
@@ -54,6 +55,7 @@ log "Starting rclone bisync (blocking: $BLOCKING)"
 
 rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   --workdir "$BISYNC_WORKDIR" \
+  --links \
   --verbose \
   --force \
   --create-empty-src-dirs \
