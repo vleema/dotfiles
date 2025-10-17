@@ -167,6 +167,10 @@ alias cleansync='rclone-bisync.sh false true'
 jf() { cd "$(fd -td | fzf --preview 'eza --tree --color=always {}')" || return; }
 jfh() { cd "$(fd -H -I -td | fzf --preview 'eza --tree --color=always {}')" || return; }
 
+# 17/out/2025
+alias gsync='rclone bisync gdrive:/meso ~/gdrive/meso --verbose --copy-links --force --exclude "{.git/**,.venv/**,.ruff-cache/**}"'
+alias gresync='rclone bisync gdrive:/meso ~/gdrive/meso --verbose --copy-links --resync --force --exclude "{.git/**,.venv/**,.ruff-cache/**}"'
+
 # =======================================================================================
 # HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
 #
