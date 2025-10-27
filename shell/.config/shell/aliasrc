@@ -47,7 +47,6 @@ alias lt='eza -aT --color=always --group-directories-first --icons=auto' # tree 
 alias l.='eza -a | grep -E "^\."'
 alias lls='eza -al --color=always --group-directories-first --icons=auto --sort newest' # long format
 alias l='eza -hl --color=always --group-directories-first --icons=auto --sort newest'   # long format
-alias cat='bat'
 
 # These common commands are just too long! Abbreviate them.
 alias \
