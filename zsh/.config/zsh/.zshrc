@@ -222,8 +222,6 @@ bindkey '^e' edit-command-line
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# # Added Haskell support on July 22nd, 2022.
-# [ -f "/home/selan/.ghcup/env" ] && source "/home/selan/.ghcup/env" # ghcup-env
 
 # =================================================
 # Source fzf keybindings
@@ -346,6 +344,4 @@ fi
 
 # Zoxide plugin
 eval "$(zoxide init zsh --cmd j)"
-
-#===============[ THE END ]====================================
 

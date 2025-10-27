@@ -8,10 +8,6 @@ if [ -d "$HOME/.local/bin" ] || [ -h "$HOME/.local/bin" ] ;
     # then export PATH="$PATH:${$(find ~/.local/bin -type d -printf %p:)%%:}"
     then export PATH="$PATH:${$(find -H ~/.local/bin -not -path '*/.git/*' -type d -printf %p:)%%:}"
 fi
-# Added on May 31st 2024 to support tree-sit-cli installation with cargo.
-if [ -d "$HOME/.cargo/bin" ] || [ -h "$HOME/.cargo/bin" ] ;
-    then export PATH="$PATH:$HOME/.cargo/bin:$HOME/.cargo/env"
-fi
 
 unsetopt PROMPT_SP
 
@@ -80,13 +76,22 @@ export DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 export CXX="/usr/bin/clang++"
 export CC="/usr/bin/clang"
 
-# ZVM
-export ZVM_INSTALL="$HOME/.zvm/self"
-export PATH="$PATH:$HOME/.zvm/bin"
-export PATH="$PATH:$ZVM_INSTALL/"
-
 # Rust installations
-export PATH="$PATH":$HOME/.cargo/bin/
+if [ -d "$HOME/.cargo/bin" ] || [ -h "$HOME/.cargo/bin" ];then 
+    export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
+# ZVM (Zig Version Manager)
+if [ -d "$HOME/.zvm" ] || [ -h "$HOME/.zvm" ]; then
+  export ZVM_INSTALL="$HOME/.zvm/self"
+  export PATH="$PATH:$HOME/.zvm/bin"
+  export PATH="$PATH:$ZVM_INSTALL/"
+fi
 
 # Go installations
-export PATH="$PATH":$HOME/.local/share/go/bin
+if [ -d "$HOME/.local/share/go/bin" ] || [ -h "$HOME/.local/share/go/bin" ]; then
+    export PATH="$PATH:$HOME/.local/share/go/bin"
+fi
+
+# Haskell GHCup
+[ -f "/home/leema/.ghcup/env" ] && . "/home/leema/.ghcup/env" # ghcup-env
