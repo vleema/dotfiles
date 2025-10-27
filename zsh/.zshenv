@@ -94,4 +94,5 @@ if [ -d "$HOME/.local/share/go/bin" ] || [ -h "$HOME/.local/share/go/bin" ]; the
 fi
 
 # Haskell GHCup
-[ -f "/home/leema/.ghcup/env" ] && . "/home/leema/.ghcup/env" # ghcup-env
+[ -f "$HOME/.ghcup/env" ] && . "$HOME/.ghcup/env" # ghcup-env
+
