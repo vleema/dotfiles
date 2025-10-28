@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-projects="$HOME/git/personal/ $HOME/git/work/ $HOME/proton/cave/projects/ $HOME/proton/cave/projects/2025.2-ufrn/ $HOME/dotfiles/"
+projects="$HOME/git/personal/ $HOME/git/work/ $HOME/cave/projects/ $HOME/cave/projects/2025.2-ufrn/ $HOME/dotfiles/"
 selected=$(find $projects -maxdepth 1 -mindepth 1 -type d | fzf)
 
 if [[ -z "$selected" ]]; then
