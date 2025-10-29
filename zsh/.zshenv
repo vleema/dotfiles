@@ -52,8 +52,7 @@ export FZF_ALT_C_COMMAND="fd --type d --hidden --strip-cwd-prefix --exclude .git
 export FZF_ALT_C_OPTS="--preview 'eza --tree --color=always {} | head -200'"
 # export FZF_DEFAULT_OPTS="--layout=reverse --height 60% --preview 'bat --color=always {}'"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 60%"
-# export BAT_THEME=tokyonight_night
-export BAT_THEME=zenburn
+export BAT_THEME=base16
 ##==== [ These control pretty print in terminal ] ====
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
