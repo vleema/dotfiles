@@ -24,6 +24,8 @@ abbrev-alias gk='git switch' \
 # Abreviations for docker
 abbrev-alias dc='docker' \
   dce='docker compose' \
+  dcex='docker compose exec -it' \
+  dcx='docker exec -it' \
   dci='docker image' \
   dcc='docker container' \
   dcn='docker network' \
