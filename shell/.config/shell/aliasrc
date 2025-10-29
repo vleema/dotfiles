@@ -144,13 +144,13 @@ alias pkgaur="\pacman -Qqem > foreignpkglist_${today}.txt"
 alias open="/usr/bin/xdg-open"
 
 # 19/aug/2025
-zf() { fd . | fzf | xargs -r -I % zathura %; }
+zf() { fd . | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
 
 # 16/sep/2025
 alias rustbook='rustup doc --book'
 
 # 06/out/2025
-zfl() { fd -L . "$HOME"/library | fzf | xargs -r -I % zathura %; }
+zfl() { fd -L . "$HOME"/library | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
 
 # 09/out/2025
 of() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
