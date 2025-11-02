@@ -1,6 +1,6 @@
 #!/bin/bash
-#vim:foldmethod=marker
-#vim:foldmarker=#{{{,#}}}
+# vim:foldmethod=marker
+# vim:foldmarker=#{{{,#}}}
 
 #{{{ search and navigation
 alias fe="$FILE_EXPLORER ."
