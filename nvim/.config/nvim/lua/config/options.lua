@@ -15,19 +15,13 @@ vim.g.vimtex_compiler_latexmk = {
   out_dir = "output",
 }
 
+vim.opt.foldlevelstart = 0
+
 -- vim.cmd([[
 --   augroup CustomColors
 --     autocmd!
---     autocmd ColorScheme * highlight Normal guibg=#1A1A1A
+--     autocmd ColorScheme * highlight Normal guibg=#1B1B1B
 --   augroup END
 -- ]])
 --
 -- Fold
-
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
--- vim.opt.foldcolumn = "0"
--- vim.opt.foldtext = ""
--- vim.opt.foldlevel = 99
--- vim.opt.foldlevelstart = 1
--- vim.opt.foldnestmax = 4
