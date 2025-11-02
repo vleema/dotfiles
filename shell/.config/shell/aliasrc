@@ -13,21 +13,12 @@ unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
-  cp="cp -v" \
-  mv="mv -v" \
-  rm="rm -v" \
   bc="bc -ql" \
-  mkd="mkdir -pv" \
+  mkd="mkdir -p" \
   yt="yt-dlp --embed-metadata -i" \
   yta="yt -x -f bestaudio/best" \
   ffmpeg="ffmpeg -hide_banner" \
   c="clear"
-
-# added on Jan 28th, 2024
-alias processes="ps xf"
-
-# added on Feb 1st, 2024
-alias neofetch="fastfetch"
 
 # added on March 31st, 2025
 alias psrg="ps x | rg $1"
@@ -35,18 +26,18 @@ alias psrg="ps x | rg $1"
 # Colorize commands when possible.
 # ls="eza -hN --color=auto --group-directories-first" \
 alias \
-  ls="eza -h --color=always --group-directories-first --icons" \
+  ls="eza --color=always --group-directories-first --icons" \
   grep="grep --color=auto" \
   diff="diff --color=auto" \
   ccat="highlight --out-format=ansi" \
   ip="ip -color=auto"
-alias la='eza -a --color=always --group-directories-first --icons=auto'  # all files and dirs
-alias ll='eza -al --color=always --group-directories-first --icons=auto' # long format
-alias lt='eza -aT --color=always --group-directories-first --icons=auto' # tree listing
-# alias ld='eza -alD --color=always --icons=auto --sort newest'            # listing only folders, sorted
-alias l.='eza -a | grep -E "^\."'
-alias lls='eza -al --color=always --group-directories-first --icons=auto --sort newest' # long format
-alias l='eza -hl --color=always --group-directories-first --icons=auto --sort newest'   # long format
+alias l='ls'                                                              # normal
+alias la='ls -a'                                                          # normal + hidden
+alias l.='ls -a | rg -E "^\."'                                            # only hidden files
+alias ll='ls -l'                                                          # long format
+alias lt='eza -T --color=always --group-directories-first --icons=auto'   # tree listing
+alias lla='ls -la'                                                        # long format + hidden
+alias lta='eza -Ta --color=always --group-directories-first --icons=auto' # tree listing + hidden
 
 # These common commands are just too long! Abbreviate them.
 alias \
@@ -58,14 +49,13 @@ alias \
   o="open" \
   p="pacman" \
   z="zathura" \
-  Y="yazi" \
   tree="tree -C" \
   t="tmux-sessionizer.sh" \
   lg="lazygit"
 
 # May 22th, 2022
 source "${XDG_CONFIG_HOME:-$HOME/.config}"/shell/shortcutrc
-# source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc
+
 # From Luke Smith video on fzf
 se() { du -a $HOME/.local/bin/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
 vf() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }

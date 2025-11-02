@@ -4,9 +4,6 @@ abbrev-alias ..='cd ..' \
   .4='cd ../../../..' \
   .5='cd ../../../../..'
 
-# Always mkdir a path
-abbrev-alias mkdir='mkdir -p'
-
 # Abreviations for git
 abbrev-alias gk='git switch' \
   gkm='git switch main' \
