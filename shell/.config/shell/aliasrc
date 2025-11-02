@@ -1,203 +1,170 @@
 #!/bin/bash
+#vim:foldmethod=marker
+#vim:foldmarker=#{{{,#}}}
 
-[ -x "$(command -v nvim)" ] && alias vimdiff="nvim -d"
+#{{{ search and navigation
+alias fe="$FILE_EXPLORER ."
+alias mkd="mkdir -p"
+alias grep="grep --color=auto"
+alias rg="rg --sort path"
+alias c="clear"
+alias \
+  ls="eza --color=always --group-directories-first --icons" \
+  l='ls' \
+  la='ls -a' \
+  l.='ls -a | rg -E "^\."' \
+  ll='ls -l' \
+  lt='eza -T --color=always --group-directories-first --icons=auto' \
+  lla='ls -la' \
+  lta='eza -Ta --color=always --group-directories-first --icons=auto'
+alias tree="tree -C"
+# jump fzf
+jf() { cd "$(fd -td | fzf --preview 'eza --tree --color=always {}')" || return; }
+jfh() { cd "$(fd -H -I -td | fzf --preview 'eza --tree --color=always {}')" || return; }
+#}}}
 
-# Use $XINITRC variable if file exists.
-[ -f "$XINITRC" ] && alias startx="startx $XINITRC"
+#{{{ files
+# general
+alias \
+  diff="diff --color=auto" \
+  ccat="highlight --out-format=ansi"
+# editor
+alias \
+  e="$EDITOR" \
+  v="$EDITOR" \
+  o="xdg-open" \
+  z="zathura"
+# file fzf
+vf() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
+vfh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
+# zathura fzf
+zf() { fd . | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
+# library fzf
+zfl() { fd -L . "$HOME"/library | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
+# xdg-open fzf
+of() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
+ofh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
+#}}}
 
-# sudo not required for some system commands
+#{{{ processes
+alias prg="ps x | rg $1"
+alias ka="killall"
+#}}}
+
+#{{{ projects
+# tmux
+alias \
+  t="tmux-sessionizer.sh" \
+  tl='tmux list-sessions' \
+  ta='tmux attach-session -t'
+
+# git
+alias lg="lazygit"
+#}}}
+
+#{{{ systemd
+# systemctl
+alias \
+  sysd="systemctl" \
+  sysd_failed="systemctl list-units --failed" \
+  sysd_status="systemctl list-unit-files --type=service" \
+  sysd_user_services="systemctl --user list-units --type=service" \
+  sysd_generate_serv_list="systemctl list-units --state=running | grep -v systemd | awk '{print $1}' | grep service > daemon_list_${today}.txt" \
+  systimers="systemctl list-timers"
+
+# journalctl
+alias jctl="journalctl -p 3 -xb"
+#}}}
+
+#{{{ cloud sync
+## rclone proton sync
+alias \
+  syn="systemctl --user start rclone-bisync.service" \
+  synj="journalctl --user -xeu rclone-bisync.service" \
+  synst="systemctl --user status rclone-bisync.service" \
+  syntt="systemctl --user status rclone-bisync.timer" \
+  cleansync='rclone-bisync.sh false true'
+#}}}
+
+#{{{ packages
+# pkg manager (paru, yay or pacman)
+alias p="$PKG_MANAGER"
+# update
+alias \
+  u='p -Syu' \
+  uf='p -Syyu'
+# add/remove
+alias \
+  add="p -S" \
+  rmp="p -Rns"
+
+# clean orphaned packages
+alias cleanup='p -Rns $(pacman -Qtdq)'
+
+today=$(date +"%Y-%m-%d")
+alias pkglist_1="p -Qqe > pkglist_explicitly_installed_${today}.txt"                                            # explicitly installed packages.
+alias pkglist_2="p -Qq | awk '{print $1}' > pkglist_all_${today}.txt"                                           # list all packages.
+alias pkglist_3="p -Qqet | awk '{print $1}' > pkglist_explicitly_installed_not_required_by_others_${today}.txt" # explicitly installed packages that are not required by any other package.
+alias pkglist_versions="p -Qe > pkglist_versions_${today}.txt"                                                  # list explicitly installed packages w/ version number.
+alias pkgaur="p -Qqem > foreignpkglist_${today}.txt"                                                            # list packages that were not found in the sync database (AUR).
+#}}}
+
+#{{{ mirrors
+alias \
+  mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist" \
+  mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist" \
+  mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist" \
+  mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist" \
+  mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist" \
+  mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
+#}}}
+
+#{{{ sysadmin
+alias df='df -h'                            # human-readable sizes
+alias disk_usage='du -csh -- */ | sort -rh' # List the folders o
+alias sysinfo='inxi -Fxz'                   # Shows overall system information
+alias hw="hwinfo --short"                   # hardware info --short
+alias free="free -mt"
+alias ip="ip -color=auto"
+alias probe="doas -E hw-probe -all -upload"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+# edit scrips in ~/.local/bin
+se() { du -a $HOME/.local/bin/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
+#}}}
+
+#{{{ misc
+alias \
+  bc="bc -ql" \
+  yt="yt-dlp --embed-metadata -i" \
+  yta="yt -x -f bestaudio/best" \
+  ffmpeg="ffmpeg -hide_banner" \
+  update-fc="sudo fc-cache -fv" \
+  wget="wget -c"
+#}}}
+
+#{{{ docker
+alias dc='docker' \
+  dce='docker compose' \
+  dcex='docker compose exec -it' \
+  dcx='docker exec -it' \
+  dci='docker image' \
+  dcc='docker container' \
+  dcn='docker network' \
+  dcv='docker volume' \
+  dcps='docker compose ps'
+#}}}
+
+#{{{ rust
+alias rustbook='rustup doc --book'
+alias rp='rustup'
+alias rman='rustup man'
+#}}}
+
+#{{{ automatic sudo
 for command in mount umount pacman updatedb su shutdown poweroff reboot; do
   alias $command="sudo $command"
 done
 unset command
+#}}}
 
-# Verbosity and settings that you pretty much just always are going to want.
-alias \
-  bc="bc -ql" \
-  mkd="mkdir -p" \
-  yt="yt-dlp --embed-metadata -i" \
-  yta="yt -x -f bestaudio/best" \
-  ffmpeg="ffmpeg -hide_banner" \
-  c="clear"
-
-# added on March 31st, 2025
-alias psrg="ps x | rg $1"
-
-# Colorize commands when possible.
-# ls="eza -hN --color=auto --group-directories-first" \
-alias \
-  ls="eza --color=always --group-directories-first --icons" \
-  grep="grep --color=auto" \
-  diff="diff --color=auto" \
-  ccat="highlight --out-format=ansi" \
-  ip="ip -color=auto"
-alias l='ls'                                                              # normal
-alias la='ls -a'                                                          # normal + hidden
-alias l.='ls -a | rg -E "^\."'                                            # only hidden files
-alias ll='ls -l'                                                          # long format
-alias lt='eza -T --color=always --group-directories-first --icons=auto'   # tree listing
-alias lla='ls -la'                                                        # long format + hidden
-alias lta='eza -Ta --color=always --group-directories-first --icons=auto' # tree listing + hidden
-
-# These common commands are just too long! Abbreviate them.
-alias \
-  ka="killall" \
-  g="git" \
-  sdn="shutdown -h now" \
-  e="$EDITOR" \
-  v="$EDITOR" \
-  o="open" \
-  p="pacman" \
-  z="zathura" \
-  tree="tree -C" \
-  t="tmux-sessionizer.sh" \
-  lg="lazygit"
-
-# May 22th, 2022
 source "${XDG_CONFIG_HOME:-$HOME/.config}"/shell/shortcutrc
-
-# From Luke Smith video on fzf
-se() { du -a $HOME/.local/bin/* | awk '{print $2}' | fzf | xargs -r $EDITOR; }
-vf() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
-vfh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
-
-# # Monitor center, May 13th, 2022
-# alias smc="system-monitoring-center"
-
-# adding flags
-alias df='df -h' # human-readable sizes
-# List the folders of the current directory sorted their size in Gbytes.
-alias disk_usage='du -csh -- */ | sort -rh' # List the folders o
-
-# Shows overall system information
-alias sysinfo='inxi -Fxz'
-#hardware info --short
-alias hw="hwinfo --short"
-
-#pacman unlock
-alias unlock="doas rm /var/lib/pacman/db.lck"
-
-#free
-alias free="free -mt"
-
-#continue download
-alias wget="wget -c"
-
-#ps
-alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
-
-#grub update
-alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
-#add new fonts
-alias update-fc="sudo fc-cache -fv"
-
-#get fastest mirrors in your neighborhood
-alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
-alias mirrord="sudo reflector --latest 30 --number 10 --sort delay --save /etc/pacman.d/mirrorlist"
-alias mirrors="sudo reflector --latest 30 --number 10 --sort score --save /etc/pacman.d/mirrorlist"
-alias mirrora="sudo reflector --latest 30 --number 10 --sort age --save /etc/pacman.d/mirrorlist"
-#our experimental - best option for the moment
-alias mirrorx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 5 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --sort rate --protocol https --save /etc/pacman.d/mirrorlist"
-
-#Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
-
-#search content with ripgrep
-alias rg="rg --sort path"
-
-#get the error messages from journalctl
-alias jctl="journalctl -p 3 -xb"
-
-#systeminfo
-alias probe="doas -E hw-probe -all -upload"
-alias sysd_failed="systemctl list-units --failed"
-alias sysd_status="systemctl list-unit-files --type=service"
-# 03/dez/2024
-alias sysd_user_services="systemctl --user list-units --type=service"
-# List running services to file..
-alias sysd_generate_serv_list="systemctl list-units --state=running | grep -v systemd | awk '{print $1}' | grep service > daemon_list_${today}.txt"
-
-today=$(date +"%Y-%m-%d")
-# List all packages.
-alias pkglist_2="\pacman -Qq | awk '{print $1}' > pkglist_all_${today}.txt" # All packages.
-# List explicitly installed packages that are not required by any other package.
-alias pkglist_3="\pacman -Qqet | awk '{print $1}' > pkglist_explicitly_installed_not_required_by_others_${today}.txt" # Explicitly installed packages that are not required by any other package.
-# List explicitly installed packages.
-alias pkglist_1="\pacman -Qqe > pkglist_explicitly_installed_${today}.txt" # Explicitly installed packages.
-# List explicitly installed packages w/ version number.
-alias pkglist_versions="\pacman -Qe > pkglist_versions_${today}.txt"
-# List packages that were not found in the sync database (AUR).
-alias pkgaur="\pacman -Qqem > foreignpkglist_${today}.txt"
-
-alias open="/usr/bin/xdg-open"
-
-# 19/aug/2025
-zf() { fd . | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
-
-# 16/sep/2025
-alias rustbook='rustup doc --book'
-
-# 06/out/2025
-zfl() { fd -L . "$HOME"/library | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
-
-# 09/out/2025
-of() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
-ofh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
-
-# 12/out/2025
-alias u='$PKG_MANAGER -Syu'
-alias uf='$PKG_MANAGER -Syyu'
-
-# 14/out/2025
-alias cleansync='rclone-bisync.sh false true'
-
-jf() { cd "$(fd -td | fzf --preview 'eza --tree --color=always {}')" || return; }
-jfh() { cd "$(fd -H -I -td | fzf --preview 'eza --tree --color=always {}')" || return; }
-
-# =======================================================================================
-# HOW TO LIST THE LARGEST FILES IN A SYSTEM (source: https://www.howtouselinux.com/post/find-largest-files-and-directories-in-linux)
-#
-# The following commands can be used to find the largest files.
-#
-#     find /path/to/directory -type f -exec du -hs {} \;| sort -rh | head -n 1
-#     du -sh * | sort -rh | head -1
-#     ls -lSh /bin | head -1
-#     find ./ -type f -exec du -sh {} \; |sort -h|tail -1
-#     du -ah /home | sort -h -r | head -n 1
-#     find $directory -type f -exec ls -s {} \; | sort -n | tail -n 1
-# =======================================================================================
-
-# =======================================================================================
-# HOW TO CONVERT A FILE FROM ONE CHARACTER ENCODING TO ANOTHER.
-# iconv -t ISO-8859-1 -f UTF-8//TRANSLIT filter.tex -o converted.tex
-# -f --from-enconding		Input encoding
-# -t --to-encoding			Output enconding
-# -o --output 					Defines the output file.
-# =======================================================================================
-
-# =======================================================================================
-# WHAT DOES " 2>&1 " MEAN?
-#
-# To combine stderr and stdout into the stdout stream, we append this to a command:
-#
-# 2>&1
-#
-# e.g. to see the first few errors from compiling g++ main.cpp:
-#
-# g++ main.cpp 2>&1 | head
-#
-#
-# File descriptor 1 is the standard output (stdout).
-# File descriptor 2 is the standard error (stderr).
-#
-# At first, 2>1 may look like a good way to redirect stderr to stdout. However, it will actually be interpreted as "redirect stderr to a file named 1".
-#
-# & indicates that what follows and precedes is a file descriptor, and not a filename. Thus, we use 2>&1. Consider >& to be a redirect merger operator.
-# =======================================================================================
-
-# =======================================================================================
-# TO get key pressed codes:
-# xkbcli
-# =======================================================================================
