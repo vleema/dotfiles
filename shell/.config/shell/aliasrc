@@ -141,20 +141,28 @@ alias \
 
 #{{{ docker
 alias dc='docker' \
-  dce='docker compose' \
-  dcex='docker compose exec -it' \
-  dcx='docker exec -it' \
-  dci='docker image' \
-  dcc='docker container' \
-  dcn='docker network' \
-  dcv='docker volume' \
-  dcps='docker compose ps'
+  dcp='dc compose' \
+  dcps='dc compose ps' \
+  dcpx='dc compose exec' \
+  dcpxi='dc compose exec -it' \
+  dcps='dc ps' \
+  dcc='dc container' \
+  dci='dc image' \
+  dcn='dc network' \
+  dcv='dc volume' \
+  dcx='dc exec' \
+  dcxi='dc exec -it'
 #}}}
 
 #{{{ rust
-alias rustbook='rustup doc --book'
-alias rp='rustup'
-alias rman='rustup man'
+alias \
+  rp='rustup' \
+  rman='rp man' \
+  rbook='rp doc --book' \
+  rcargo='rp doc --cargo' \
+  rstd='rp doc --cargo' \
+  rref='rp doc --reference' \
+  rexample='rp doc --rust-by-example'
 #}}}
 
 #{{{ automatic sudo
