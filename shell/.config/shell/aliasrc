@@ -8,6 +8,7 @@ alias mkd="mkdir -p"
 # search
 alias grep="grep --color=auto"
 alias rg="rg --sort path"
+alias galias='alias | rg '
 alias c="clear"
 # listings
 alias \
@@ -92,6 +93,7 @@ alias p="$PKG_MANAGER"
 # update
 alias \
   u='p -Syu' \
+  unc='u --noconfirm' \
   uf='p -Syyu'
 # add/remove
 alias \
@@ -136,7 +138,8 @@ alias \
   yta="yt -x -f bestaudio/best" \
   ffmpeg="ffmpeg -hide_banner" \
   update-fc="sudo fc-cache -fv" \
-  wget="wget -c"
+  wget="wget -c" \
+  hypr="Hyprland"
 #}}}
 
 #{{{ docker
