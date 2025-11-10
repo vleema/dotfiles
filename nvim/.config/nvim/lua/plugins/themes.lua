@@ -2,10 +2,10 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox-material",
+      colorscheme = "vague",
     },
   },
-  -- { "vague2k/vague.nvim" },
+  { "vague-theme/vague.nvim" },
   -- { "loctvl842/monokai-pro.nvim" },
   { "sainnhe/gruvbox-material" },
   -- { "NeViRAIDE/chameleon.nvim" },
