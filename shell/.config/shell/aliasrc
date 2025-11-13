@@ -15,7 +15,7 @@ alias \
   ls="eza --color=auto --group-directories-first --icons=auto" \
   l='ls' \
   la='ls -a' \
-  l.='ls -a | rg -E "^\."' \
+  l.='ls -a | rg "^\."' \
   ll='ls -l' \
   lt='ls -T' \
   lla='ls -la' \
