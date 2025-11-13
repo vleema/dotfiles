@@ -78,7 +78,6 @@ zinit wait lucid for \
    zsh-users/zsh-completions \
    Aloxaf/fzf-tab \
 
-
 # Add in snippets
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
@@ -92,6 +91,10 @@ zinit snippet OMZP::docker-compose
 
 # Load completions
 autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots) # Include hidden files.
 
 zinit cdreplay -q
 
