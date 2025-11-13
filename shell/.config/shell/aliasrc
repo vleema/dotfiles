@@ -8,18 +8,18 @@ alias mkd="mkdir -p"
 # search
 alias grep="grep --color=auto"
 alias rg="rg --sort path"
-alias galias='alias | rg '
+alias gals='alias | rg '
 alias c="clear"
 # listings
 alias \
-  ls="eza --color=always --group-directories-first --icons" \
+  ls="eza --color=auto --group-directories-first --icons=auto" \
   l='ls' \
   la='ls -a' \
   l.='ls -a | rg -E "^\."' \
   ll='ls -l' \
-  lt='eza -T --color=always --group-directories-first --icons=auto' \
+  lt='ls -T' \
   lla='ls -la' \
-  lta='eza -Ta --color=always --group-directories-first --icons=auto'
+  lta='ls -Ta'
 alias tree="tree -C"
 # jump fzf
 jf() { cd "$(fd -td | fzf --preview 'eza --tree --color=always {}')" || return; }
@@ -38,8 +38,8 @@ alias \
   o="xdg-open" \
   z="zathura"
 # file fzf
-vf() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
-vfh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
+ff() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
+fh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
 # zathura fzf
 zf() { fd . | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
 # library fzf
@@ -142,30 +142,15 @@ alias \
   hypr="Hyprland"
 #}}}
 
-#{{{ docker
-alias dc='docker' \
-  dcp='dc compose' \
-  dcps='dc compose ps' \
-  dcpx='dc compose exec' \
-  dcpxi='dc compose exec -it' \
-  dcps='dc ps' \
-  dcc='dc container' \
-  dci='dc image' \
-  dcn='dc network' \
-  dcv='dc volume' \
-  dcx='dc exec' \
-  dcxi='dc exec -it'
-#}}}
-
 #{{{ rust
 alias \
   rp='rustup' \
-  rman='rp man' \
-  rbook='rp doc --book' \
-  rcargo='rp doc --cargo' \
-  rstd='rp doc --cargo' \
-  rref='rp doc --reference' \
-  rexample='rp doc --rust-by-example'
+  rman='rustup man' \
+  rbook='rustup doc --book' \
+  rcargo='rustup doc --cargo' \
+  rstd='rustup doc --cargo' \
+  rref='rustup doc --reference' \
+  rexample='rustup doc --rust-by-example'
 #}}}
 
 #{{{ automatic sudo
@@ -174,5 +159,3 @@ for command in mount umount pacman updatedb su shutdown poweroff reboot; do
 done
 unset command
 #}}}
-
-source "${XDG_CONFIG_HOME:-$HOME/.config}"/shell/shortcutrc
