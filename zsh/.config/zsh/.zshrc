@@ -134,6 +134,7 @@ bindkey '^e' edit-command-line
 # Selan, on June 21st, 2023
 # -------------------------------------------------
 source <(fzf --zsh)
+zstyle ':fzf-tab:complete:(j|cd):*' fzf-preview 'exa --color=always $realpath'
 
 # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
 # - The first argument to the function ($1) is the base path to start traversal
