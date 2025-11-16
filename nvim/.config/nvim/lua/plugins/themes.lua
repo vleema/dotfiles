@@ -2,10 +2,10 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "vague",
+      colorscheme = "gruvbox-material",
     },
   },
-  { "vague-theme/vague.nvim" },
+  -- { "vague-theme/vague.nvim" },
   -- { "loctvl842/monokai-pro.nvim" },
   { "sainnhe/gruvbox-material" },
   -- { "NeViRAIDE/chameleon.nvim" },
@@ -17,5 +17,5 @@ return {
   { "HiPhish/rainbow-delimiters.nvim", lazy = false },
   -- { "sainnhe/sonokai" },
   -- { "luisiacc/gruvbox-baby" },
-  -- { "gamunu/vscode.nvim" },
+  { "gamunu/vscode.nvim" },
 }

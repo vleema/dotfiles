@@ -15,4 +15,10 @@
 
 //@theme "/home/leema/.local/share/rofi/themes/squared-everforest.rasi"
 
-@theme "/home/leema/.local/share/rofi/themes/gtk-adwaita.rasi"
+//@theme "/home/leema/.local/share/rofi/themes/gtk-adwaita.rasi"
+
+//@theme "/home/leema/.local/share/rofi/themes/vague.rasi"
+
+//@theme "/home/leema/.local/share/rofi/themes/squared-everforest.rasi"
+
+@theme "/home/leema/.local/share/rofi/themes/gruvbox-material.rasi"
