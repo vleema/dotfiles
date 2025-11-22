@@ -5,6 +5,13 @@
 vim.keymap.set("n", "<S-m>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
 vim.keymap.set("n", "<S-i>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 
+-- For my colemak keyboard
+vim.keymap.set("n", "<C-Left>", "<C-w>h", { desc = "Go to Left Window" })
+vim.keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Go to Right Window" })
+vim.keymap.set("n", "<C-Up>", "<C-w>j", { desc = "Go to Down Window" })
+vim.keymap.set("n", "<C-\\>", "<C-w>v", { desc = "Split Window Right" })
+vim.keymap.set("n", "<C-q>", "<C-w>q", { desc = "Close Window" })
+
 -- Function to find project root using LSP, with fallback methods
 local function find_project_root()
   -- First try to get root from active LSP clients
