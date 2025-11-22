@@ -2,9 +2,10 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox-material",
+      colorscheme = "gruber-darker",
     },
   },
+  { "blazkowolf/gruber-darker.nvim" },
   -- { "vague-theme/vague.nvim" },
   -- { "loctvl842/monokai-pro.nvim" },
   { "sainnhe/gruvbox-material" },
@@ -14,7 +15,7 @@ return {
   -- { "yorickpeterse/vim-paper" },
   -- { "rose-pine/neovim" },
   -- { "rebelot/kanagawa.nvim" },
-  { "HiPhish/rainbow-delimiters.nvim", lazy = false },
+  -- { "HiPhish/rainbow-delimiters.nvim", lazy = false },
   -- { "sainnhe/sonokai" },
   -- { "luisiacc/gruvbox-baby" },
   { "gamunu/vscode.nvim" },
