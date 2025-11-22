@@ -169,3 +169,21 @@ for command in mount umount pacman updatedb su shutdown poweroff reboot; do
 done
 unset command
 #}}}
+
+#{{{ number conversion
+d2b() {
+  echo "obase=2; $1" | bc
+}
+d2x() {
+  echo "obase=16; $1" | bc
+}
+x2d() {
+  echo $((16#$1))
+}
+b2d() {
+  echo $((2#$1))
+}
+x2b() {
+  echo "obase=2; $(x2d $1)" | bc
+}
+#}}}
