@@ -1,41 +1,24 @@
-@define-color orange #d65d0e;
-@define-color on_color #b8bb26;
+@define-color on_color #73D936;
 @define-color off_color #df4949;
-@define-color disabled_color #928374;
-@define-color urgent_color #ff6699;
-@define-color icon_color #E2A74A;
-@define-color wsp_occupied #fbf1c7;
-/*@define-color wsp_occupied #928374;*/
-@define-color wsp_empty #928374;
-/* @define-color wsp_active #b8bb26; */
-@define-color wsp_active #fbf1c7;
-@define-color wsp_urgent #ff6699;
-@define-color text_color #fbf1c7;
+@define-color urgent_color #C73C3F;
+@define-color icon_color #FFDD33;
+@define-color wsp_active #FFFFFF;
+
+@define-color text_color #FFFFFF;
 @define-color bluetooth_connected #0082FC;
 @define-color bluetooth_disabled #665c54;
 @define-color bluetooth_on #458588;
-@define-color tooltip_bkg #1d2021;
-@define-color tooltip_border #d4be98;
-@define-color waybar_bkg #151818;
-@define-color battery_normal #fbf1c7;
-@define-color battery_warning #d3869b;
-@define-color battery_critical #df4949;
-@define-color battery_charging #b8bb26;
-@define-color battery_full #b8bb26;
+@define-color tooltip_bkg #181818;
+@define-color waybar_bkg #181818;
+@define-color battery_normal #FFFFFF;
+@define-color battery_warning #FFDD33;
+@define-color battery_critical @urgent_color;
+@define-color battery_charging #73D936;
+@define-color battery_full #9E95C7;
 
 
-@define-color subtext1 #bac2de;
-@define-color subtext0 #a6adc8;
-@define-color overlay2 #9399b2;
-@define-color overlay1 #7f849c;
-@define-color overlay0 #6c7086;
-@define-color surface2 #585b70;
-@define-color surface1 #45475a;
-/* @define-color surface0 #313244; */
-@define-color surface3 #1f1f28;
-@define-color surface0 rgba(49, 50, 68, 0.30);
-@define-color black0 #161616;
-@define-color black1 #010202;
+@define-color black0 #101010;
+@define-color black1 #453D41;
 @define-color cream #dcd7ba;
 @define-color icon0 #c7522a;
 @define-color icon1 #e5c185;
@@ -43,14 +26,14 @@
 @define-color icon3 #74a892;
 @define-color icon4 #008585;
 @define-color icon5 #be7973;
-@define-color icon6 #98bb6c;
+@define-color icon6 #96A6C8;
 @define-color icon7 #ffead3;
 @define-color icon8 #ecc6d9;
-@define-color icon9 #99ffdd;
+@define-color icon9 #73D936;
 @define-color icon10 #ffcc66;
 @define-color icon11 #ff6699;
 
-@define-color bkg1 #504945;
-@define-color bkg2 #282828;
+@define-color bkg1 #101010;
+@define-color bkg2 #453D41;
 
 @define-color sep #CAB693;

@@ -3,8 +3,9 @@
 * {
     min-height: 0;
     /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
-    font-size: 12px;
-    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    /* font-family: "JetBrainsMono Nerd Font"; */
+    font-family: "Iosevka Nerd Font";
     font-weight: 500;
     /* font-weight: bold; */
 }
@@ -121,20 +122,14 @@ window#waybar.empty #window {
 }
 
 #cpu {
-    color: @icon10;
+    color: @icon_color;
     margin-left: 0;
     margin-right: 0;
 }
 
 #network {
-    color: @text_color;
+    color: @icon6;
     margin-left: 1;
-    margin-right: 0;
-}
-
-#custom-gpu {
-    color: #94e2d5;
-    margin-left: 0;
     margin-right: 0;
 }
 
