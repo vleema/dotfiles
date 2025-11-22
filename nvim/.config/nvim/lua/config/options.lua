@@ -14,8 +14,10 @@ vim.opt.spelllang = { "pt_br", "en_us" }
 vim.g.vimtex_compiler_latexmk = {
   out_dir = "output",
 }
+vim.g.vimtex_quickfix_mode = 0
+vim.g.vimtex_quickfix_open_on_warning = 0
 
-vim.opt.foldlevelstart = 0
+vim.opt.foldlevel = 99
 
 -- vim.cmd([[
 --   augroup CustomColors
