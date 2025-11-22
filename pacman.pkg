@@ -14,7 +14,6 @@ eza
 fastfetch
 fcitx5
 fd
-ffmpegthumbs
 firefox
 fzf
 grim
@@ -27,10 +26,7 @@ hyprshot
 hyprsunset
 imagemagick
 jq
-kde-cli-tools
 kitty
-kvantum
-kvantum-qt5
 libnotify
 neovim
 networkmanager
@@ -39,8 +35,6 @@ noto-fonts-emoji
 nwg-displays
 nwg-look
 pacman-contrib
-pamixer
-parallel
 pavucontrol
 pipewire
 pipewire-alsa
@@ -62,7 +56,6 @@ satty
 sddm
 slurp
 stow
-swappy
 thunar
 ttf-jetbrains-mono
 udiskie
@@ -76,4 +69,5 @@ xdg-user-dirs
 yazi
 zathura
 zathura-pdf-poppler
+zellij
 zip
