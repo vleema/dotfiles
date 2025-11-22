@@ -13,9 +13,11 @@
   "position": "top",
   // If height property would be not present, it'd be calculated dynamically
   "height": 10,
+  "spacing": 4,
   "modules-left": [
     "hyprland/workspaces",
-    "hyprland/mode"
+    "hyprland/mode",
+    "hyprland/submap"
   ],
   "modules-center": [
     "hyprland/window"
@@ -26,9 +28,14 @@
     "cpu",
     "temperature",
     "battery",
+    "tray",
     "clock#date",
     "clock#time"
   ],
+  "hyprland/submap": {
+    "format": "",
+    "max-length": 12
+  },
   "battery": {
     "states": {
       "warning": 30,
