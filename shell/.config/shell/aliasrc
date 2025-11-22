@@ -36,7 +36,7 @@ alias \
   e="$EDITOR" \
   v="$EDITOR" \
   o="xdg-open" \
-  z="zathura"
+  zt="zathura"
 # file fzf
 ff() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
 fh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
@@ -54,6 +54,15 @@ alias prg="ps x | rg $1"
 alias ka="killall"
 #}}}
 
+#{{{ zellij
+alias \
+  s="zellij-sessionizer.sh" \
+  za="zellij a" \
+  zl="zellij ls" \
+  zrm="zellij delete-session" \
+  zrma="zellij delete-all-sessions"
+#}}}
+
 #{{{ projects
 # tmux
 alias \
@@ -62,6 +71,7 @@ alias \
   ta='tmux attach-session -t'
 # git
 alias lg="lazygit"
+
 #}}}
 
 #{{{ systemd
