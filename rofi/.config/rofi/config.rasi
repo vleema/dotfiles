@@ -21,4 +21,8 @@
 
 //@theme "/home/leema/.local/share/rofi/themes/squared-everforest.rasi"
 
-@theme "/home/leema/.local/share/rofi/themes/gruvbox-material.rasi"
+//@theme "/home/leema/.local/share/rofi/themes/gruvbox-material.rasi"
+
+//@theme "/home/leema/.local/share/rofi/themes/white-sur.rasi"
+
+@theme "/home/leema/.local/share/rofi/themes/gruber-darker.rasi"
