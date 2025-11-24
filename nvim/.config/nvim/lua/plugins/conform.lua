@@ -7,6 +7,7 @@ return {
     },
     formatters_by_ft = {
       lua = { "stylua" },
+      python = { "ruff", lsp_format = "fallback" },
     },
   },
   keys = {
