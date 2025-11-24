@@ -1,20 +1,23 @@
 return {
   "stevearc/conform.nvim",
   opts = {
-    format_on_save = {
+    default_format_opts = {
       timeout_ms = 500,
       lsp_format = "fallback",
     },
+    format_on_save = {},
     formatters_by_ft = {
       lua = { "stylua" },
-      python = { "ruff", lsp_format = "fallback" },
+      python = { "ruff" },
     },
   },
   keys = {
     {
       "<leader>cf",
       function()
-        require("conform").format()
+        -- TODO: Define format function
+        -- require("conform").format()
+        vim.lsp.buf.format()
       end,
       desc = "Format buffer",
     },
