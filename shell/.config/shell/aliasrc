@@ -37,16 +37,22 @@ alias \
   v="$EDITOR" \
   o="xdg-open" \
   zt="zathura"
-# file fzf
-ff() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
-fh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
+# rg into a vim quicklist
+vrg () {
+  fst=$1
+  shift
+  rg --vimgrep "$fst" $@ | $EDITOR -q - 
+}
+# edit fzf
+ef() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
+e.() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % $EDITOR %; }
 # zathura fzf
 zf() { fd . | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
 # library fzf
 zfl() { fd -L . "$HOME"/library | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
 # xdg-open fzf
 of() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
-ofh() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
+of.() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
 #}}}
 
 #{{{ processes
