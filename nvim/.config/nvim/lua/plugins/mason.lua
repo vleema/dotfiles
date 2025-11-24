@@ -8,9 +8,10 @@ return {
     opts = {
       ensure_installed = {
         "basedpyright",
-        "ruff",
         "clangd",
         "lua_ls",
+        "ruff",
+        "stylua",
       },
     },
     dependencies = {
