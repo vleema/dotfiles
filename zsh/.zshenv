@@ -24,6 +24,7 @@ export VISUAL='nvim'
 export HOSTNAME=$(hostname)
 export PKG_MANAGER='paru'
 export FILE_EXPLORER='thunar'
+export PAGER='less'
 #}}}
 
 #{{{ xdg
