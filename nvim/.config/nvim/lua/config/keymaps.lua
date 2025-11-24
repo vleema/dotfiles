@@ -1,140 +1,139 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+-- vim:foldmethod=marker
 
-vim.keymap.set("n", "<S-m>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-vim.keymap.set("n", "<S-i>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+local map = vim.keymap.set
 
--- For my colemak keyboard
-vim.keymap.set("n", "<C-Left>", "<C-w>h", { desc = "Go to Left Window" })
-vim.keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Go to Right Window" })
-vim.keymap.set("n", "<C-Up>", "<C-w>j", { desc = "Go to Down Window" })
-vim.keymap.set("n", "<C-\\>", "<C-w>v", { desc = "Split Window Right" })
-vim.keymap.set("n", "<C-q>", "<C-w>q", { desc = "Close Window" })
+map("n", "<leader>pr", ":source $MYVIMRC<cr>", { desc = "Source init.lua" })
+map("n", "<leader>pl", ":Lazy<cr>", { desc = "Open Lazy menu" })
+map("n", "<leader>pm", ":Mason<cr>", { desc = "Open Mason menu" })
 
--- Function to find project root using LSP, with fallback methods
-local function find_project_root()
-  -- First try to get root from active LSP clients
-  local clients = vim.lsp.get_clients()
-  if #clients > 0 then
-    -- Use the first client's root directory
-    local root_dir = clients[1].config.root_dir
+-- buffers {{{
+map("n", "<leader>,", ":b <C-d>", { desc = "List open buffers for selection" })
+map("n", "<leader>bd", ":bd<cr>", { desc = "Delete open buffer" })
+-- }}}
+
+-- movement {{{
+map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
+-- }}}
+
+
+-- window {{{
+map("n", "<C-w>-", "<C-w>s", { desc = "Split window below", remap = true })
+map("n", "<C-w>\\", "<C-w>v", { desc = "Split window right", remap = true })
+-- }}}
+
+-- diagnostics {{{
+local diagnostic_goto = function(next, severity)
+  return function()
+    vim.diagnostic.jump({
+      count = (next and 1 or -1) * vim.v.count1,
+      severity = severity and vim.diagnostic.severity[severity] or nil,
+      float = true,
+    })
+  end
+end
+
+local toggle_diagnostic = function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end
+
+local toggle_virtual_lines = function()
+  local new_config = not vim.diagnostic.config().virtual_lines
+  vim.diagnostic.config({ virtual_lines = new_config })
+end
+
+local toggle_virtual_text = function()
+  local new_config = not vim.diagnostic.config().virtual_text
+  vim.diagnostic.config({ virtual_text = new_config })
+end
+
+map("n", "<leader>ut", toggle_virtual_text, { desc = "Toggle virtual text" })
+map("n", "<leader>ul", toggle_virtual_lines, { desc = "Toggle virtual lines" })
+map("n", "<leader>ud", toggle_diagnostic, { desc = "Toggle diagnostics" })
+map("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line diagnostics" })
+map("n", "]d", diagnostic_goto(true), { desc = "Next diagnostic" })
+map("n", "[d", diagnostic_goto(false), { desc = "Prev diagnostic" })
+map("n", "]r", diagnostic_goto(true, "ERROR"), { desc = "Next error" })
+map("n", "[r", diagnostic_goto(false, "ERROR"), { desc = "Prev error" })
+map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next warning" })
+map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev warning" })
+map("n", "<leader>dl", function () vim.diagnostic.setloclist() end, { desc = "Add buffer diagnostics to the location list" })
+map("n", "<leader>dq", function () vim.diagnostic.setqflist() end, { desc = "Add diagnostics to quickfix list" })
+-- }}}
+
+-- netrw {{{
+local open_netrw_root = function(cmd, liststyle)
+  cmd = cmd or "Explore"
+  liststyle = liststyle or 0
+  return function()
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
+    local root_dir = nil
+    if #clients > 0 then
+      root_dir = clients[1].workspace_folders and clients[1].workspace_folders[1].uri or clients[1].config.root_dir
+      if root_dir and root_dir:match("^file://") then
+        root_dir = root_dir:gsub("^file://", "")
+      end
+    end
+    vim.g.netrw_liststyle = liststyle
     if root_dir then
-      return root_dir
-    end
-  end
-
-  -- Fallback 1: Check workspace folders
-  local workspace_folders = vim.lsp.buf.list_workspace_folders()
-  if #workspace_folders > 0 then
-    return workspace_folders[1]
-  end
-
-  -- Fallback 2: Look for .git directory
-  local current_dir = vim.fn.expand("%:p:h")
-  local git_dir = vim.fn.finddir(".git", current_dir .. ";")
-  if git_dir ~= "" then
-    return vim.fn.fnamemodify(git_dir, ":h")
-  end
-
-  -- Fallback 3: Use current working directory
-  return vim.fn.getcwd()
-end
-
--- Function to create .editorconfig file with template
-local function create_editorconfig()
-  local project_root = find_project_root()
-  local editorconfig_path = project_root .. "/.editorconfig"
-
-  -- Check if .editorconfig already exists
-  if vim.fn.filereadable(editorconfig_path) == 1 then
-    local choice = vim.fn.confirm(".editorconfig already exists. Overwrite?", "&Yes\n&No\n&Open existing", 2)
-
-    if choice == 1 then
-      -- Overwrite
-    elseif choice == 2 then
-      -- Don't overwrite, exit
-      return
+      vim.cmd(cmd .. root_dir)
     else
-      -- Open existing file
-      vim.cmd("edit " .. editorconfig_path)
-      return
+      vim.cmd(cmd .. " .")
     end
   end
-
-  -- .editorconfig template
-  local template = [[# EditorConfig is awesome: https://EditorConfig.org
-
-# top-most EditorConfig file
-root = true
-
-# Unix-style newlines with a newline ending every file
-[*]
-charset = utf-8
-end_of_line = lf
-insert_final_newline = true
-trim_trailing_whitespace = true
-
-# 4 space indentation
-[*.{js,jsx,ts,tsx,py,java,c,cpp,h,hpp,css,scss,html,xml,json,yaml,yml}]
-indent_style = space
-indent_size = 4
-
-# 2 space indentation
-[*.{vue,svelte,md,markdown}]
-indent_style = space
-indent_size = 2
-
-# Tab indentation (no size specified)
-[*.{go,makefile,Makefile}]
-indent_style = tab
-
-# Matches the exact files either package.json or .travis.yml
-[{package.json,.travis.yml}]
-indent_style = space
-indent_size = 2
-
-# Dockerfile
-[Dockerfile*]
-indent_style = space
-indent_size = 4
-
-# Shell scripts
-[*.{sh,bash,zsh,fish}]
-indent_style = space
-indent_size = 4
-
-# Python specific
-[*.py]
-max_line_length = 88
-
-# Web files
-[*.{html,css,scss,sass,less}]
-indent_style = space
-indent_size = 2
-
-# Configuration files
-[*.{toml,ini,cfg,conf}]
-indent_style = space
-indent_size = 4
-]]
-
-  -- Write the template to file
-  local file = io.open(editorconfig_path, "w")
-  if file then
-    file:write(template)
-    file:close()
-
-    -- Open the created file
-    vim.cmd("edit " .. editorconfig_path)
-    print(".editorconfig created successfully at: " .. editorconfig_path)
-  else
-    print("Error: Could not create .editorconfig file")
+end
+local open_netrw = function(cmd, liststyle)
+  cmd = cmd or "Explore"
+  liststyle = liststyle or 0
+  return function()
+    vim.g.netrw_liststyle = liststyle
+    vim.cmd(cmd)
   end
 end
+map("n", "<leader>e", open_netrw_root(), { desc = "Open netrw on the root directory" })
+map("n", "<leader>E", open_netrw(), { desc = "Open netrw on cwd" })
+map("n", "<leader>fE", open_netrw_root("25Lexplore!", 3), { desc = "Open netrw on the right side (root)" })
+map("n", "<leader>fe", open_netrw("25Lexplore!", 3), { desc = "Open netrw on the right side (cwd)" })
+-- }}}
 
--- Create the keymap
-vim.keymap.set("n", "<leader>cg", create_editorconfig, {
-  desc = "Create .editorconfig file in project root",
-  silent = true,
-})
+-- files {{{
+map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+-- }}}
+
+-- quickfix {{{
+map("n", "<leader>lq", function()
+  local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+  if not success and err then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
+end, { desc = "Quickfix list" })
+
+map("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
+map("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
+-- }}}
+
+-- location list {{{
+map("n", "<leader>ll", function()
+  local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
+  if not success and err then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
+end, { desc = "Location List" })
+-- }}}
+
+-- search {{{
+map({ "i", "n", "s" }, "<esc>", function()
+  vim.cmd("noh")
+  return "<esc>"
+end, { expr = true, desc = "Escape and clear hlsearch" })
+-- }}}
+
+-- spell {{{
+local toggle_spell = function()
+  local winid = vim.api.nvim_get_current_win()
+  vim.wo[winid][0].spell = not vim.wo[winid][0].spell
+end
+map("n", "<leader>us", toggle_spell, { desc = "Toggle spell" })
+-- }}}
