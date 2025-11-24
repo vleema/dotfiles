@@ -34,15 +34,29 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+local lsp_group = vim.api.nvim_create_augroup("lsp", { clear = true })
+
 vim.api.nvim_create_autocmd("LspAttach", {
   desc = "Toggle LSP folding if available",
-  group = vim.api.nvim_create_augroup("lsp", { clear = true }),
+  group = lsp_group,
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     if client:supports_method("textDocument/foldingRange") then
       local win = vim.api.nvim_get_current_win()
       vim.wo[win][0].foldmethod = "expr"
       vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  desc = "Change neovim root directory to be the same as the lsp",
+  group = lsp_group,
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local root_dir = client.config.root_dir
+    if root_dir then
+      vim.cmd("cd " .. root_dir)
     end
   end,
 })
