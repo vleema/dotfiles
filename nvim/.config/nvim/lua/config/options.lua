@@ -33,15 +33,11 @@ o.foldmethod = "indent"
 o.foldtext = ""
 -- }}}
 
--- netrw {{{
-g.netrw_banner = 0
--- }}}
-
--- lsp {{{
-vim.diagnostic.config({ virtual_text = true })
--- }}}
-
 -- misc {{{
+vim.diagnostic.config({ virtual_text = true }) -- enable inline text for diagnostics
+g.netrw_banner = 0 -- no header for netrw
+vim.o.undofile = true -- persist undos across sessions
+o.spelllang = { "pt_br", "en_us" } -- spell language
 o.clipboard = "unnamedplus" -- system clipboard
 o.ignorecase = true
 o.termguicolors = true -- true color
@@ -57,8 +53,4 @@ o.fillchars = { -- characters to fill various things
   diff = "╱",
   eob = " ",
 }
--- }}}
-
--- history {{{
-vim.o.undofile = true
 -- }}}
