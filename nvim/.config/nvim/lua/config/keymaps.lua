@@ -25,7 +25,7 @@ map("n", "<C-w>\\", "<C-w>v", { desc = "Split window right", remap = true })
 
 -- lsp {{{
 -- FIX: Use conform instead
--- TODO: Add a keymap to toggle formatting
+-- TODO: Add a keymap to toggle automatica buffer formatting
 -- TODO: Add inlay hints
 map("n", "<leader>cf", function()
   vim.lsp.buf.format()
@@ -36,6 +36,9 @@ end, { desc = "Go to definition" })
 map("n", "gD", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to declaration" })
+map("n", "gro", function()
+  vim.lsp.buf.workspace_symbol()
+end, { desc = "Filter workspace symbols" })
 -- }}}
 
 -- diagnostics {{{
