@@ -18,10 +18,24 @@ map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
 -- }}}
 
-
 -- window {{{
 map("n", "<C-w>-", "<C-w>s", { desc = "Split window below", remap = true })
 map("n", "<C-w>\\", "<C-w>v", { desc = "Split window right", remap = true })
+-- }}}
+
+-- lsp {{{
+-- FIX: Use conform instead
+-- TODO: Add a keymap to toggle formatting
+-- TODO: Add inlay hints
+map("n", "<leader>cf", function()
+  vim.lsp.buf.format()
+end, { desc = "Format current buffer" })
+map("n", "gd", function()
+  vim.lsp.buf.definition()
+end, { desc = "Go to definition" })
+map("n", "gD", function()
+  vim.lsp.buf.definition()
+end, { desc = "Go to declaration" })
 -- }}}
 
 -- diagnostics {{{
@@ -59,8 +73,12 @@ map("n", "]r", diagnostic_goto(true, "ERROR"), { desc = "Next error" })
 map("n", "[r", diagnostic_goto(false, "ERROR"), { desc = "Prev error" })
 map("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next warning" })
 map("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev warning" })
-map("n", "<leader>dl", function () vim.diagnostic.setloclist() end, { desc = "Add buffer diagnostics to the location list" })
-map("n", "<leader>dq", function () vim.diagnostic.setqflist() end, { desc = "Add diagnostics to quickfix list" })
+map("n", "<leader>dl", function()
+  vim.diagnostic.setloclist()
+end, { desc = "Add buffer diagnostics to the location list" })
+map("n", "<leader>dq", function()
+  vim.diagnostic.setqflist()
+end, { desc = "Add diagnostics to quickfix list" })
 -- }}}
 
 -- netrw {{{
