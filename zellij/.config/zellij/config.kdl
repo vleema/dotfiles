@@ -170,6 +170,7 @@ keybinds clear-defaults=true {
         bind "Alt f" { ToggleFloatingPanes; }
         bind "Alt h" { MoveFocusOrTab "left"; }
         bind "Alt i" { MoveTab "left"; }
+        bind "Alt o" { MoveTab "right"; }
         bind "Alt n" { NewTab "right"; }
         bind "Alt j" { MoveFocus "down"; }
         bind "Alt k" { MoveFocus "up"; }
@@ -177,7 +178,6 @@ keybinds clear-defaults=true {
         bind "Alt q" { CloseFocus; }
         bind "Alt t" { NewPane "right"; }
         bind "Alt d" { Detach; }
-        bind "Alt o" { MoveTab "right"; }
         bind "Alt p" { TogglePaneInGroup; }
         bind "Alt Shift p" { ToggleGroupMarking; }
         bind "Alt s" {
