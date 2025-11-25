@@ -133,6 +133,10 @@ window#waybar.empty #window {
     margin-right: 0;
 }
 
+#temperature {
+    color: @icon0;
+}
+
 #memory {
     margin-left: 0;
     color: @icon9;
