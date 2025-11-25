@@ -25,11 +25,11 @@
         "clock#time"
     ],
     "modules-right": [
+        "battery",
         "network",
         "memory",
         "cpu",
         "temperature",
-        "battery",
         "tray"
     ],
     "hyprland/submap": {
