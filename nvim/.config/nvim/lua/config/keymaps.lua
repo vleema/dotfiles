@@ -12,13 +12,14 @@ map("n", "<leader>bd", ":bd<cr>", { desc = "Delete open buffer" })
 -- }}}
 
 -- movement {{{
+map("i", "jj", "<esc>", { silent = true })
+-- }}}
+
+-- window {{{
 map("n", "<C-h>", "<C-w>h", { desc = "Go to left window", remap = true })
 map("n", "<C-j>", "<C-w>j", { desc = "Go to lower window", remap = true })
 map("n", "<C-k>", "<C-w>k", { desc = "Go to upper window", remap = true })
 map("n", "<C-l>", "<C-w>l", { desc = "Go to right window", remap = true })
--- }}}
-
--- window {{{
 map("n", "<C-w>-", "<C-w>s", { desc = "Split window below", remap = true })
 map("n", "<C-w>\\", "<C-w>v", { desc = "Split window right", remap = true })
 -- }}}
