@@ -1,5 +1,6 @@
 return {
   "stevearc/conform.nvim",
+  enabled = false,
   opts = {
     default_format_opts = {
       timeout_ms = 500,
