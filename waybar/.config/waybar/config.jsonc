@@ -6,132 +6,132 @@
 //
 // =============================================================================
 {
-  // -------------------------------------------------------------------------
-  // Global configuration
-  // -------------------------------------------------------------------------
-  "layer": "top",
-  "position": "top",
-  // If height property would be not present, it'd be calculated dynamically
-  "height": 10,
-  "spacing": 4,
-  "modules-left": [
-    "hyprland/workspaces",
-    "hyprland/mode",
-    "hyprland/submap"
-  ],
-  "modules-center": [
-    "hyprland/window"
-  ],
-  "modules-right": [
-    "network",
-    "memory",
-    "cpu",
-    "temperature",
-    "battery",
-    "tray",
-    "clock#date",
-    "clock#time"
-  ],
-  "hyprland/submap": {
-    "format": "",
-    "max-length": 12
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
-    },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄 {capacity}%",
-    "format-plugged": "",
-    "format-full": "",
-    "format-icons": [
-      "󰂎",
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
+    // -------------------------------------------------------------------------
+    // Global configuration
+    // -------------------------------------------------------------------------
+    "layer": "top",
+    "position": "top",
+    // If height property would be not present, it'd be calculated dynamically
+    "height": 10,
+    "spacing": 4,
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/mode",
+        "hyprland/submap",
+        "hyprland/window"
     ],
-    "tooltip-format": "{time}",
-    "interval": 5
-  },
-  "clock#time": {
-    "interval": 1,
-    "format": "{:%H:%M:%S}",
-    "tooltip": false
-  },
-  "clock#date": {
-    "interval": 10,
-    "format": "  {:%e %b %Y}",
-    "tooltip-format": "{:%e %B %Y}"
-  },
-  "cpu": {
-    "interval": 5,
-    "format": "  {usage}% ({load})",
-    "states": {
-      "warning": 70,
-      "critical": 90
-    }
-  },
-  "custom/sep": {
-    "format": "│",
-    "tooltip": false
-  },
-  "memory": {
-    "interval": 5,
-    "format": " {}% ({used}/{total} GiB)",
-    "states": {
-      "warning": 70,
-      "critical": 90
-    }
-  },
-  "network": {
-    "interval": 5,
-    "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
-    "format-ethernet": "󰈀  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-    "format-disconnected": "  Disconnected",
-    "tooltip-format": "{ifname}: {ipaddr}"
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-muted": "  muted",
-    "format-icons": {
-      "headphone": " ",
-      "hands-free": "󰂑",
-      "headset": "󰂑",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": [
-        " ",
-        " ",
-        " "
-      ]
-    },
-    "on-click-middle": "pamixer -t",
-    "on-click": "pavucontrol"
-  },
-  "temperature": {
-    "critical-threshold": 80,
-    "interval": 5,
-    "format": "{icon}  {temperatureC}°C",
-    "format-icons": [
-      "", // Icon: temperature-empty
-      "", // Icon: temperature-quarter
-      "", // Icon: temperature-half
-      "", // Icon: temperature-three-quarters
-      "" // Icon: temperature-full
+    "modules-center": [
+        "clock#date",
+        "clock#time"
     ],
-    "tooltip": true
-  },
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10
-  }
+    "modules-right": [
+        "network",
+        "memory",
+        "cpu",
+        "temperature",
+        "battery",
+        "tray"
+    ],
+    "hyprland/submap": {
+        "format": "",
+        "max-length": 12
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "",
+        "format-full": "",
+        "format-icons": [
+            "󰂎",
+            "󰁺",
+            "󰁻",
+            "󰁼",
+            "󰁽",
+            "󰁾",
+            "󰁿",
+            "󰂀",
+            "󰂁",
+            "󰂂",
+            "󰁹"
+        ],
+        "tooltip-format": "{time}",
+        "interval": 5
+    },
+    "clock#time": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "tooltip": false
+    },
+    "clock#date": {
+        "interval": 10,
+        "format": "  {:%e %b %Y}",
+        "tooltip-format": "{:%e %B %Y}"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "  {usage}% ({load})",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+    "custom/sep": {
+        "format": "│",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {}% ({used}/{total} GiB)",
+        "states": {
+            "warning": 70,
+            "critical": 90
+        }
+    },
+    "network": {
+        "interval": 5,
+        "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": "󰈀  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "  Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "  muted",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": "󰂑",
+            "headset": "󰂑",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                " ",
+                " ",
+                " "
+            ]
+        },
+        "on-click-middle": "pamixer -t",
+        "on-click": "pavucontrol"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "interval": 5,
+        "format": "{icon}  {temperatureC}°C",
+        "format-icons": [
+            "", // Icon: temperature-empty
+            "", // Icon: temperature-quarter
+            "", // Icon: temperature-half
+            "", // Icon: temperature-three-quarters
+            "" // Icon: temperature-full
+        ],
+        "tooltip": true
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    }
 }
