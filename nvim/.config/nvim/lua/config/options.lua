@@ -3,6 +3,7 @@
 local o = vim.opt
 local g = vim.g
 
+g.terminal_emulator = "alacritty"
 g.mapleader = " "
 g.maplocalleader = "\\"
 
