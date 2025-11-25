@@ -94,7 +94,6 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::mvn
-zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 
 # Load completions
@@ -125,6 +124,8 @@ add-zsh-hook precmd precmd_function
 export KEYTIMEOUT=15
 
 # Custom ZSH Binds
+bindkey -v
+bindkey 'jj' vi-cmd-mode
 bindkey '^ ' autosuggest-accept
 bindkey -v '^?' backward-delete-char
 
