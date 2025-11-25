@@ -7,6 +7,7 @@ return {
       keymap = {
         preset = "enter",
         ["<C-y>"] = { "select_and_accept" },
+        ["<C-space>"] = { "select_and_accept" },
       },
       appearance = {
         nerd_font_variant = "mono",
