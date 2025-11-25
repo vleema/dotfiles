@@ -37,14 +37,30 @@ vim.api.nvim_create_autocmd("FileType", {
 local lsp_group = vim.api.nvim_create_augroup("lsp", { clear = true })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-  desc = "Toggle LSP folding if available",
+  desc = "Toggle LSP folding and formatting if available",
   group = lsp_group,
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if not client then
+      return
+    end
+
     if client:supports_method("textDocument/foldingRange") then
       local win = vim.api.nvim_get_current_win()
-      vim.wo[win][0].foldmethod = "expr"
-      vim.wo[win][0].foldexpr = "v:lua.vim.lsp.foldexpr()"
+      local fm = vim.wo[win].foldmethod
+      local fex = vim.wo[win].foldexpr
+      if fm == "manual" and (fex == nil or fex == "" or fex == "0") then
+        vim.wo[win].foldmethod = "expr"
+        vim.wo[win].foldexpr = "v:lua.vim.lsp.foldexpr()"
+      end
+    end
+    if client:supports_method("textDocument/formatting") then
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = args.buf,
+        callback = function()
+          vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
+        end,
+      })
     end
   end,
 })
