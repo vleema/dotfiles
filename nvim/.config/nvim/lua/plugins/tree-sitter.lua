@@ -13,7 +13,7 @@ return {
   config = function()
     vim.api.nvim_create_autocmd("FileType", {
       desc = "Enable treesitter highlighting and foldmethod for supported file types",
-      pattern = { "c", "cpp", "lua", "rust", "python", "yaml" },
+      pattern = { "c", "cpp", "lua", "rust", "python", "yaml", "toml", "hyprlang" },
       group = vim.api.nvim_create_augroup("treesitter", { clear = true }),
       callback = function()
         vim.wo.foldmethod = "expr"
