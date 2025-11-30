@@ -128,6 +128,8 @@ bindkey -v
 bindkey 'jj' vi-cmd-mode
 bindkey '^ ' autosuggest-accept
 bindkey -v '^?' backward-delete-char
+bindkey -M viins '^N' down-line-or-history
+bindkey -M viins '^P' up-line-or-history
 
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
