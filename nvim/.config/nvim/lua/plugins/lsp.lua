@@ -1,36 +1,23 @@
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = {
-    "folke/lazydev.nvim",
-  },
-  {
-    "mason-org/mason.nvim",
-    opts = {},
-  },
+  { "neovim/nvim-lspconfig" },
+  { "mason-org/mason.nvim", opts = {} },
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {
       ensure_installed = {
+        -- Python
         "basedpyright",
-        "clangd",
-        "lua_ls",
         "ruff",
+        -- C/C++
+        "clangd",
+        -- Lua
+        "lua_ls",
         "stylua",
       },
     },
     dependencies = {
       "mason-org/mason.nvim",
       "neovim/nvim-lspconfig",
-      "folke/lazydev.nvim",
-    },
-  },
-  {
-    "folke/lazydev.nvim",
-    ft = "lua",
-    opts = {
-      library = {
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-      },
     },
   },
 }
