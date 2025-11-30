@@ -2,12 +2,8 @@
 
 * {
     min-height: 0;
-    /* font-family: Lexend, "Font Awesome 6 Free Solid"; */
     font-size: 14px;
-    /* font-family: "JetBrainsMono Nerd Font"; */
-    font-family: "Iosevka Nerd Font";
-    font-weight: 500;
-    /* font-weight: bold; */
+    font-family: "Iosevka";
 }
 
 window#waybar {
