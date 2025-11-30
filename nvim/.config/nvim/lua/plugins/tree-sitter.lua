@@ -25,8 +25,13 @@ return {
       },
       group = vim.api.nvim_create_augroup("treesitter", { clear = true }),
       callback = function()
-        vim.wo.foldmethod = "expr"
-        vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        local win = vim.api.nvim_get_current_win()
+        local fm = vim.wo[win].foldmethod
+        local fex = vim.wo[win].foldexpr
+        if (fm == "indent" or fm == "manual") and (fex == nil or fex == "" or fex == "0") then
+          vim.wo[win].foldmethod = "expr"
+          vim.wo[win].foldexpr = "v:lua.vim.treesitter.foldexpr()"
+        end
         vim.treesitter.start()
       end,
     })

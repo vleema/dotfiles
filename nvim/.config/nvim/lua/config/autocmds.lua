@@ -30,8 +30,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if client:supports_method("textDocument/foldingRange") then
       local win = vim.api.nvim_get_current_win()
       local fm = vim.wo[win].foldmethod
-      local fex = vim.wo[win].foldexpr
-      if fm == "manual" and (fex == nil or fex == "" or fex == "0") then
+      if fm == "manual" or fm == "indent" or "expr" then
         vim.wo[win].foldmethod = "expr"
         vim.wo[win].foldexpr = "v:lua.vim.lsp.foldexpr()"
       end
