@@ -14,6 +14,6 @@ vim.lsp.config("clangd", {
   },
 })
 
-vim.lsp.config("rust_analyze", {
+vim.lsp.config("rust_analyzer", {
   root_markers = { ".git", "Cargo.toml" },
 })

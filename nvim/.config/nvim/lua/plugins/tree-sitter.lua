@@ -22,6 +22,7 @@ return {
         "yaml",
         "toml",
         "hyprlang",
+        "tex",
       },
       group = vim.api.nvim_create_augroup("treesitter", { clear = true }),
       callback = function()

@@ -26,11 +26,10 @@ map("n", "<C-w>\\", "<C-w>v", { desc = "Split window right", remap = true })
 
 -- lsp {{{
 -- FIX: Use conform instead
--- TODO: Add a keymap to toggle automatica buffer formatting
 -- TODO: Add inlay hints
-map("n", "<leader>cf", function()
-  vim.lsp.buf.format()
-end, { desc = "Format current buffer" })
+-- map("n", "<leader>cf", function()
+--   vim.lsp.buf.format()
+-- end, { desc = "Format current buffer" })
 map("n", "gd", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to definition" })

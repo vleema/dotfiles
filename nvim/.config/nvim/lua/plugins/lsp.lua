@@ -12,7 +12,13 @@ return {
         "clangd",
         -- Lua
         "lua_ls",
+        shfmt = {
+          append_args = { "-i", "2" },
+        },
         "stylua",
+        -- Tex
+        "texlab",
+        -- "tex-fmt",
       },
     },
     dependencies = {
