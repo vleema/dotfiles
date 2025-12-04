@@ -10,3 +10,7 @@ map p print
 
 map <S-Down> navigate next
 map <S-Up> navigate previous
+
+# for vimtex
+set synctex true
+set synctex-editor-command "vim -v --not-a-term -T dumb -c \"VimtexInverseSearch %{line}:%{column} '%{input}'\""
