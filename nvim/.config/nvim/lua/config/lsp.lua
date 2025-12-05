@@ -13,7 +13,3 @@ vim.lsp.config("clangd", {
     "--fallback-style=google",
   },
 })
-
-vim.lsp.config("rust_analyzer", {
-  root_markers = { ".git", "Cargo.toml" },
-})

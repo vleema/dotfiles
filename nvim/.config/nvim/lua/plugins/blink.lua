@@ -1,7 +1,7 @@
 return {
   {
     "saghen/blink.cmp",
-    dependencies = { "rafamadriz/friendly-snippets" },
+    dependencies = { "rafamadriz/friendly-snippets", { "L3MON4D3/LuaSnip", version = "v2.*" } },
     version = "1.*",
     opts = {
       keymap = {
@@ -24,6 +24,9 @@ return {
           },
         },
         documentation = { auto_show = true },
+      },
+      snippets = {
+        preset = "luasnip",
       },
       sources = {
         default = { "lazydev", "lsp", "path", "snippets", "buffer" },
