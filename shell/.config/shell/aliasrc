@@ -100,7 +100,7 @@ alias \
   synj="journalctl --user -xeu rclone-bisync.service" \
   synst="systemctl --user status rclone-bisync.service" \
   syntt="systemctl --user status rclone-bisync.timer" \
-  cleansync='rclone-bisync.sh false true'
+  cleansync='rclone-bisync.sh --resync'
 #}}}
 
 #{{{ packages
