@@ -5,7 +5,7 @@ After=network-online.target
 
 [Service]
 Type=exec
-ExecStart=%h/.local/bin/rclone/rclone-bisync.sh false
+ExecStart=%h/.local/bin/rclone/rclone-bisync.sh
 
 [Install]
 WantedBy=default.target
