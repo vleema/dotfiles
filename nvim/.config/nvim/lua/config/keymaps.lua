@@ -4,7 +4,6 @@ local map = vim.keymap.set
 
 map("n", "<leader>pr", ":source $MYVIMRC<cr>", { desc = "Source init.lua" })
 map("n", "<leader>pl", ":Lazy<cr>", { desc = "Open Lazy menu" })
-map("n", "<leader>pm", ":Mason<cr>", { desc = "Open Mason menu" })
 
 -- buffers {{{
 map("n", "<leader>,", ":b <C-d>", { desc = "List open buffers for selection" })
