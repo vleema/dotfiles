@@ -1,0 +1,15 @@
+{
+  "name": "personal-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "cpp",
+        "path": "./cpp.json"
+      },
+      {
+        "language": "gitcommit",
+        "path": "./git.json"
+      }
+    ]
+  }
+}
