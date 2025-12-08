@@ -26,6 +26,7 @@ rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   --exclude "$EXCLUDE_DIRS" \
   --resilient \
   --recover \
+  --conflict-resolve newer \
   --conflict-suffix "sync-conflict-{DateOnly}" \
   $RESYNC \
   # --protondrive-replace-existing-draft=true \
