@@ -1,3 +1,20 @@
+local langs = {
+  "c",
+  "cpp",
+  "go",
+  "gomod",
+  "gosum",
+  "hyprlang",
+  "json",
+  "lua",
+  "markdown",
+  "python",
+  "rust",
+  "tex",
+  "toml",
+  "yaml",
+}
+
 return {
   "nvim-treesitter/nvim-treesitter",
   branch = "main",
@@ -9,24 +26,12 @@ return {
     indent = { enable = true },
     highlight = { enable = true },
     folds = { enable = true },
+    ensure_installed = langs,
   },
   config = function()
     vim.api.nvim_create_autocmd("FileType", {
       desc = "Enable treesitter highlighting and foldmethod for supported file types",
-      pattern = {
-        "c",
-        "cpp",
-        "go",
-        "gomod",
-        "gosum",
-        "hyprlang",
-        "lua",
-        "python",
-        "rust",
-        "tex",
-        "toml",
-        "yaml",
-      },
+      pattern = langs,
       group = vim.api.nvim_create_augroup("treesitter", { clear = true }),
       callback = function()
         local win = vim.api.nvim_get_current_win()

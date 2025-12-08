@@ -39,6 +39,10 @@ return {
         "gofumpt",
         "goimports",
         "golangci-lint",
+        -- Json
+        "jsonls",
+        -- Markdown
+        "marksman",
       },
     },
   },
