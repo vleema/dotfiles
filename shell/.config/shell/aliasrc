@@ -23,7 +23,7 @@ alias \
 alias tree="tree -C"
 # jump fzf
 jf() { cd "$(fd -td | fzf --preview 'eza --tree --color=always {}')" || return; }
-jfh() { cd "$(fd -H -I -td | fzf --preview 'eza --tree --color=always {}')" || return; }
+j.() { cd "$(fd -H -I -td | fzf --preview 'eza --tree --color=always {}')" || return; }
 #}}}
 
 #{{{ files
@@ -38,7 +38,7 @@ alias \
   o="xdg-open" \
   z="zathura"
 # rg into a vim quicklist
-vrg () {
+vg () {
   fst=$1
   shift
   rg --vimgrep "$fst" $@ | $EDITOR -q - 
@@ -49,10 +49,10 @@ e.() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' |
 # zathura fzf
 zf() { fd . | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
 # library fzf
-zfl() { fd -L . "$HOME"/library | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
+lb() { fd -L . "$HOME"/library | fzf | xargs -r -I % sh -c 'zathura "$1" >/dev/null 2>&1 &' _ %; }
 # xdg-open fzf
 of() { fd . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
-of.() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
+o.() { fd -H -I . | fzf --preview 'bat -n --color=always --line-range :500 {}' | xargs -r -I % xdg-open %; }
 #}}}
 
 #{{{ processes
@@ -69,15 +69,15 @@ alias \
   zrma="zellij delete-all-sessions"
 #}}}
 
-#{{{ projects
-# tmux
+#{{{ tmux
 alias \
   t="tmux-sessionizer.sh" \
   tl='tmux list-sessions' \
   ta='tmux attach-session -t'
-# git
-alias lg="lazygit"
+#}}}
 
+#{{{ git
+alias lg="lazygit"
 #}}}
 
 #{{{ systemd
@@ -100,7 +100,7 @@ alias \
   synj="journalctl --user -xeu rclone-bisync.service" \
   synst="systemctl --user status rclone-bisync.service" \
   syntt="systemctl --user status rclone-bisync.timer" \
-  cleansync='rclone-bisync.sh --resync'
+  rsyn='rclone-bisync.sh --resync'
 #}}}
 
 #{{{ packages
