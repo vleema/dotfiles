@@ -1,7 +1,7 @@
 #!/bin/bash
 
-REMOTE="proton:"
-LOCAL_PATH="$HOME"/proton
+REMOTE="gdrive:sync"
+LOCAL_PATH="$HOME"/cloud
 REMOTE_PATH=""
 BISYNC_WORKDIR="$HOME"/.local/state/rclone-bisync
 LOG_FILE="$BISYNC_WORKDIR"/rclone-bisync.log
@@ -27,8 +27,8 @@ rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   --resilient \
   --recover \
   --conflict-suffix "sync-conflict-{DateOnly}" \
-  --protondrive-replace-existing-draft=true \
   $RESYNC \
+  # --protondrive-replace-existing-draft=true \
   2>&1 | tee -a "$LOG_FILE"
 
 if [ "${PIPESTATUS[0]}" -eq 0 ]; then
