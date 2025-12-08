@@ -21,6 +21,7 @@
         "hyprland/window"
     ],
     "modules-center": [
+        "custom/pacman",
         "clock#date",
         "clock#time"
     ],
@@ -32,6 +33,17 @@
         "temperature",
         "tray"
     ],
+    "custom/pacman": {
+        "format": "{icon}{0}",
+        "return-type": "json",
+        "format-icons": {
+            "pending-updates": " ",
+             // "updated": ""
+             "updated": ""
+        },
+        "exec-if": "which waybar-updates",
+        "exec": "waybar-updates"
+    },
     "hyprland/submap": {
         "format": "",
         "max-length": 12
