@@ -6,7 +6,7 @@ REMOTE_PATH=""
 BISYNC_WORKDIR="$HOME"/.local/state/rclone-bisync
 LOG_FILE="$BISYNC_WORKDIR"/rclone-bisync.log
 EXCLUDE_DIRS='{.lake/**,target/**,.git/**,ssd-*/**,*venv/**,.ruff-cache/**}'
-RESYNC=$1
+EXTRA_PARAMS=$@
 
 notify() {
   notify-send -u "$2" "Rclone Sync" "$1"
@@ -28,7 +28,7 @@ rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   --recover \
   --conflict-resolve newer \
   --conflict-suffix "sync-conflict-{DateOnly}" \
-  $RESYNC \
+  $EXTRA_PARAMS \
   # --protondrive-replace-existing-draft=true \
   2>&1 | tee -a "$LOG_FILE"
 
