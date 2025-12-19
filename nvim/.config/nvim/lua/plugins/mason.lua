@@ -43,6 +43,8 @@ return {
         "jsonls",
         -- Markdown
         "marksman",
+        -- Javascript/Typescript
+        "ts_ls",
       },
     },
   },
