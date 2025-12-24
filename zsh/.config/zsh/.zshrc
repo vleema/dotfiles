@@ -254,3 +254,6 @@ fi
 
 # Zoxide plugin
 eval "$(zoxide init zsh --cmd j)"
+
+# bun completions
+[ -s "/home/leema/.bun/_bun" ] && source "/home/leema/.bun/_bun"
