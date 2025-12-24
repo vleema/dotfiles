@@ -1,15 +1,19 @@
 {
-  "name": "personal-snippets",
-  "contributes": {
-    "snippets": [
-      {
-        "language": "cpp",
-        "path": "./cpp.json"
-      },
-      {
-        "language": "gitcommit",
-        "path": "./git.json"
-      }
-    ]
-  }
+    "name": "personal-snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "cpp",
+                "path": "./cpp.json"
+            },
+            {
+                "language": "gitcommit",
+                "path": "./git.json"
+            },
+            {
+                "language": "tex",
+                "path": "./tex.json"
+            }
+        ]
+    }
 }

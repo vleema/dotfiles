@@ -1,0 +1,478 @@
+{
+    "\\0": {
+        "prefix": "\\0",
+        "body": [
+            "\\emptyset"
+        ],
+        "description": "emptyset"
+    },
+    "\\2": {
+        "prefix": "\\2",
+        "body": [
+            "\\sqrt"
+        ],
+        "description": "sqrt"
+    },
+    "\\6": {
+        "prefix": "\\6",
+        "body": [
+            "\\partial"
+        ],
+        "description": "partial"
+    },
+    "\\8": {
+        "prefix": "\\8",
+        "body": [
+            "\\infty"
+        ],
+        "description": "infty"
+    },
+    "\\=": {
+        "prefix": "\\=",
+        "body": [
+            "\\equiv"
+        ],
+        "description": "equiv"
+    },
+    "\\\\": {
+        "prefix": "\\\\",
+        "body": [
+            "\\setminus"
+        ],
+        "description": "setminus"
+    },
+    "\\.": {
+        "prefix": "\\.",
+        "body": [
+            "\\cdot"
+        ],
+        "description": "cdot"
+    },
+    "\\*": {
+        "prefix": "\\*",
+        "body": [
+            "\\times"
+        ],
+        "description": "times"
+    },
+    "\\<": {
+        "prefix": "\\<",
+        "body": [
+            "\\langle"
+        ],
+        "description": "langle"
+    },
+    "\\>": {
+        "prefix": "\\>",
+        "body": [
+            "\\rangle"
+        ],
+        "description": "rangle"
+    },
+    "\\H": {
+        "prefix": "\\H",
+        "body": [
+            "\\hbar"
+        ],
+        "description": "hbar"
+    },
+    "\\+": {
+        "prefix": "\\+",
+        "body": [
+            "\\dagger"
+        ],
+        "description": "dagger"
+    },
+    "\\[": {
+        "prefix": "\\[",
+        "body": [
+            "\\subseteq"
+        ],
+        "description": "subseteq"
+    },
+    "\\]": {
+        "prefix": "\\]",
+        "body": [
+            "\\supseteq"
+        ],
+        "description": "supseteq"
+    },
+    "\\(": {
+        "prefix": "\\(",
+        "body": [
+            "\\subset"
+        ],
+        "description": "subset"
+    },
+    "\\)": {
+        "prefix": "\\)",
+        "body": [
+            "\\supset"
+        ],
+        "description": "supset"
+    },
+    "\\A": {
+        "prefix": "\\A",
+        "body": [
+            "\\forall"
+        ],
+        "description": "forall"
+    },
+    "\\B": {
+        "prefix": "\\B",
+        "body": [
+            "\\boldsymbol"
+        ],
+        "description": "boldsymbol"
+    },
+    "\\E": {
+        "prefix": "\\E",
+        "body": [
+            "\\exists"
+        ],
+        "description": "exists"
+    },
+    "\\N": {
+        "prefix": "\\N",
+        "body": [
+            "\\nabla"
+        ],
+        "description": "nabla"
+    },
+    "\\jj": {
+        "prefix": "\\jj",
+        "body": [
+            "\\downarrow"
+        ],
+        "description": "downarrow"
+    },
+    "\\jJ": {
+        "prefix": "\\jJ",
+        "body": [
+            "\\Downarrow"
+        ],
+        "description": "Downarrow"
+    },
+    "\\jk": {
+        "prefix": "\\jk",
+        "body": [
+            "\\uparrow"
+        ],
+        "description": "uparrow"
+    },
+    "\\jK": {
+        "prefix": "\\jK",
+        "body": [
+            "\\Uparrow"
+        ],
+        "description": "Uparrow"
+    },
+    "\\jh": {
+        "prefix": "\\jh",
+        "body": [
+            "\\leftarrow"
+        ],
+        "description": "leftarrow"
+    },
+    "\\jH": {
+        "prefix": "\\jH",
+        "body": [
+            "\\Leftarrow"
+        ],
+        "description": "Leftarrow"
+    },
+    "\\jl": {
+        "prefix": "\\jl",
+        "body": [
+            "\\rightarrow"
+        ],
+        "description": "rightarrow"
+    },
+    "\\jL": {
+        "prefix": "\\jL",
+        "body": [
+            "\\Rightarrow"
+        ],
+        "description": "Rightarrow"
+    },
+    "\\a": {
+        "prefix": "\\a",
+        "body": [
+            "\\alpha"
+        ],
+        "description": "alpha"
+    },
+    "\\b": {
+        "prefix": "\\b",
+        "body": [
+            "\\beta"
+        ],
+        "description": "beta"
+    },
+    "\\c": {
+        "prefix": "\\c",
+        "body": [
+            "\\chi"
+        ],
+        "description": "chi"
+    },
+    "\\d": {
+        "prefix": "\\d",
+        "body": [
+            "\\delta"
+        ],
+        "description": "delta"
+    },
+    "\\e": {
+        "prefix": "\\e",
+        "body": [
+            "\\epsilon"
+        ],
+        "description": "epsilon"
+    },
+    "\\f": {
+        "prefix": "\\f",
+        "body": [
+            "\\phi"
+        ],
+        "description": "phi"
+    },
+    "\\g": {
+        "prefix": "\\g",
+        "body": [
+            "\\gamma"
+        ],
+        "description": "gamma"
+    },
+    "\\h": {
+        "prefix": "\\h",
+        "body": [
+            "\\eta"
+        ],
+        "description": "eta"
+    },
+    "\\i": {
+        "prefix": "\\i",
+        "body": [
+            "\\iota"
+        ],
+        "description": "iota"
+    },
+    "\\k": {
+        "prefix": "\\k",
+        "body": [
+            "\\kappa"
+        ],
+        "description": "kappa"
+    },
+    "\\l": {
+        "prefix": "\\l",
+        "body": [
+            "\\lambda"
+        ],
+        "description": "lambda"
+    },
+    "\\m": {
+        "prefix": "\\m",
+        "body": [
+            "\\mu"
+        ],
+        "description": "mu"
+    },
+    "\\n": {
+        "prefix": "\\n",
+        "body": [
+            "\\nu"
+        ],
+        "description": "nu"
+    },
+    "\\p": {
+        "prefix": "\\p",
+        "body": [
+            "\\pi"
+        ],
+        "description": "pi"
+    },
+    "\\q": {
+        "prefix": "\\q",
+        "body": [
+            "\\theta"
+        ],
+        "description": "theta"
+    },
+    "\\r": {
+        "prefix": "\\r",
+        "body": [
+            "\\rho"
+        ],
+        "description": "rho"
+    },
+    "\\s": {
+        "prefix": "\\s",
+        "body": [
+            "\\sigma"
+        ],
+        "description": "sigma"
+    },
+    "\\t": {
+        "prefix": "\\t",
+        "body": [
+            "\\tau"
+        ],
+        "description": "tau"
+    },
+    "\\y": {
+        "prefix": "\\y",
+        "body": [
+            "\\psi"
+        ],
+        "description": "psi"
+    },
+    "\\u": {
+        "prefix": "\\u",
+        "body": [
+            "\\upsilon"
+        ],
+        "description": "upsilon"
+    },
+    "\\w": {
+        "prefix": "\\w",
+        "body": [
+            "\\omega"
+        ],
+        "description": "omega"
+    },
+    "\\z": {
+        "prefix": "\\z",
+        "body": [
+            "\\zeta"
+        ],
+        "description": "zeta"
+    },
+    "\\x": {
+        "prefix": "\\x",
+        "body": [
+            "\\xi"
+        ],
+        "description": "xi"
+    },
+    "\\D": {
+        "prefix": "\\D",
+        "body": [
+            "\\Delta"
+        ],
+        "description": "Delta"
+    },
+    "\\F": {
+        "prefix": "\\F",
+        "body": [
+            "\\Phi"
+        ],
+        "description": "Phi"
+    },
+    "\\G": {
+        "prefix": "\\G",
+        "body": [
+            "\\Gamma"
+        ],
+        "description": "Gamma"
+    },
+    "\\L": {
+        "prefix": "\\L",
+        "body": [
+            "\\Lambda"
+        ],
+        "description": "Lambda"
+    },
+    "\\P": {
+        "prefix": "\\P",
+        "body": [
+            "\\Pi"
+        ],
+        "description": "Pi"
+    },
+    "\\Q": {
+        "prefix": "\\Q",
+        "body": [
+            "\\Theta"
+        ],
+        "description": "Theta"
+    },
+    "\\S": {
+        "prefix": "\\S",
+        "body": [
+            "\\Sigma"
+        ],
+        "description": "Sigma"
+    },
+    "\\U": {
+        "prefix": "\\U",
+        "body": [
+            "\\Upsilon"
+        ],
+        "description": "Upsilon"
+    },
+    "\\W": {
+        "prefix": "\\W",
+        "body": [
+            "\\Omega"
+        ],
+        "description": "Omega"
+    },
+    "\\X": {
+        "prefix": "\\X",
+        "body": [
+            "\\Xi"
+        ],
+        "description": "Xi"
+    },
+    "\\Y": {
+        "prefix": "\\Y",
+        "body": [
+            "\\Psi"
+        ],
+        "description": "Psi"
+    },
+    "\\ve": {
+        "prefix": "\\ve",
+        "body": [
+            "\\varepsilon"
+        ],
+        "description": "varepsilon"
+    },
+    "\\vf": {
+        "prefix": "\\vf",
+        "body": [
+            "\\varphi"
+        ],
+        "description": "varphi"
+    },
+    "\\vk": {
+        "prefix": "\\vk",
+        "body": [
+            "\\varkappa"
+        ],
+        "description": "varkappa"
+    },
+    "\\vp": {
+        "prefix": "\\vp",
+        "body": [
+            "\\varpi"
+        ],
+        "description": "varpi"
+    },
+    "\\vq": {
+        "prefix": "\\vq",
+        "body": [
+            "\\vartheta"
+        ],
+        "description": "vartheta"
+    },
+    "\\vr": {
+        "prefix": "\\vr",
+        "body": [
+            "\\varrho"
+        ],
+        "description": "varrho"
+    }
+}
