@@ -1,4 +1,5 @@
 {
+  "style": "./style.css",
   "layer": "top",
   "position": "top",
   "height": 10,
@@ -43,10 +44,7 @@
     "interval": 1,
     "format": "{}",
     "return-type": "json",
-    "exec": "/home/franca/.config/waybar/modules/music_player.sh",
-    "on-click": "/home/franca/.config/waybar/modules/music_player.sh previous",
-    "on-click-middle": "/home/franca/.config/waybar/modules/music_player.sh pause",
-    "on-click-right": "/home/franca/.config/waybar/modules/music_player.sh next"
+    "exec": "/home/franca/.config/waybar/modules/music_player.sh"
   },
   "hyprland/workspaces": {
     "active-only": false,
