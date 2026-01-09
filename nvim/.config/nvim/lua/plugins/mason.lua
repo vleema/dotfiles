@@ -45,6 +45,8 @@ return {
         "marksman",
         -- Javascript/Typescript
         "ts_ls",
+        -- Haskell
+        "hlint",
       },
     },
   },

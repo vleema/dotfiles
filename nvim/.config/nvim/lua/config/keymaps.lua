@@ -8,6 +8,7 @@ map("n", "<leader>pl", ":Lazy<cr>", { desc = "Open Lazy menu" })
 -- buffers {{{
 map("n", "<leader>,", ":b <C-d>", { desc = "List open buffers for selection" })
 map("n", "<leader>bd", ":bd<cr>", { desc = "Delete open buffer" })
+map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- }}}
 
 -- movement {{{
@@ -24,11 +25,7 @@ map("n", "<C-w>\\", "<C-w>v", { desc = "Split window right", remap = true })
 -- }}}
 
 -- lsp {{{
--- FIX: Use conform instead
 -- TODO: Add inlay hints
--- map("n", "<leader>cf", function()
---   vim.lsp.buf.format()
--- end, { desc = "Format current buffer" })
 map("n", "gd", function()
   vim.lsp.buf.definition()
 end, { desc = "Go to definition" })

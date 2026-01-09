@@ -1,13 +1,17 @@
 return {
   {
+    "vague-theme/vague.nvim",
+    lazy = false,
+  },
+  {
     "sainnhe/gruvbox-material",
     lazy = false,
     config = function()
       vim.g.gruvbox_material_background = "hard"
       vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_foreground = "original"
     end,
   },
-  -- cuu
   {
     "blazkowolf/gruber-darker.nvim",
     lazy = false,
