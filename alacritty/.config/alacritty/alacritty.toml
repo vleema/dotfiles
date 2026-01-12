@@ -21,7 +21,10 @@ family = "Iosevka"
 style = "Regular"
 
 [keyboard]
-bindings = [{ key = "m", mods = "Control|Shift", action = "SpawnNewInstance" }]
+bindings = [
+{ key = "m", mods = "Control|Shift", action = "SpawnNewInstance" },
+{ key = "Return", mods = "Shift", chars = '\x1b\r'}
+]
 
 # [window]
 # opacity = 0.95
@@ -29,3 +32,4 @@ bindings = [{ key = "m", mods = "Control|Shift", action = "SpawnNewInstance" }]
 [window.padding]
 x = 0
 y = 0
+
