@@ -13,3 +13,7 @@ vim.lsp.config("clangd", {
     "--fallback-style=google",
   },
 })
+
+vim.lsp.config("ruff", {
+  hover = false,
+})
