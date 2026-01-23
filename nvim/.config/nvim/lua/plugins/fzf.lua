@@ -1,5 +1,8 @@
 return {
   "ibhagwan/fzf-lua",
+  dependencies = {
+    "nvim-mini/mini.icons",
+  },
   lazy = false,
   setup = { "skim" },
   opts = {
@@ -8,6 +11,8 @@ return {
     },
   },
   -- TODO: Change keybind for regex search
+
+  -- stylua: ignore
   keys = {
     { "<leader><leader>", ":FzfLua files<cr>",                  desc = "Find files" },
     { "<leader>/",        ":FzfLua live_grep_native<cr>",       desc = "Live rg current project" },
@@ -23,6 +28,7 @@ return {
     { "<leader>sd",       ":FzfLua diagnostics_document <cr>",  desc = "Find document diagnostics" },
     { "<leader>sD",       ":FzfLua diagnostics_workspace <cr>", desc = "Find workspace diagnostics" },
     { "<leader>sk",       ":FzfLua keymaps <cr>",               desc = "Find keymaps" },
+    { "<leader>sr",       ":FzfLua resume <cr>",                desc = "Resume last search" },
     { "<leader>sC",       ":FzfLua commands <cr>",              desc = "Find commands" },
     { "<leader>sa",       ":FzfLua autocmds <cr>",              desc = "Find autocmds" },
     { "<leader>uc",       ":FzfLua colorschemes <cr>",          desc = "Colorschemes" },
