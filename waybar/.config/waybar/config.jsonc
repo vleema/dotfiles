@@ -10,22 +10,20 @@
     // Global configuration
     // -------------------------------------------------------------------------
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     // If height property would be not present, it'd be calculated dynamically
     "height": 10,
     "spacing": 4,
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/mode",
-        "hyprland/submap",
-        "hyprland/window"
+        "hyprland/submap"
     ],
-    "modules-center": [
+    "modules-center": [],
+    "modules-right": [
         "custom/pacman",
         "clock#date",
-        "clock#time"
-    ],
-    "modules-right": [
+        "clock#time",
         "battery",
         "network",
         "memory",
@@ -38,8 +36,8 @@
         "return-type": "json",
         "format-icons": {
             "pending-updates": " ",
-             // "updated": ""
-             "updated": ""
+            // "updated": ""
+            "updated": ""
         },
         "exec-if": "which waybar-updates",
         "exec": "waybar-updates"
