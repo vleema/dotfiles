@@ -47,7 +47,7 @@ return {
     folds = { enable = true },
     ensure_installed = langs,
   },
-  config = function()
+  config = function(_, opts)
     vim.api.nvim_create_autocmd("FileType", {
       desc = "Enable treesitter highlighting and foldmethod for supported file types",
       pattern = langs,
@@ -63,5 +63,6 @@ return {
         vim.treesitter.start()
       end,
     })
+    require("nvim-treesitter").setup(opts)
   end,
 }
