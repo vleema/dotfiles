@@ -94,7 +94,6 @@ zinit snippet OMZP::kubectl
 zinit snippet OMZP::kubectx
 zinit snippet OMZP::command-not-found
 zinit snippet OMZP::mvn
-zinit snippet OMZP::docker-compose
 
 # Load completions
 autoload -U compinit && compinit
