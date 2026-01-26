@@ -54,4 +54,5 @@ o.fillchars = {                                -- characters to fill various thi
   diff = "╱",
   eob = " ",
 }
+o.splitright = true
 -- }}}
