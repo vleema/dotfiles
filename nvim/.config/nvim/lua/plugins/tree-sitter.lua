@@ -15,6 +15,7 @@ local langs = {
   "json",
   "jsonc",
   "jsx",
+  "kitty",
   "lhaskell",
   "lua",
   "luadoc",
