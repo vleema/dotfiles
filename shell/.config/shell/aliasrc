@@ -179,7 +179,8 @@ alias \
   ffmpeg="ffmpeg -hide_banner" \
   update-fc="sudo fc-cache -fv" \
   wget="wget -c" \
-  hypr="Hyprland"
+  hypr="start-hyprland" \
+  ssh="TERM=xterm-256color ssh"
 #}}}
 
 #{{{ rust
