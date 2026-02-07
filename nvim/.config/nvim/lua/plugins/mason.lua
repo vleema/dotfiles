@@ -44,9 +44,11 @@ return {
         -- Markdown
         "marksman",
         -- Javascript/Typescript
-        "ts_ls",
+        "vtsls",
         -- Haskell
         "hlint",
+        -- Zig
+        "zls",
       },
     },
   },
