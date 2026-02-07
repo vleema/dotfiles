@@ -5,6 +5,7 @@ return {
     local user = vim.env.USER or "User"
     user = user:sub(1, 1):upper() .. user:sub(2)
     return {
+      model = "gpt-5.2-codex",
       auto_insert_mode = true,
       headers = {
         user = "  " .. user .. " ",
