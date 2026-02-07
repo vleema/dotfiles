@@ -1,6 +1,7 @@
 adw-gtk-theme
 adwaita-cursors
 adwaita-icon-theme
+apple-fonts
 bat
 blueman
 bluez
@@ -31,6 +32,7 @@ libnotify
 neovim
 networkmanager
 noto-fonts
+noto-fonts-cjk
 noto-fonts-emoji
 nwg-displays
 nwg-look
@@ -58,6 +60,8 @@ skim
 slurp
 stow
 thunar
+ttc-iosekva
+ttf-font-awesome-5
 ttf-jetbrains-mono
 udiskie
 ueberzugpp
@@ -65,6 +69,7 @@ unzip
 waybar
 wireplumber
 wl-clip-persist
+woff2-font-awesome
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-user-dirs
