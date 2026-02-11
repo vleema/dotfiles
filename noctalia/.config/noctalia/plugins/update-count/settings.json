@@ -3,6 +3,6 @@
   "updateTerminalCommand": "alacritty",
   "currentIconName": "world-download",
   "hideOnZero": false,
-  "customCmdGetNumUpdates": "paru -Quq -2 /dev/null | wc -l",
+  "customCmdGetNumUpdates": "",
   "customCmdDoSystemUpdate": "paru -Syu"
 }
