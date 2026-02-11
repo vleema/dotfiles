@@ -41,6 +41,9 @@ return {
       tex = { "tex-fmt" },
       markdown = { "prettier" },
       go = { "goimports", "gofumpt" },
+      typescript = { "prettier" },
+      typescriptreact = { "prettier" },
+      javascript = { "prettier" },
     },
     default_format_opts = {
       lsp_format = "fallback",
