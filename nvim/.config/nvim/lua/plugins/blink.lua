@@ -4,6 +4,10 @@ return {
     dependencies = { "rafamadriz/friendly-snippets", { "L3MON4D3/LuaSnip", version = "v2.*" } },
     version = "1.*",
     opts = {
+      enabled = function()
+        local disabled_filetypes = { "dap-repl" }
+        return not vim.tbl_contains(disabled_filetypes, vim.bo.filetype)
+      end,
       keymap = {
         preset = "enter",
         ["<C-y>"] = { "select_and_accept" },
