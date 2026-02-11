@@ -16,6 +16,13 @@ return {
     },
   },
   {
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = "mason.nvim",
+    opts = {
+      automatic_installation = true,
+    },
+  },
+  {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     dependencies = {
       "mason-org/mason.nvim",
