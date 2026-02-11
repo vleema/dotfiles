@@ -10,10 +10,12 @@ return {
             ["rust-analyzer"] = {
               cargo = {
                 target = "x86_64-unknown-linux-gnu",
+                allfeatures = true,
               },
             },
           },
         },
+        dap = {},
       }
     end,
   },
