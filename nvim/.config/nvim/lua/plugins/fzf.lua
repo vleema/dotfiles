@@ -14,6 +14,7 @@ return {
 
   -- stylua: ignore
   keys = {
+    { "<leader>,",        ":FzfLua buffers<cr>",                desc = "Find open buffers" },
     { "<leader><leader>", ":FzfLua files<cr>",                  desc = "Find files" },
     { "<leader>/",        ":FzfLua live_grep_native<cr>",       desc = "Live rg current project" },
     { "<leader>sb",       ":FzfLua grep_curbuf<cr>",            desc = "Live rg current buffer" },

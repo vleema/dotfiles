@@ -6,13 +6,17 @@ map("n", "<leader>pr", ":source $MYVIMRC<cr>", { desc = "Source init.lua" })
 map("n", "<leader>pl", ":Lazy<cr>", { desc = "Open Lazy menu" })
 
 -- buffers {{{
-map("n", "<leader>,", ":b <C-d>", { desc = "List open buffers for selection" })
+-- map("n", "<leader>,", ":b <C-d>", { desc = "List open buffers for selection" })
 map("n", "<leader>bd", ":bd<cr>", { desc = "Delete open buffer" })
 map("t", "<C-x>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- }}}
 
 -- movement {{{
 map("i", "jj", "<esc>", { silent = true })
+map("n", "<leader>yc", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p") .. ":" .. vim.fn.line("."))
+  vim.notify("Copied current line to clipboard")
+end)
 -- }}}
 
 -- window {{{
