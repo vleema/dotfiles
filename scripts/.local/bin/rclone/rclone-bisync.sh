@@ -1,6 +1,7 @@
 #!/bin/bash
 
 REMOTE="gdrive:sync"
+# REMOTE="proton:"
 LOCAL_PATH="$HOME"/cloud
 REMOTE_PATH=""
 BISYNC_WORKDIR="$HOME"/.local/state/rclone-bisync
@@ -26,6 +27,9 @@ rclone bisync "$LOCAL_PATH" "${REMOTE}${REMOTE_PATH}" \
   --exclude "$EXCLUDE_DIRS" \
   --resilient \
   --recover \
+  --delete-excluded \
+  --max-delete 10000 \
+  --ignore-errors \
   --conflict-resolve newer \
   --conflict-suffix "sync-conflict-{DateOnly}" \
   $EXTRA_PARAMS \
